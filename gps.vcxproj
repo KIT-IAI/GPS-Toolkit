@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\gps\DatumParameters.hpp" />
+    <ClInclude Include="src\gps\DatumParametersImpl.hpp" />
+    <ClInclude Include="src\gps\Exception.hpp" />
+    <ClInclude Include="src\gps\GridParametersImpl.hpp" />
+    <ClInclude Include="src\gps\Constants.hpp" />
+    <ClInclude Include="src\gps\Factory.hpp" />
+    <ClInclude Include="src\gps\gps.hpp" />
+    <ClInclude Include="src\gps\GridParameters.hpp" />
+    <ClInclude Include="src\gps\Projection.hpp" />
+    <ClInclude Include="src\gps\ProjectionImpl.hpp" />
+    <ClInclude Include="src\gps\Settings.hpp" />
+    <ClInclude Include="src\gps\tk\CxBase.h" />
+    <ClInclude Include="src\gps\tk\CxErrors.h" />
+    <ClInclude Include="src\gps\tk\CxString.h" />
+    <ClInclude Include="src\gps\tk\DatumGrid.h" />
+    <ClInclude Include="src\gps\tk\DatumGridNadcon.h" />
+    <ClInclude Include="src\gps\tk\DatumGridNTv2.h" />
+    <ClInclude Include="src\gps\tk\DatumGridUtils.h" />
+    <ClInclude Include="src\gps\tk\DatumsDat.hpp" />
+    <ClInclude Include="src\gps\tk\DatumSubGrid.h" />
+    <ClInclude Include="src\gps\tk\GpsConstantsX.h" />
+    <ClInclude Include="src\gps\tk\GpsDatumParametersX.h" />
+    <ClInclude Include="src\gps\tk\GpsDefs.h" />
+    <ClInclude Include="src\gps\tk\GpsGridParametersX.h" />
+    <ClInclude Include="src\gps\tk\GridsDat.hpp" />
+    <ClInclude Include="src\gps\tk\Projection.h" />
+    <ClInclude Include="src\gps\tk\ProjectionAlbers.h" />
+    <ClInclude Include="src\gps\tk\ProjectionAzimuthalEq.h" />
+    <ClInclude Include="src\gps\tk\ProjectionBonne.h" />
+    <ClInclude Include="src\gps\tk\ProjectionCassiniSoldner.h" />
+    <ClInclude Include="src\gps\tk\ProjectionCylEqArea.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEckert1.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEckert2.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEckert3.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEckert4.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEckert5.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEckert6.h" />
+    <ClInclude Include="src\gps\tk\ProjectionEquirectangular.h" />
+    <ClInclude Include="src\gps\tk\ProjectionGallStereo.h" />
+    <ClInclude Include="src\gps\tk\ProjectionGnomonic.h" />
+    <ClInclude Include="src\gps\tk\ProjectionGrinten1.h" />
+    <ClInclude Include="src\gps\tk\ProjectionHammer.h" />
+    <ClInclude Include="src\gps\tk\ProjectionKrovak.h" />
+    <ClInclude Include="src\gps\tk\ProjectionLambert.h" />
+    <ClInclude Include="src\gps\tk\ProjectionLambertAzimuthal.h" />
+    <ClInclude Include="src\gps\tk\ProjectionLoximuthal.h" />
+    <ClInclude Include="src\gps\tk\ProjectionMercator.h" />
+    <ClInclude Include="src\gps\tk\ProjectionMiller.h" />
+    <ClInclude Include="src\gps\tk\ProjectionMollweide.h" />
+    <ClInclude Include="src\gps\tk\ProjectionObliqueMercator.h" />
+    <ClInclude Include="src\gps\tk\ProjectionObliqueStereo.h" />
+    <ClInclude Include="src\gps\tk\ProjectionOrthographic.h" />
+    <ClInclude Include="src\gps\tk\ProjectionPlateCarree.h" />
+    <ClInclude Include="src\gps\tk\ProjectionPolarStereo.h" />
+    <ClInclude Include="src\gps\tk\ProjectionPolyconic.h" />
+    <ClInclude Include="src\gps\tk\ProjectionQuarticAuthalic.h" />
+    <ClInclude Include="src\gps\tk\ProjectionRobinson.h" />
+    <ClInclude Include="src\gps\tk\Projections.h" />
+    <ClInclude Include="src\gps\tk\ProjectionSinusoidal.h" />
+    <ClInclude Include="src\gps\tk\ProjectionSwissMercator.h" />
+    <ClInclude Include="src\gps\tk\ProjectionTransverseMercator.h" />
+    <ClInclude Include="src\gps\tk\ProjectionUtils.h" />
+    <ClInclude Include="src\gps\tk\ProjectionWinkel1.h" />
+    <ClInclude Include="src\gps\tk\ProjTypes.h" />
+    <ClInclude Include="src\gps\tk\resource.h" />
+    <ClInclude Include="src\gps\tk\SpatialBase.h" />
+    <ClInclude Include="src\gps\tk\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\gps\DatumParametersImpl.cpp" />
+    <ClCompile Include="src\gps\Factory.cpp" />
+    <ClCompile Include="src\gps\GridParametersImpl.cpp" />
+    <ClCompile Include="src\gps\ProjectionImpl.cpp" />
+    <ClCompile Include="src\gps\Settings.cpp" />
+    <ClCompile Include="src\gps\tk\CxBase.cpp" />
+    <ClCompile Include="src\gps\tk\CxErrors.cpp" />
+    <ClCompile Include="src\gps\tk\CxString.cpp" />
+    <ClCompile Include="src\gps\tk\DatumGrid.cpp" />
+    <ClCompile Include="src\gps\tk\DatumGridNadcon.cpp" />
+    <ClCompile Include="src\gps\tk\DatumGridNTv2.cpp" />
+    <ClCompile Include="src\gps\tk\DatumGridUtils.cpp" />
+    <ClCompile Include="src\gps\tk\DatumsDat.cpp" />
+    <ClCompile Include="src\gps\tk\DatumSubGrid.cpp" />
+    <ClCompile Include="src\gps\tk\GpsDatumParametersX.cpp" />
+    <ClCompile Include="src\gps\tk\GpsGridParametersX.cpp" />
+    <ClCompile Include="src\gps\tk\GridsDat.cpp" />
+    <ClCompile Include="src\gps\tk\Projection.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionAlbers.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionAzimuthalEq.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionBonne.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionCassiniSoldner.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionCylEqArea.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEckert1.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEckert2.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEckert3.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEckert4.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEckert5.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEckert6.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionEquirectangular.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionGallStereo.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionGnomonic.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionGrinten1.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionHammer.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionKrovak.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionLambert.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionLambertAzimuthal.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionLoximuthal.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionMercator.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionMiller.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionMollweide.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionObliqueMercator.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionObliqueStereo.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionOrthographic.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionPlateCarree.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionPolarStereo.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionPolyconic.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionQuarticAuthalic.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionRobinson.cpp" />
+    <ClCompile Include="src\gps\tk\Projections.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionSinusoidal.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionSwissMercator.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionTransverseMercator.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionUtils.cpp" />
+    <ClCompile Include="src\gps\tk\ProjectionWinkel1.cpp" />
+    <ClCompile Include="src\gps\tk\SpatialBase.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BC272247-A408-4E41-A8CD-8C3A0E5211D8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>gps</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\lib\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\lib_x64\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\lib_x64\</OutDir>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
