@@ -1,14 +1,8 @@
 #include "stdafx.h"
 
-/////
-
 #include "DatumGridUtils.h"
 
-/////
-
 #include <math.h>
-
-/////
 
 double gps_round (double x)
 {

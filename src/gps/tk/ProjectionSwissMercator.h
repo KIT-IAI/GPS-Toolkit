@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionSwissMercator : public CProjection
 {
@@ -22,5 +18,3 @@ private:
 	double		c, ee, ep;
 	double		K, R;
 };
-
-/

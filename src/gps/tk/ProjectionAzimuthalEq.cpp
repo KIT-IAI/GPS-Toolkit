@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionAzimuthalEq.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define TOL 1.e-14
-
-/
 
 CProjectionAzimuthalEq::CProjectionAzimuthalEq ()
 {
 }
 
-/
-
 CProjectionAzimuthalEq::~CProjectionAzimuthalEq ()
 {
 }
-
-/
 
 VOID CProjectionAzimuthalEq::Initialize(CCfgMapProjection & proj)
 {
@@ -71,8 +55,6 @@ VOID CProjectionAzimuthalEq::Initialize(CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 VOID CProjectionAzimuthalEq::Forward ()
 {
 	if ( m_bSphere )
@@ -86,8 +68,6 @@ VOID CProjectionAzimuthalEq::Forward ()
 
 	return VOID ();
 }
-
-/
 
 VOID CProjectionAzimuthalEq::ForwardSphere ()
 {
@@ -115,8 +95,6 @@ VOID CProjectionAzimuthalEq::ForwardSphere ()
 
 	return void ();
 }
-
-/
 
 VOID CProjectionAzimuthalEq::ForwardEllipse ()
 {
@@ -158,8 +136,6 @@ VOID CProjectionAzimuthalEq::ForwardEllipse ()
 	return VOID ();
 }
 
-/
-
 VOID CProjectionAzimuthalEq::Inverse ()
 {
 	if ( m_bSphere )
@@ -173,8 +149,6 @@ VOID CProjectionAzimuthalEq::Inverse ()
 
 	return void ();
 }
-
-/
 
 VOID CProjectionAzimuthalEq::InverseEllipse ()
 {
@@ -204,8 +178,6 @@ VOID CProjectionAzimuthalEq::InverseEllipse ()
 	return void ();
 }
 
-/
-
 VOID CProjectionAzimuthalEq::InverseSphere ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -227,4 +199,3 @@ VOID CProjectionAzimuthalEq::InverseSphere ()
 	return void ();
 }
 
-/

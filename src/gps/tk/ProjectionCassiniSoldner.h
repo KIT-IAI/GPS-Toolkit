@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionCassiniSoldner : public CProjection
 {
 public:
@@ -24,5 +22,3 @@ private:
 	double		M0, c0, c1, c2, c3, a0 , a1, a2, a3;
 
 };
-
-/

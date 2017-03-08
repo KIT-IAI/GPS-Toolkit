@@ -1,23 +1,13 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionGrinten1.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 #define TOL			1.e-10
 #define THIRD		.33333333333333333333
@@ -28,19 +18,13 @@
 #define TPISQ		19.73920880217871723738
 #define HPISQ		4.93480220054467930934
 
-/
-
 CProjectionGrinten1::CProjectionGrinten1 ()
 {
 }
 
-/
-
 CProjectionGrinten1::~CProjectionGrinten1 ()
 {
 }
-
-/
 
 void CProjectionGrinten1::Initialize (CCfgMapProjection & proj)
 {
@@ -53,8 +37,6 @@ void CProjectionGrinten1::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionGrinten1::Forward ()
 {
@@ -113,8 +95,6 @@ void CProjectionGrinten1::Forward ()
 	
     return void ();
 }
-
-/
 
 void CProjectionGrinten1::Inverse ()
 {
@@ -183,6 +163,4 @@ void CProjectionGrinten1::Inverse ()
 
 	return void ();
 }
-
-/
 

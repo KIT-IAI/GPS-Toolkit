@@ -1,45 +1,27 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionGallStereo.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define YF	1.70710678118654752440
 #define XF	0.70710678118654752440
 
-/
-
 #define RYF	0.58578643762690495119
 #define RXF	1.41421356237309504880
-
-/
 
 CProjectionGallStereo::CProjectionGallStereo ()
 {
 }
 
-/
-
 CProjectionGallStereo::~CProjectionGallStereo ()
 {
 }
-
-/
 
 void CProjectionGallStereo::Initialize (CCfgMapProjection & proj)
 {
@@ -52,8 +34,6 @@ void CProjectionGallStereo::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionGallStereo::Forward ()
 {
@@ -70,8 +50,6 @@ void CProjectionGallStereo::Forward ()
     return void ();
 }
 
-/
-
 void CProjectionGallStereo::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -86,4 +64,3 @@ void CProjectionGallStereo::Inverse ()
 	return void ();
 }
 
-/

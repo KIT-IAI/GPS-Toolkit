@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionGnomonic.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionGnomonic::CProjectionGnomonic ()
 {
 }
 
-/
-
 CProjectionGnomonic::~CProjectionGnomonic ()
 {
 }
-
-/
 
 void CProjectionGnomonic::Initialize (CCfgMapProjection & proj)
 {
@@ -46,8 +32,6 @@ void CProjectionGnomonic::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionGnomonic::Forward ()
 {
@@ -71,8 +55,6 @@ void CProjectionGnomonic::Forward ()
     return void ();
 }
 
-/
-
 void CProjectionGnomonic::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -94,4 +76,3 @@ void CProjectionGnomonic::Inverse ()
 	return void ();
 }
 
-/

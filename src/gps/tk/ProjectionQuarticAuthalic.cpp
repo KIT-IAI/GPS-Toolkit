@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionQuarticAuthalic.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionQuarticAuthalic::CProjectionQuarticAuthalic ()
 {
 }
 
-/
-
 CProjectionQuarticAuthalic::~CProjectionQuarticAuthalic ()
 {
 }
-
-/
 
 void CProjectionQuarticAuthalic::Initialize (CCfgMapProjection & proj)
 {
@@ -42,8 +28,6 @@ void CProjectionQuarticAuthalic::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionQuarticAuthalic::Forward ()
 {
@@ -63,8 +47,6 @@ void CProjectionQuarticAuthalic::Forward ()
 	return void ();
 }
 
-/
-
 void CProjectionQuarticAuthalic::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -81,5 +63,3 @@ void CProjectionQuarticAuthalic::Inverse ()
 
 	return void ();
 }
-
-/

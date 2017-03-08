@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionKrovak.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionKrovak::CProjectionKrovak ()
 {
 }
 
-/
-
 CProjectionKrovak::~CProjectionKrovak ()
 {
 }
-
-/
 
 void CProjectionKrovak::Initialize (CCfgMapProjection & proj)
 {
@@ -66,8 +52,6 @@ void CProjectionKrovak::Initialize (CCfgMapProjection & proj)
 	ro0		        = k0 * n0 / tan ( sp1 );
 }
 
-/
-
 void CProjectionKrovak::Forward ()
 {
 	double lat      = m_fLatitude;
@@ -88,8 +72,6 @@ void CProjectionKrovak::Forward ()
 	m_fNorthing		= ro * cos ( eps );
 	m_fEasting      = ro * sin ( eps );
 }
-
-/
 
 void CProjectionKrovak::Inverse ()
 {
@@ -124,4 +106,3 @@ void CProjectionKrovak::Inverse ()
     m_fLongitude    = lon;
 }
 
-/

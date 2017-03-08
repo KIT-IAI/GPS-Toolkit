@@ -1,8 +1,5 @@
-//////////////////////////////////////////////////////////////////////
 
 #include "CxString.h"
-
-//////////////////////////////////////////////////////////////////////
 #define errSUCCESS                                        	0	//Success
 #define errGPS_ENDOFSATINFO                               	19025	//No more SatelliteInfo objects available
 #define errGPS_LOADDATUMFAILED                            	19030	//Failed to load datum definition file, the file could not be found
@@ -60,8 +57,6 @@
 #define errMISC_IMPROPLICENSE                             	21012	//License is impropriate to use this function. You need to upgrade to another license
 #define errOSGB_FAILEDLOADDATA                            	22001	//OSTN02: Failed to load OSTN02 transformation data
 #define errOSGB_OUTOFBOUNDS                               	22002	//OSTN02: Input coordinate(s) out of bounds
-
-//////////////////////////////////////////////////////////////////////
 
 CCxString & GetErrorText (LONG lError, CCxString & strError);
 

@@ -1,8 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by GpsCtrl.rc
-//
-#define IDS_PROJNAME                    100
+// Used by GpsCtrl.rc#define IDS_PROJNAME                    100
 #define IDR_GPSCTRL                     101
 #define IDR_GPS                         102
 #define IDR_GPSCONSTANTS                103

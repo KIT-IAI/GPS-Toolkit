@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionMollweide : public CProjection
 {
@@ -21,5 +17,3 @@ private:
 
 	double		r2, r8;
 };
-
-/

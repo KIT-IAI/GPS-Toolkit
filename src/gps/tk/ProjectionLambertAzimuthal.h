@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionLambertAzimuthal :	public CProjection
 {
 public:
@@ -24,5 +22,3 @@ private:
 	double		q0, qp, clat0, slat0, sinb0, cosb0;
 
 };
-
-/

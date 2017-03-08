@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionKrovak : public CProjection
 {
 public:
@@ -18,4 +16,3 @@ private:
 	double		alfa, k, ro0, ssp1;
 };
 
-/

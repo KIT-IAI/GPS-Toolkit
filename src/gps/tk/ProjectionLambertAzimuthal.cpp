@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionLambertAzimuthal.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define EPSLN	1.0e-10
-
-/
 
 CProjectionLambertAzimuthal::CProjectionLambertAzimuthal ()
 {
 }
 
-/
-
 CProjectionLambertAzimuthal::~CProjectionLambertAzimuthal ()
 {
 }
-
-/
 
 void CProjectionLambertAzimuthal::Initialize (CCfgMapProjection & proj)
 {
@@ -79,8 +63,6 @@ void CProjectionLambertAzimuthal::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionLambertAzimuthal::Forward ()
 {
 	if ( m_bSphere )
@@ -88,8 +70,6 @@ void CProjectionLambertAzimuthal::Forward ()
 	else
 		ForwardE ();
 }
-
-/
 
 void CProjectionLambertAzimuthal::ForwardE ()
 {
@@ -121,8 +101,6 @@ void CProjectionLambertAzimuthal::ForwardE ()
 	return void ();
 }
 
-/
-
 void CProjectionLambertAzimuthal::ForwardS ()
 {
 	double lat      = m_fLatitude;
@@ -146,8 +124,6 @@ void CProjectionLambertAzimuthal::ForwardS ()
 	return void ();
 }
 
-/
-
 void CProjectionLambertAzimuthal::Inverse ()
 {
 	if ( m_bSphere )
@@ -157,8 +133,6 @@ void CProjectionLambertAzimuthal::Inverse ()
 
 	return void ();
 }
-
-/
 
 void CProjectionLambertAzimuthal::InverseS ()
 {
@@ -208,8 +182,6 @@ void CProjectionLambertAzimuthal::InverseS ()
 	return void ();
 }
 
-/
-
 void CProjectionLambertAzimuthal::InverseE ()
 {
 	double dx       = m_fEasting  - fe;
@@ -255,4 +227,3 @@ void CProjectionLambertAzimuthal::InverseE ()
 	return void ();
 }
 
-/

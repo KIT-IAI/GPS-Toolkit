@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionTransverseMercator.h"
-
-/
 
 #include "GpsConstantsX.h"
 
-/
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionTransverseMercator::CProjectionTransverseMercator ()
 {
 }
 
-/
-
 CProjectionTransverseMercator::~CProjectionTransverseMercator ()
 {
 }
-
-/
 
 VOID CProjectionTransverseMercator::Initialize (CCfgMapProjection & proj)
 {
@@ -72,8 +56,6 @@ VOID CProjectionTransverseMercator::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 VOID CProjectionTransverseMercator::Forward ()
 {
@@ -133,8 +115,6 @@ VOID CProjectionTransverseMercator::Forward ()
 
 	return void ();
 }
-
-/
 
 VOID CProjectionTransverseMercator::Inverse ()
 {
@@ -212,5 +192,3 @@ VOID CProjectionTransverseMercator::Inverse ()
 
 	return void ();
 }
-
-/

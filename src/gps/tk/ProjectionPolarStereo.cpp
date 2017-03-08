@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionPolarStereo.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionPolarStereo::CProjectionPolarStereo ()
 {
 }
 
-/
-
 CProjectionPolarStereo::~CProjectionPolarStereo ()
 {
 }
-
-/
 
 void CProjectionPolarStereo::Initialize(CCfgMapProjection & proj)
 {
@@ -65,8 +51,6 @@ void CProjectionPolarStereo::Initialize(CCfgMapProjection & proj)
     clat0           = cos ( lat0 );
 }
 
-/
-
 void CProjectionPolarStereo::Forward()
 {
 	double lat      = m_fLatitude   * hem;
@@ -97,8 +81,6 @@ void CProjectionPolarStereo::Forward()
     m_fEasting      =  hem * rho * sin ( dlam ) + fe;
     m_fNorthing		= -hem * rho * cos ( dlam ) + fn;
 }
-
-/
 
 void CProjectionPolarStereo::Inverse()
 {
@@ -141,5 +123,3 @@ void CProjectionPolarStereo::Inverse()
     m_fLatitude     = lat;
     m_fLongitude    = lon;   
 }
-
-/

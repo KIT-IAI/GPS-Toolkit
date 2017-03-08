@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionWinkel1 : public CProjection
 {
@@ -17,5 +13,3 @@ public:
 	VOID		Forward						();
 	VOID		Inverse						();
 };
-
-/

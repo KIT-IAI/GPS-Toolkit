@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionMercator : public CProjection
 {
 public:
@@ -18,5 +16,3 @@ public:
 	VOID		InverseSphere				();
 	VOID		InverseEllipse				();
 };
-
-/

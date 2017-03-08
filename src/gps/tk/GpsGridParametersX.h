@@ -22,23 +22,15 @@ public:
 							CGpsGridParametersX			();
 	virtual					~CGpsGridParametersX		();
 
-	VOID					Clear						();
+	void Clear ();
 
-	LONG					FromOleObject				(VARIANT * pVariant);
-	LONG					ToOleObject					(VARIANT * pVariant);
+	void LoadFromId (GridId id);
+	LONG LoadStatePlane(LONG lId);
 
-	LONG					SaveToFile					(CCxString & strFileName);
-	LONG					LoadFromFile				(CCxString & strFileName);
+	VOID ToProjectionStruct(CCfgMapProjection & proj);
 
-	LONG					LoadFromId					(LONG lId);
-	LONG					LoadStatePlane				(LONG lId);
-
-	LONG					GetFirstGrid				();
-	LONG					GetNextGrid					();
-
-	VOID					ToProjectionStruct			(CCfgMapProjection & proj);
-
-	CCxString				m_strName;
+public:
+	std::wstring m_strName;
 
 	LONG					m_lId;
 	LONG					m_lProjection;
@@ -59,9 +51,5 @@ public:
 	DOUBLE					m_fScaleFactor;
 
 	CGpsDatumParametersX	m_cGpsDatumParameters;
-
-protected:
-
-	CSpatialBase *	m_pSpatialBase;
 };
 

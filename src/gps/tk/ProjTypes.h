@@ -1,16 +1,10 @@
-/
-
 #include <windows.h>
 #include <stdlib.h>
 
 #include "CxString.h"
 
-/
-
 #ifndef _PROJTYPES_H
 #define _PROJTYPES_H
-
-/
 
 class CCfgMapProjection
 {
@@ -230,7 +224,5 @@ public:
 	double		m_fRectifiedGrid;
 	double		m_fProjScale;
 };
-
-/
 
 #endif // _PROJTYPES_H

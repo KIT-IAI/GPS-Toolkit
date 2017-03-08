@@ -4,18 +4,12 @@
 #include <stdio.h>
 #include <vector>
 
-//////////////
-
 #include "CxBase.h"
-
-//////////////
 
 CCxBase::CCxBase()
 {
 	m_strDebugFile  = _T("C:\\debug\\unknown.txt");
 }
-
-//////////////
 
 CCxBase::CCxBase(LPCTSTR lptszDebug)
 {
@@ -24,41 +18,29 @@ CCxBase::CCxBase(LPCTSTR lptszDebug)
 	m_strDebugFile += _T(".txt");
 }
 
-//////////////
-
 CCxBase::~CCxBase()
 {
 }
-
-//////////////
 
 void CCxBase::SetLogFile (LPCTSTR lptszLogFile)
 {
 	m_strLogFile = lptszLogFile;
 }
 
-//////////////
-
 void CCxBase::SetTraceFile (LPCTSTR lptszTraceFile)
 {
 	m_strTraceFile = lptszTraceFile;
 }
-
-//////////////
 
 void CCxBase::TraceFunction ( LPCTSTR format, ... )
 {
 	
 }
 
-//////////////
-
 void CCxBase::TraceDebug ( LPCTSTR format, ... )
 {
 
 }
-
-//////////////
 
 void CCxBase::TraceTrace ( LPCTSTR format, ... )
 {
@@ -151,8 +133,6 @@ void CCxBase::TraceTrace ( LPCTSTR format, ... )
 // 	return void ();
 }
 
-//////////////
-
 void CCxBase::TraceLog ( LPCTSTR format, ... )
 {
 	time_t	tm;
@@ -187,8 +167,6 @@ void CCxBase::TraceLog ( LPCTSTR format, ... )
 		}
 	}
 }
-
-//////////////
 
 BOOL CCxBase :: operator == ( const CCxBase & )
 {

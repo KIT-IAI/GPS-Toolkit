@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionPlateCarree.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionPlateCarree::CProjectionPlateCarree ()
 {
 }
 
-/
-
 CProjectionPlateCarree::~CProjectionPlateCarree ()
 {
 }
-
-/
 
 void CProjectionPlateCarree::Initialize (CCfgMapProjection & proj)
 {
@@ -43,8 +29,6 @@ void CProjectionPlateCarree::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionPlateCarree::Forward ()
 {
@@ -60,8 +44,6 @@ void CProjectionPlateCarree::Forward ()
     return void ();
 }
 
-/
-
 void CProjectionPlateCarree::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -75,5 +57,3 @@ void CProjectionPlateCarree::Inverse ()
 
 	return void ();
 }
-
-/

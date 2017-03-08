@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionCylEqArea.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionCylEqArea::CProjectionCylEqArea ()
 {
 }
 
-/
-
 CProjectionCylEqArea::~CProjectionCylEqArea ()
 {
 }
-
-/
 
 void CProjectionCylEqArea::Initialize(CCfgMapProjection & proj)
 {
@@ -69,8 +55,6 @@ void CProjectionCylEqArea::Initialize(CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionCylEqArea::Forward()
 {
 	double lat      = m_fLatitude;
@@ -95,8 +79,6 @@ void CProjectionCylEqArea::Forward()
 
 	return void ();
 }
-
-/
 
 void CProjectionCylEqArea::Inverse()
 {
@@ -135,5 +117,3 @@ void CProjectionCylEqArea::Inverse()
 
 	return void ();
 }
-
-/

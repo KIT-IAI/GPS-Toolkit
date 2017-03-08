@@ -1,15 +1,9 @@
 #pragma once
 
-/////
-
 #include "DatumSubGrid.h"
-
-/////
 
 #define MODE_NADCON			1
 #define MODE_NTV2			2
-
-/////
 
 class CDatumGrid
 {
@@ -34,5 +28,3 @@ private:
 
 	LONG				m_lMode;	
 };
-
-/////

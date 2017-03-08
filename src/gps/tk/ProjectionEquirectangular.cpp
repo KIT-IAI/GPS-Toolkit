@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionEquirectangular.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionEquirectangular::CProjectionEquirectangular ()
 {
 }
 
-/
-
 CProjectionEquirectangular::~CProjectionEquirectangular ()
 {
 }
-
-/
 
 void CProjectionEquirectangular::Initialize (CCfgMapProjection & proj)
 {
@@ -46,8 +32,6 @@ void CProjectionEquirectangular::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionEquirectangular::Forward ()
 {
 	double lat		= m_fLatitude;
@@ -61,8 +45,6 @@ void CProjectionEquirectangular::Forward ()
 
     return void ();
 }
-
-/
 
 void CProjectionEquirectangular::Inverse ()
 {
@@ -78,4 +60,3 @@ void CProjectionEquirectangular::Inverse ()
 	return void ();
 }
 
-/

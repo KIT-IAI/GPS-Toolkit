@@ -1,15 +1,9 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjection::CProjection ()
 {
@@ -24,62 +18,44 @@ CProjection::CProjection ()
 	m_bSphere		= FALSE;
 }
 
-/
-
 CProjection::~CProjection ()
 {
 }
-
-/
 
 double CProjection::DEG2RAD (double x)
 {
 	return x * ( M_PI / 180.0 );
 }
 
-/
-
 double CProjection::RAD2DEG (double x)
 {
 	return x / ( M_PI / 180.0 );
 }
 
-/
-
 double CProjection::SPHSN (double lat)
 {
 	return ( a / sqrt ( 1.0 - e2 * pow ( sin ( lat ), 2.0 ) ) );
 }
-
-/
 	
 double CProjection::SPHSR (double lat)
 {
 	return a * ( 1.0 - e2 ) / pow ( sqrt ( 1.0 - e2 * pow ( sin ( lat ), 2.0 ) ), 3.0 );
 }
 
-/
-
 double CProjection::TSFN (double lat)
 {
 	return tan ( M_PI_4 - ( lat / 2.0 ) ) / pow ( ( ( 1.0 - e * sin ( lat ) ) / ( 1.0 + e * sin ( lat ) ) ), ( e / 2.0 ) );
 }
-
-/
 
 double CProjection::TSFN2 (double lat)
 {
 	return tan ( M_PI_4 + ( lat / 2.0 ) ) * pow ( ( ( 1.0 - e * sin ( lat ) ) / ( 1.0 + e * sin ( lat ) ) ), ( e / 2.0 ) );
 }
 
-/
-
 double CProjection::MSFN (double lat)
 {
 	return cos ( lat ) / sqrt ( ( 1.0 - e2 * sin ( lat ) * sin ( lat ) ) );
 }
-
-/
 
 double CProjection::QSFN2 (double lat)
 {
@@ -88,16 +64,12 @@ double CProjection::QSFN2 (double lat)
 	return ( ( 1.0 - e2 ) * ( sin ( lat ) / ( 1.0 - con * con ) - ( 0.5 / e ) * log ( ( 1.0 - con) / ( 1.0 + con ) ) ) );
 }
 
-/
-
 double CProjection::QSFN (double lat)
 {
 	double con  = e * sin ( lat );
 
 	return ( ( 1.0 - e ) * ( sin ( lat ) / ( 1.0 - con * con ) - ( 0.5 / e ) * log ( ( 1.0 - con) / ( 1.0 + con ) ) ) );
 }
-
-/
 
 double CProjection::AUTHLAT (double lat)
 {
@@ -111,8 +83,6 @@ double CProjection::AUTHLAT (double lat)
 
 	return lat + sin2b + sin4b + sin6b;
 }
-
-/
 
 double CProjection::MLFN (double lat)
 {
@@ -130,8 +100,6 @@ double CProjection::MLFN (double lat)
 
 	return ( c0 * lat - s2lat + s4lat - s6lat );
 }
-
-/
 
 double CProjection::INVMLFN (double y)
 {
@@ -157,8 +125,6 @@ double CProjection::INVMLFN (double y)
 	return mu + s2mu + s4mu + s6mu + s8mu;
 }
 
-/
-
 double CProjection::SIGN (double x)
 {
 	double ret = 0.0;
@@ -173,14 +139,10 @@ double CProjection::SIGN (double x)
     return ret;
 }
 
-/
-
 double CProjection::ASQRT (double x) 
 { 
 	return ( ( x <= 0) ? 0.0 : sqrt ( x ) );
 }
-
-/
 
 double CProjection::ASINZ (double x)
 {
@@ -192,8 +154,6 @@ double CProjection::ASINZ (double x)
 
 	return asin ( x );
 }
-
-/
 
 double CProjection::AASIN (double x)
 {
@@ -207,20 +167,14 @@ double CProjection::AASIN (double x)
 	return asin ( x );
 }
 
-/
-
 void CProjection::Forward ()
 {
 
 }
 
-/
-
 void CProjection::Inverse ()
 {
 }
-
-/
 
 void CProjection::Initialize(CCfgMapProjection &proj)
 {

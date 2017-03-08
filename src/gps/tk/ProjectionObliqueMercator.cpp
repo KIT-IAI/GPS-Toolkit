@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionObliqueMercator.h"
-
-/
 
 #include "GpsConstantsX.h"
 
-/
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionObliqueMercator::CProjectionObliqueMercator()
 {
 }
 
-/
-
 CProjectionObliqueMercator::~CProjectionObliqueMercator()
 {
 }
-
-/
 
 void CProjectionObliqueMercator::Initialize (CCfgMapProjection & proj)
 {
@@ -84,8 +68,6 @@ void CProjectionObliqueMercator::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionObliqueMercator::Forward ()
 {
 	double lat      = m_fLatitude;
@@ -108,8 +90,6 @@ void CProjectionObliqueMercator::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionObliqueMercator::Inverse ()
 {
@@ -145,4 +125,3 @@ void CProjectionObliqueMercator::Inverse ()
 	return void ();
 }
 
-/

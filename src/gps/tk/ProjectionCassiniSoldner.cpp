@@ -1,36 +1,22 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionCassiniSoldner.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionCassiniSoldner::CProjectionCassiniSoldner ()
 {
 	m_bSphere = FALSE;
 }
 
-/
-
 CProjectionCassiniSoldner::~CProjectionCassiniSoldner ()
 {
 }
-
-/
 
 void CProjectionCassiniSoldner::Initialize(CCfgMapProjection &proj)
 {
@@ -82,8 +68,6 @@ void CProjectionCassiniSoldner::Initialize(CCfgMapProjection &proj)
 	return void ();
 }
 
-/
-
 void CProjectionCassiniSoldner::Forward ()
 {
 	if ( m_bSphere )
@@ -93,8 +77,6 @@ void CProjectionCassiniSoldner::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionCassiniSoldner::ForwardE ()
 {
@@ -127,8 +109,6 @@ void CProjectionCassiniSoldner::ForwardE ()
 	return void ();
 }
 
-/
-
 void CProjectionCassiniSoldner::ForwardS ()
 {
 	double	lat		= m_fLatitude;
@@ -145,8 +125,6 @@ void CProjectionCassiniSoldner::ForwardS ()
 	return void ();
 }
 
-/
-
 void CProjectionCassiniSoldner::Inverse ()
 {
 	if ( m_bSphere )
@@ -156,8 +134,6 @@ void CProjectionCassiniSoldner::Inverse ()
 
 	return void ();
 }
-
-/
 
 void CProjectionCassiniSoldner::InverseE ()
 {
@@ -196,8 +172,6 @@ void CProjectionCassiniSoldner::InverseE ()
 	return void ();
 }
 
-/
-
 void CProjectionCassiniSoldner::InverseS ()
 {
         double dy		= ( m_fNorthing - fn ) / a;
@@ -214,4 +188,3 @@ void CProjectionCassiniSoldner::InverseS ()
 	return void ();
 }
 
-/

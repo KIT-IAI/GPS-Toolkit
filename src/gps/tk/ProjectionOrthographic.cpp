@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionOrthographic.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionOrthographic::CProjectionOrthographic ()
 {
 }
 
-/
-
 CProjectionOrthographic::~CProjectionOrthographic ()
 {
 }
-
-/
 
 void CProjectionOrthographic::Initialize (CCfgMapProjection & proj)
 {
@@ -46,8 +32,6 @@ void CProjectionOrthographic::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionOrthographic::Forward ()
 {
@@ -67,8 +51,6 @@ void CProjectionOrthographic::Forward ()
 	
     return void ();
 }
-
-/
 
 void CProjectionOrthographic::Inverse ()
 {
@@ -96,5 +78,3 @@ void CProjectionOrthographic::Inverse ()
 
 	return void ();
 }
-
-/

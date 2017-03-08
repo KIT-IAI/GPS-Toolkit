@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "ProjTypes.h"
-
-/
 
 #ifndef MIN
 #define MIN(x,y) ((x < y) ? x : y)
@@ -13,8 +9,6 @@
 #ifndef MAX
 #define MAX(x,y) ((x > y) ? x : y)
 #endif // MAX	
-
-/
 
 class CProjection
 {
@@ -60,5 +54,3 @@ protected:
 
 	bool				m_bSphere;
 };
-
-/

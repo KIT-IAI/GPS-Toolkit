@@ -1,23 +1,13 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionRobinson.h"
-
-/
 
 #define V(C,z) (C.c0 + z * (C.c1 + z * (C.c2 + z * C.c3)))
 #define D(C,z) (C.c1 + z * (C.c2 + C.c2 + z * 3. * C.c3))
-
-/
 
 static struct COEFS 
 {
@@ -26,8 +16,6 @@ static struct COEFS
 	double	c2;
 	double	c3;
 };
-
-/
 
 struct COEFS X [] = 
 {
@@ -52,8 +40,6 @@ struct COEFS X [] =
 	0.5322,  0.00000000,	 0.000000000,	 0.00000e-00,
 };
 
-/
-
 struct COEFS Y [] = 
 {
 	0.0000,	0.01240000,	 3.72529e-10,	 1.15484e-09,
@@ -77,41 +63,25 @@ struct COEFS Y [] =
 	1.0000, 0.00000000,  0.000000000,    0,
 };
 
-/
-
 #define C1	11.45915590261646417544
 #define RC1	0.08726646259971647884
-/
-
 #define FXC	0.8487
 #define FYC	1.3523
 
-/
-
 #define NODES	18L
-
-/
 
 #define EPS	1.0e-10
 
-/
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionRobinson::CProjectionRobinson ()
 {
 }
 
-/
-
 CProjectionRobinson::~CProjectionRobinson ()
 {
 }
-
-/
 
 void CProjectionRobinson::Initialize (CCfgMapProjection & proj)
 {
@@ -124,8 +94,6 @@ void CProjectionRobinson::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionRobinson::Forward ()
 {
@@ -148,8 +116,6 @@ void CProjectionRobinson::Forward ()
 	
     return void ();
 }
-
-/
 
 void CProjectionRobinson::Inverse ()
 {
@@ -210,5 +176,3 @@ void CProjectionRobinson::Inverse ()
 
 	return void ();
 }
-
-/

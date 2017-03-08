@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionMollweide.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionMollweide::CProjectionMollweide ()
 {
 }
 
-/
-
 CProjectionMollweide::~CProjectionMollweide ()
 {
 }
-
-/
 
 void CProjectionMollweide::Initialize (CCfgMapProjection & proj)
 {
@@ -51,8 +37,6 @@ void CProjectionMollweide::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionMollweide::Forward ()
 {
@@ -76,8 +60,6 @@ void CProjectionMollweide::Forward ()
 	return void ();
 }
 
-/
-
 void CProjectionMollweide::Inverse ()
 {
 	double dx		= m_fEasting  - fe;
@@ -95,6 +77,4 @@ void CProjectionMollweide::Inverse ()
 
 	return void ();
 }
-
-/
 

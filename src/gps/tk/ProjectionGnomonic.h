@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionGnomonic :	public CProjection
 {
@@ -22,5 +18,3 @@ protected:
 	double		clat0;
 	double		slat0;
 };
-
-/

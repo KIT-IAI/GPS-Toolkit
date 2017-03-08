@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionCylEqArea : public CProjection
 {
@@ -18,6 +14,4 @@ public:
 	VOID		Forward						();
 	VOID		Inverse						();
 };
-
-/
 

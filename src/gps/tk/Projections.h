@@ -1,14 +1,8 @@
 #pragma once
 
-/
-
 #include "Projection.h"
 
-/
-
 class CDatumGrid;
-
-/
 
 class CProjections
 {
@@ -46,5 +40,3 @@ private:
 	CCfgMapProjection	m_projDst;
 	CCfgMapProjection	m_projWgs;
 };
-
-/

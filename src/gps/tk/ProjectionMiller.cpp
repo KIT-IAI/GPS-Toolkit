@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionMiller.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionMiller::CProjectionMiller ()
 {
 }
 
-/
-
 CProjectionMiller::~CProjectionMiller ()
 {
 }
-/
-
 void CProjectionMiller::Initialize(CCfgMapProjection & proj)
 {
 	a				= proj.m_fAxis;
@@ -41,8 +27,6 @@ void CProjectionMiller::Initialize(CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionMiller::Forward()
 {
@@ -57,8 +41,6 @@ void CProjectionMiller::Forward()
 	return void ();
 }
 
-/
-
 void CProjectionMiller::Inverse()
 {
 	double  dx      = m_fEasting  - fe;
@@ -70,4 +52,3 @@ void CProjectionMiller::Inverse()
 	return void ();
 }
 
-/

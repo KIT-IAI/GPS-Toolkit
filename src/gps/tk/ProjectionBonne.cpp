@@ -1,40 +1,24 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionBonne.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define EPS10	1e-10
-
-/
 
 CProjectionBonne::CProjectionBonne ()
 {
 	m_bSphere	= FALSE;
 }
 
-/
-
 CProjectionBonne::~CProjectionBonne ()
 {
 }
-
-/
 
 void CProjectionBonne::Initialize(CCfgMapProjection & proj)
 {
@@ -72,8 +56,6 @@ void CProjectionBonne::Initialize(CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionBonne::Forward ()
 {
 	if ( m_bSphere )
@@ -83,8 +65,6 @@ void CProjectionBonne::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionBonne::ForwardE ()
 {
@@ -104,8 +84,6 @@ void CProjectionBonne::ForwardE ()
 
 	return void ();
 }
-
-/
 
 void CProjectionBonne::ForwardS ()
 {
@@ -130,8 +108,6 @@ void CProjectionBonne::ForwardS ()
 	return void ();
 }
 
-/
-
 void CProjectionBonne::Inverse()
 {
 	if ( m_bSphere )
@@ -141,8 +117,6 @@ void CProjectionBonne::Inverse()
 
 	return void ();
 }
-
-/
 
 void CProjectionBonne::InverseE ()
 {
@@ -182,8 +156,6 @@ void CProjectionBonne::InverseE ()
 	return void ();
 }
 
-/
-
 void CProjectionBonne::InverseS ()
 {
 	double dy		= ( m_fNorthing - fn ) / a;
@@ -207,4 +179,3 @@ void CProjectionBonne::InverseS ()
 	return void ();
 }
 
-/

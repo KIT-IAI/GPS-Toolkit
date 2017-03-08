@@ -1,7 +1,5 @@
 #pragma once
 
-/////
-
 class CDatumSubGrid
 {
 public:
@@ -38,5 +36,3 @@ private:
 	float		*	m_pdblLatitudes;
 	float		*	m_pdblLongitudes;
 };
-
-/////

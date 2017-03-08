@@ -1,44 +1,26 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionEckert2.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define FXC		0.46065886596178063902
 #define FYC		1.44720250911653531871
 
-/
-
 #define ONEEPS	1.0000001
-
-/
 
 CProjectionEckert2::CProjectionEckert2 ()
 {
 }
 
-/
-
 CProjectionEckert2::~CProjectionEckert2 ()
 {
 }
-
-/
 
 void CProjectionEckert2::Initialize (CCfgMapProjection & proj)
 {
@@ -51,8 +33,6 @@ void CProjectionEckert2::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionEckert2::Forward ()
 {
@@ -68,8 +48,6 @@ void CProjectionEckert2::Forward ()
 
     return void ();
 }
-
-/
 
 void CProjectionEckert2::Inverse ()
 {
@@ -101,6 +79,4 @@ void CProjectionEckert2::Inverse ()
 
 	return void ();
 }
-
-/
 

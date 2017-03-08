@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionAzimuthalEq :	public CProjection
 {
@@ -26,5 +22,3 @@ protected:
 
 	double es, N1, G, He, clat0, slat0;
 };
-
-/

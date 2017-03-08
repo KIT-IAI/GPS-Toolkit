@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionLambert.h"
-
-/
 
 #include "GpsConstantsX.h"
 
-/
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionLambert::CProjectionLambert ()
 {
 }
 
-/
-
 CProjectionLambert::~CProjectionLambert ()
 {
 }
-
-/
 
 void CProjectionLambert::Initialize (CCfgMapProjection & proj)
 {
@@ -102,8 +86,6 @@ void CProjectionLambert::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionLambert::Forward ()
 {
 	double lat  = m_fLatitude;
@@ -126,8 +108,6 @@ void CProjectionLambert::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionLambert::Inverse ()
 {
@@ -172,6 +152,4 @@ void CProjectionLambert::Inverse ()
 
 	return void ();
 }
-
-/
 

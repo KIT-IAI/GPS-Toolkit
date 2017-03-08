@@ -1,40 +1,24 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionPolyconic.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define TOL	1e-10
-
-/
 
 CProjectionPolyconic::CProjectionPolyconic ()
 {
 	m_bSphere = FALSE;
 }
 
-/
-
 CProjectionPolyconic::~CProjectionPolyconic ()
 {
 }
-
-/
 
 void CProjectionPolyconic::Initialize(CCfgMapProjection & proj)
 {
@@ -72,8 +56,6 @@ void CProjectionPolyconic::Initialize(CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionPolyconic::Forward ()
 {
 	if ( m_bSphere )
@@ -83,8 +65,6 @@ void CProjectionPolyconic::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionPolyconic::ForwardE ()
 {
@@ -107,8 +87,6 @@ void CProjectionPolyconic::ForwardE ()
 
 	return void ();
 }
-
-/
 
 void CProjectionPolyconic::ForwardS ()
 {
@@ -138,8 +116,6 @@ void CProjectionPolyconic::ForwardS ()
 	return void ();
 }
 
-/
-
 void CProjectionPolyconic::Inverse ()
 {
 	if ( m_bSphere )
@@ -149,8 +125,6 @@ void CProjectionPolyconic::Inverse ()
 
 	return void ();
 }
-
-/
 
 void CProjectionPolyconic::InverseE ()
 {
@@ -205,8 +179,6 @@ void CProjectionPolyconic::InverseE ()
 	return void ();
 }
 
-/
-
 void CProjectionPolyconic::InverseS ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -250,5 +222,3 @@ void CProjectionPolyconic::InverseS ()
 	
 	return void ();
 }
-
-/

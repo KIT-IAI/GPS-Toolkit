@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionObliqueStereo.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionObliqueStereo::CProjectionObliqueStereo ()
 {
 }
 
-/
-
 CProjectionObliqueStereo::~CProjectionObliqueStereo ()
 {
 }
-
-/
 
 void CProjectionObliqueStereo::Initialize (CCfgMapProjection & proj)
 {
@@ -81,8 +67,6 @@ void CProjectionObliqueStereo::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionObliqueStereo::Forward ()
 {
 	double lat      = m_fLatitude;
@@ -130,8 +114,6 @@ void CProjectionObliqueStereo::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionObliqueStereo::Inverse ()
 {
@@ -204,6 +186,4 @@ void CProjectionObliqueStereo::Inverse ()
 
 	return void ();
 }
-
-/
 

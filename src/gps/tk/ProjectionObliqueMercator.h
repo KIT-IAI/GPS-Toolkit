@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionObliqueMercator : public CProjection
 {
 public:
@@ -21,5 +19,3 @@ private:
 
 	bool		bHotine;
 };
-
-/

@@ -1,30 +1,18 @@
 #include "StdAfx.h"
 
-/////
-
 #include "DatumGridNadcon.h"
 #include "DatumGridNTv2.h"
 #include "DatumSubGrid.h"
 
-/////
-
 #include "DatumGrid.h"
-
-/////
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/////
-
 #define DEG2RAD(x) x * ( M_PI / 180.0 )
 #define RAD2DEG(x) x / ( M_PI / 180.0 )
 
-/////
-
 #include <tchar.h>
-
-/////
 
 CDatumGrid::CDatumGrid ()
 {
@@ -32,8 +20,6 @@ CDatumGrid::CDatumGrid ()
 
 	Clear	();
 }
-
-/////
 
 CDatumGrid::~CDatumGrid ()
 {
@@ -45,8 +31,6 @@ CDatumGrid::~CDatumGrid ()
 		m_pGrids = NULL;
 	}
 }
-
-/////
 
 VOID CDatumGrid::Clear ()
 {
@@ -74,8 +58,6 @@ VOID CDatumGrid::Clear ()
 
 	return VOID ();
 }
-
-/////
 
 LONG CDatumGrid::Load (LPCTSTR lptszFileName)
 {
@@ -129,8 +111,6 @@ _EndLoad:
 	return lResult;
 }
 
-/////
-
 BOOL CDatumGrid::GetShift (double dblLongitude, double dblLatitude, double & dblShiftX, double & dblShiftY)
 {
 	LONG				l		= 0L;
@@ -180,8 +160,6 @@ _EndGetShift:
 	return bValid;
 }
 
-/////
-
 BOOL CDatumGrid::Forward (double & dblLongitude, double & dblLatitude)
 {
 	BOOL	bValid			= FALSE;
@@ -205,8 +183,6 @@ _EndForward:
 	return bValid;
 }
 
-/////
-
 BOOL CDatumGrid::Inverse (double & dblLongitude, double & dblLatitude)
 {
 	BOOL	bValid			= FALSE;
@@ -229,5 +205,3 @@ _EndInverse:
 
 	return bValid;
 }
-
-/////

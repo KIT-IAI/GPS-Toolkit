@@ -1,7 +1,5 @@
 #pragma once
 
-/////
-
 #include "DatumGrid.h"
 
 class CDatumGridNTv2
@@ -30,5 +28,3 @@ protected:
 
 	INT					m_nFiles;
 };
-
-/////

@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionMercator.h"
-
-/
 
 #include "GpsConstantsX.h"
 
-/
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionMercator::CProjectionMercator ()
 {
 }
 
-/
-
 CProjectionMercator::~CProjectionMercator ()
 {
 }
-
-/
 
 VOID CProjectionMercator::Initialize(CCfgMapProjection & proj)
 {
@@ -80,8 +64,6 @@ VOID CProjectionMercator::Initialize(CCfgMapProjection & proj)
 	return VOID ();
 }
 
-/
-
 VOID CProjectionMercator::Forward ()
 {
 	if ( m_bSphere )
@@ -96,8 +78,6 @@ VOID CProjectionMercator::Forward ()
 	return VOID ();
 }
 
-/
-
 VOID CProjectionMercator::ForwardEllipse ()
 {
 	double lat      = m_fLatitude;
@@ -111,8 +91,6 @@ VOID CProjectionMercator::ForwardEllipse ()
 	return VOID ();
 }
 
-/
-
 VOID CProjectionMercator::ForwardSphere ()
 {
 	double lat      = m_fLatitude;
@@ -123,8 +101,6 @@ VOID CProjectionMercator::ForwardSphere ()
 
 	return VOID ();
 }
-
-/
 
 VOID CProjectionMercator::Inverse ()
 {
@@ -139,8 +115,6 @@ VOID CProjectionMercator::Inverse ()
 
 	return VOID ();
 }
-
-/
 
 VOID CProjectionMercator::InverseEllipse ()
 {
@@ -166,8 +140,6 @@ VOID CProjectionMercator::InverseEllipse ()
     m_fLatitude     = lat;
 }
 
-/
-
 VOID CProjectionMercator::InverseSphere ()
 {
 	double dx       = m_fEasting  - fe;
@@ -180,4 +152,3 @@ VOID CProjectionMercator::InverseSphere ()
     m_fLatitude     = lat;
 }
 
-/

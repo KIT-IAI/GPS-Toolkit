@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionHammer.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionHammer::CProjectionHammer ()
 {
 }
 
-/
-
 CProjectionHammer::~CProjectionHammer ()
 {
 }
-
-/
 
 void CProjectionHammer::Initialize (CCfgMapProjection & proj)
 {
@@ -42,8 +28,6 @@ void CProjectionHammer::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionHammer::Forward ()
 {
@@ -65,8 +49,6 @@ void CProjectionHammer::Forward ()
 	return void ();
 }
 
-/
-
 void CProjectionHammer::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -82,5 +64,3 @@ void CProjectionHammer::Inverse ()
 
 	return void ();
 }
-
-/

@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionEckert4 : public CProjection
 {
@@ -21,5 +17,3 @@ private:
 
 	double		ra0, ra1, q;
 };
-
-////////////////////////////////////////////////////////

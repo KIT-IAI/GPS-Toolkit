@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionPolarStereo : public CProjection
 {
 public:
@@ -17,5 +15,3 @@ private:
 
 	double		slat0, clat0, hem;
 };
-
-/

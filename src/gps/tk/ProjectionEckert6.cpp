@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionEckert6.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionEckert6::CProjectionEckert6 ()
 {
 }
 
-/
-
 CProjectionEckert6::~CProjectionEckert6 ()
 {
 }
-
-/
 
 void CProjectionEckert6::Initialize (CCfgMapProjection & proj)
 {
@@ -62,8 +48,6 @@ void CProjectionEckert6::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionEckert6::Forward ()
 {
 	double lat		= m_fLatitude;
@@ -93,8 +77,6 @@ void CProjectionEckert6::Forward ()
     return void ();
 }
 
-/
-
 void CProjectionEckert6::Inverse ()
 {
 	double dx		= m_fEasting  - fe;
@@ -120,6 +102,4 @@ void CProjectionEckert6::Inverse ()
 
 	return void ();
 }
-
-/
 

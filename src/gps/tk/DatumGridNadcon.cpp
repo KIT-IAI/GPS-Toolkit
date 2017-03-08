@@ -1,16 +1,10 @@
 #include "StdAfx.h"
 
-/////
-
 #include "DatumGrid.h"
 #include "DatumGridNadcon.h"
 
-/////
-
 #include <atlbase.h>
 #include <atlcom.h>
-
-/////
 
 CDatumGridNadcon::CDatumGridNadcon ()
 {
@@ -19,8 +13,6 @@ CDatumGridNadcon::CDatumGridNadcon ()
 
 	Clear	();
 }
-
-/////
 
 CDatumGridNadcon::~CDatumGridNadcon ()
 {
@@ -39,14 +31,10 @@ CDatumGridNadcon::~CDatumGridNadcon ()
 	Clear	();
 }
 
-/////
-
 VOID CDatumGridNadcon::Clear ()
 {
 	return VOID ();
 }
-
-/////
 
 LONG CDatumGridNadcon::Load (LPCTSTR lptszFileName, CDatumGrid * pGrid)
 {
@@ -149,8 +137,6 @@ _EndLoad:
 	return lResult;
 }
 
-/////
-
 LONG CDatumGridNadcon::LoadHeader (CDatumSubGrid * pGrid)
 {
 	LONG	lResult	= -1L;
@@ -182,8 +168,6 @@ _EndLoadHeader:
 
 	return lResult;
 }
-
-/////
 
 LONG CDatumGridNadcon::LoadGrid (CDatumSubGrid * pGrid)
 {
@@ -233,8 +217,6 @@ _EndLoadGrid:
 	return lResult;
 }
 
-/////
-
 LONG CDatumGridNadcon::ReadFloat (FILE * fp, DOUBLE & f)
 {
 	LONG	lResult		= -1L;
@@ -257,8 +239,6 @@ _EndReadFloat:
 
 	return lResult;
 }
-
-/////
 
 LONG CDatumGridNadcon::ReadDouble (FILE * fp, DOUBLE & d)
 {
@@ -283,8 +263,6 @@ _EndReadDouble:
 	return lResult;
 }
 
-/////
-
 LONG CDatumGridNadcon::ReadInteger (FILE * fp, INT & n)
 {
 	LONG	lResult	= -1L;
@@ -307,8 +285,6 @@ _EndReadInteger:
 
 	return lResult;
 }
-
-/////
 
 LONG CDatumGridNadcon::ReadLong (FILE * fp, LONG & l)
 {

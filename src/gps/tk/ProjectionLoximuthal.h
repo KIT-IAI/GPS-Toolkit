@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionLoximuthal : public CProjection
 {
@@ -22,5 +18,3 @@ protected:
 	double		tsp1;
 	double		csp1;
 };
-
-/

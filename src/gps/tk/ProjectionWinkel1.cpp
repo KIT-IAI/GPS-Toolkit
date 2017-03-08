@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionWinkel1.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionWinkel1::CProjectionWinkel1 ()
 {
 }
 
-/
-
 CProjectionWinkel1::~CProjectionWinkel1 ()
 {
 }
-
-/
 
 void CProjectionWinkel1::Initialize (CCfgMapProjection & proj)
 {
@@ -43,8 +29,6 @@ void CProjectionWinkel1::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionWinkel1::Forward ()
 {
@@ -62,8 +46,6 @@ void CProjectionWinkel1::Forward ()
     return void ();
 }
 
-/
-
 void CProjectionWinkel1::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -77,6 +59,4 @@ void CProjectionWinkel1::Inverse ()
 
 	return void ();
 }
-
-/
 

@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionTransverseMercator : public CProjection
 {
 public:
@@ -19,5 +17,3 @@ private:
     double tn, tn2, tn3, tn4, tn5;
 	double e1;
 };
-
-/

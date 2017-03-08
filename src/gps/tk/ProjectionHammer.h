@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionHammer : public CProjection
 {
@@ -17,6 +13,4 @@ public:
 	VOID		Forward						();
 	VOID		Inverse						();
 };
-
-/
 

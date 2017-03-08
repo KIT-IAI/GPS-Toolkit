@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionLambert : public CProjection
 {
 public:
@@ -17,5 +15,3 @@ private:
 
 	double		n, f1, rf, ta;
 };
-
-/

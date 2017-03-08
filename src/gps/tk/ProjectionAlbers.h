@@ -1,7 +1,5 @@
 #pragma once
 
-/
-
 class CProjectionAlbers : public CProjection
 {
 public:
@@ -18,4 +16,3 @@ private:
 	double		n, nq0, r0, C;
 };
 
-/

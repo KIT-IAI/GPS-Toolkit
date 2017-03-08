@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionSinusoidal.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionSinusoidal::CProjectionSinusoidal ()
 {
 }
 
-/
-
 CProjectionSinusoidal::~CProjectionSinusoidal ()
 {
 }
-
-/
 
 void CProjectionSinusoidal::Initialize(CCfgMapProjection & proj)
 {
@@ -58,8 +44,6 @@ void CProjectionSinusoidal::Initialize(CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionSinusoidal::Forward()
 {
@@ -90,8 +74,6 @@ void CProjectionSinusoidal::Forward()
 
 	return void ();
 }
-
-/
 
 void CProjectionSinusoidal::Inverse()
 {
@@ -132,5 +114,3 @@ void CProjectionSinusoidal::Inverse()
 
 	return void ();
 }
-
-/

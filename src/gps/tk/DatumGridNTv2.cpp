@@ -1,13 +1,9 @@
 #include "StdAfx.h"
 
-/////
-
 #include "DatumGrid.h"
 #include "DatumGridUtils.h"
 #include "DatumSubGrid.h"
 #include "DatumGridNTv2.h"
-
-/////
 
 CDatumGridNTv2::CDatumGridNTv2 ()
 {
@@ -18,20 +14,14 @@ CDatumGridNTv2::CDatumGridNTv2 ()
 	Clear ();
 }
 
-/////
-
 CDatumGridNTv2::~CDatumGridNTv2 ()
 {
 }
-
-/////
 
 VOID CDatumGridNTv2::Clear ()
 {
 	return VOID ();
 }
-
-/////
 
 LONG CDatumGridNTv2::Load (LPCTSTR lptszFileName, CDatumGrid * pGrid)
 {
@@ -78,8 +68,6 @@ _EndLoad:
 	return lResult;
 }
 
-/////
-
 LONG CDatumGridNTv2::ProcessHeader ()
 {
 	LONG	lResult		= 0L;
@@ -110,8 +98,6 @@ _EndProcessHeader:
 
 	return lResult;
 }
-
-/////
 
 CDatumSubGrid * CDatumGridNTv2::ProcessGrid ()
 {
@@ -185,8 +171,6 @@ _EndProcessSubGrid:
 	return pGrid;
 }
 
-/////
-
 LONG CDatumGridNTv2::GetHeaderInt (INT & n)
 {
 	CHAR	szData	[ 16 + 1 ];
@@ -199,8 +183,6 @@ LONG CDatumGridNTv2::GetHeaderInt (INT & n)
 
 	return 0L;
 }
-
-/////
 
 LONG CDatumGridNTv2::GetHeaderDouble (DOUBLE & d)
 {
@@ -215,8 +197,6 @@ LONG CDatumGridNTv2::GetHeaderDouble (DOUBLE & d)
 	return 0L;
 }
 
-/////
-
 LONG CDatumGridNTv2::GetDouble (FLOAT & d)
 {
 	LONG	lResult	= -1L;
@@ -227,8 +207,6 @@ LONG CDatumGridNTv2::GetDouble (FLOAT & d)
 
 	return lResult;
 }
-
-/////
 
 LONG CDatumGridNTv2::GetHeaderChar (CHAR * c, INT nMaxLen)
 {

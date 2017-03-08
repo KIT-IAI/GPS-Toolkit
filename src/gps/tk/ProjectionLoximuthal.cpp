@@ -1,39 +1,23 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionLoximuthal.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/
-
 #define EPS	1e-8
-
-/
 
 CProjectionLoximuthal::CProjectionLoximuthal ()
 {
 }
 
-/
-
 CProjectionLoximuthal::~CProjectionLoximuthal ()
 {
 }
-
-/
 
 void CProjectionLoximuthal::Initialize (CCfgMapProjection & proj)
 {
@@ -51,8 +35,6 @@ void CProjectionLoximuthal::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionLoximuthal::Forward ()
 {
@@ -81,8 +63,6 @@ void CProjectionLoximuthal::Forward ()
 
     return void ();
 }
-
-/
 
 void CProjectionLoximuthal::Inverse ()
 {
@@ -116,4 +96,3 @@ void CProjectionLoximuthal::Inverse ()
 	return void ();
 }
 
-/

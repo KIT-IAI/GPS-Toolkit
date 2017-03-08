@@ -1,41 +1,25 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionEckert3.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 #define CX		0.4222382003157712014900
 #define CY		0.8444764006315424029800
 #define CB		0.4052847345693510857755
 
-/
-
 CProjectionEckert3::CProjectionEckert3 ()
 {
 }
 
-/
-
 CProjectionEckert3::~CProjectionEckert3 ()
 {
 }
-
-/
 
 void CProjectionEckert3::Initialize (CCfgMapProjection & proj)
 {
@@ -48,8 +32,6 @@ void CProjectionEckert3::Initialize (CCfgMapProjection & proj)
 
 	return void ();
 }
-
-/
 
 void CProjectionEckert3::Forward ()
 {
@@ -66,8 +48,6 @@ void CProjectionEckert3::Forward ()
     return void ();
 }
 
-/
-
 void CProjectionEckert3::Inverse ()
 {
 	double dx		= ( m_fEasting  - fe ) / a;
@@ -82,6 +62,4 @@ void CProjectionEckert3::Inverse ()
 
 	return void ();
 }
-
-/
 

@@ -1,14 +1,8 @@
 #include "StdAfx.h"
 
-/////
-
 #include "DatumGridUtils.h"
 
-/////
-
 #include "DatumSubGrid.h"
-
-/////
 
 CDatumSubGrid::CDatumSubGrid ()
 {
@@ -18,14 +12,10 @@ CDatumSubGrid::CDatumSubGrid ()
 	Clear	();
 }
 
-/////
-
 CDatumSubGrid::~CDatumSubGrid ()
 {
 	Clear	();
 }
-
-/////
 
 VOID CDatumSubGrid::Clear ()
 {
@@ -56,8 +46,6 @@ VOID CDatumSubGrid::Clear ()
 
 	return VOID ();
 }
-
-/////
 
 LONG CDatumSubGrid::Allocate (LONG lRecords)
 {
@@ -92,8 +80,6 @@ _EndAllocate:
 
 	return 0L;
 }
-
-/////
 
 DOUBLE CDatumSubGrid::GetCorrectionLat (DOUBLE dblLat, DOUBLE dblLon)
 {
@@ -136,8 +122,6 @@ DOUBLE CDatumSubGrid::GetCorrectionLat (DOUBLE dblLat, DOUBLE dblLon)
 	return top + ( bottom - top ) * tLat;
 }
 
-/////
-
 DOUBLE CDatumSubGrid::GetCorrectionLon (DOUBLE dblLat, DOUBLE dblLon)
 {
 	int			nLat0			= 0L;
@@ -179,8 +163,6 @@ DOUBLE CDatumSubGrid::GetCorrectionLon (DOUBLE dblLat, DOUBLE dblLon)
 	return top + ( bottom - top ) * tLat;
 }
 
-/////
-
 BOOL CDatumSubGrid::PointInGrid (DOUBLE dblLat, DOUBLE dblLon)
 {
 	BOOL	bPointInGrid	= FALSE;
@@ -203,8 +185,6 @@ _EndPointInGrid:
 
 	return bPointInGrid;
 }
-
-/////
 
 VOID CDatumSubGrid::AddCorrection (DOUBLE dblLat, DOUBLE dblLon)
 {

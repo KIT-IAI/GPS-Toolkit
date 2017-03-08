@@ -1,35 +1,21 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
-
-/
 
 #include "ProjectionUtils.h"
 
-/
-
 #include "ProjectionSwissMercator.h"
-
-/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionSwissMercator::CProjectionSwissMercator()
 {
 }
 
-/
-
 CProjectionSwissMercator::~CProjectionSwissMercator ()
 {
 }
-
-/
 
 VOID CProjectionSwissMercator::Initialize (CCfgMapProjection & proj)
 {
@@ -59,8 +45,6 @@ VOID CProjectionSwissMercator::Initialize (CCfgMapProjection & proj)
 	R				= a * k0 * sqrt ( 1 - e2 ) / ( 1 - e2 * sin ( lat0 ) * sin ( lat0 ) );
 }
 
-/
-
 VOID CProjectionSwissMercator::Forward ()
 {
 	double lat      = m_fLatitude;
@@ -84,8 +68,6 @@ VOID CProjectionSwissMercator::Forward ()
 
 	return void ();
 }
-
-/
 
 VOID CProjectionSwissMercator::Inverse ()
 {
@@ -122,5 +104,3 @@ VOID CProjectionSwissMercator::Inverse ()
 
 	return void ();
 }
-
-/

@@ -8,6 +8,7 @@
 #include "GpsConstantsX.h"
 #include "GpsDefs.h"
 #include "CxErrors.h"
+#include "Grids.hpp"
 
 CGpsGridParametersX::CGpsGridParametersX ()
 {
@@ -18,9 +19,9 @@ CGpsGridParametersX::~CGpsGridParametersX ()
 {
 }
 
-VOID CGpsGridParametersX::Clear ()
+void CGpsGridParametersX::Clear()
 {
-	m_strName				= _T("");
+	m_strName.clear();
 
 	m_lId					= 0L;
 	m_lProjection			= 0L;
@@ -271,98 +272,16 @@ _EndLoadFromFile:
 
 
 
-LONG CGpsGridParametersX::LoadFromId (LONG lID)
+void CGpsGridParametersX::LoadFromId(GridId id)
 {
-	LONG	lResult	= 0L;
-
-	if ( m_pSpatialBase == NULL )
-	{
-		m_pSpatialBase = new CSpatialBase ();
-	}
-
-	if ( m_pSpatialBase == NULL )
-	{
-		lResult = errMISC_CREATEINSTANCEFAILED;
-		goto _EndLoadFromId;
-	}
-
-	lResult = m_pSpatialBase->SetGrid ( lID, this );
-
-_EndLoadFromId:
-
-	return lResult;
+	Grids::getInstance().load(id);
 }
 
 
 
-LONG CGpsGridParametersX::LoadStatePlane (LONG lID)
+LONG CGpsGridParametersX::LoadStatePlane(LONG lID)
 {
-	LONG	lResult	= 0L;
-
-	if ( m_pSpatialBase == NULL )
-	{
-		m_pSpatialBase = new CSpatialBase ();
-	}
-
-	if ( m_pSpatialBase == NULL )
-	{
-		lResult = errMISC_CREATEINSTANCEFAILED;
-		goto _EndLoadFromId;
-	}
-
-	lResult = m_pSpatialBase->SetStatePlane ( lID, this );
-
-_EndLoadFromId:
-
-	return lResult;
-}
-
-
-
-LONG CGpsGridParametersX::GetFirstGrid ()
-{
-	LONG	lResult	= 0L;
-
-	if ( m_pSpatialBase == NULL )
-	{
-		m_pSpatialBase = new CSpatialBase ();
-	}
-
-	if ( m_pSpatialBase == NULL )
-	{
-		lResult = errMISC_CREATEINSTANCEFAILED;
-		goto _EndGetFirstGrid;
-	}
-
-	lResult = m_pSpatialBase->GetFirstGrid ( this );
-
-_EndGetFirstGrid:
-
-	return lResult;
-}
-
-
-
-LONG CGpsGridParametersX::GetNextGrid ()
-{
-	LONG	lResult	= 0L;
-
-	if ( m_pSpatialBase == NULL )
-	{
-		m_pSpatialBase = new CSpatialBase ();
-	}
-
-	if ( m_pSpatialBase == NULL )
-	{
-		lResult = errMISC_CREATEINSTANCEFAILED;
-		goto _EndGetNextGrid;
-	}
-
-	lResult = m_pSpatialBase->GetNextGrid ( this );
-
-_EndGetNextGrid:
-
-	return lResult;
+	Grids::getInstance().loadGridPlane(lID, this);
 }
 
 

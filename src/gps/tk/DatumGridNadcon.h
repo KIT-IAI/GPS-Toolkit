@@ -1,10 +1,6 @@
 #pragma once
 
-/////
-
 #include "DatumGrid.h"
-
-/////
 
 class CDatumGridNadcon
 {
@@ -30,5 +26,3 @@ protected:
 	FILE	*		m_fpLas;
 	FILE	*		m_fpLos;
 };
-
-/////

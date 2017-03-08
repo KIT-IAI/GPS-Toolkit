@@ -1,8 +1,6 @@
 #ifndef _GPSDEFS_H
 #define _GPSDEFS_H
 
-//////////////
-
 #ifndef SZ_VERSION
 #ifdef WIN64
 #define		SZ_VERSION							_T("4.0.14.325 (x64)")
@@ -11,19 +9,11 @@
 #endif // WIN64
 #endif // SZ_VERSION
 
-//////////////
-
 #define		REG_ROOT							_T("SOFTWARE\\Eye4Software\\GpsToolkit")
-
-//////////////
 
 #define		REG_SERIAL							_T("RegistrationKey")
 
-//////////////
-
 #define		RESERVED_CHECK						24253938
-
-//////////////
 
 #define		CFG_FIELD_HEADER					0
 #define		CFG_FIELD_AXIS						1
@@ -49,6 +39,4 @@
 #define		CFG_FIELD_AZIMUTHANGLE				21
 #define		CFG_FIELD_RECTIFIEDGRIDANGLE		22
 #define		CFG_FIELD_SCALEFACTORGRID			23
-//////////////
-
 #endif // _GPSDEFS_H

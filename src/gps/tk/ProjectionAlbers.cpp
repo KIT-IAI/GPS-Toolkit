@@ -1,29 +1,19 @@
 #include "StdAfx.h"
 
-/
-
 #include "Projection.h"
 #include "ProjectionUtils.h"
 #include "ProjectionAlbers.h"
 
-/
-
 #define _USE_MATH_DEFINES
 #include <math.h>
-
-/
 
 CProjectionAlbers::CProjectionAlbers ()
 {
 }
 
-/
-
 CProjectionAlbers::~CProjectionAlbers ()
 {
 }
-
-/
 
 void CProjectionAlbers::Initialize (CCfgMapProjection & proj)
 {
@@ -69,8 +59,6 @@ void CProjectionAlbers::Initialize (CCfgMapProjection & proj)
 	return void ();
 }
 
-/
-
 void CProjectionAlbers::Forward ()
 {
 	double lat      = m_fLatitude;
@@ -93,8 +81,6 @@ void CProjectionAlbers::Forward ()
 
 	return void ();
 }
-
-/
 
 void CProjectionAlbers::Inverse ()
 {
@@ -136,6 +122,4 @@ void CProjectionAlbers::Inverse ()
     m_fLatitude        = lat;
 	m_fLongitude       = lon;
 }
-
-/
 

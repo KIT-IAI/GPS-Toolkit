@@ -1,10 +1,6 @@
 #pragma once
 
-/
-
 #include "Projection.h"
-
-/
 
 class CProjectionBonne : public CProjection
 {
@@ -26,5 +22,3 @@ public:
 	double		E1, M1;
 	double		ssp1, csp1;
 };
-
-/
