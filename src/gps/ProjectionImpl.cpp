@@ -1,12 +1,10 @@
 #include <memory>
-#include <boost/filesystem/operations.hpp>
 
 #include "tk/GpsDatumParametersX.h"
 #include "tk/GpsGridParametersX.h"
 #include "tk/GpsConstantsX.h"
-#include "tk/CxErrors.h"
+#include "Errors.hpp"
 
-#include "Exception.hpp"
 #include "DatumParametersImpl.hpp"
 #include "GridParametersImpl.hpp"
 
@@ -14,329 +12,316 @@
 
 namespace gps
 {
-	ProjectionImpl::ProjectionImpl()
-		: m_projection(new CProjections())
-	{
-		clear();
-	}
+    ProjectionImpl::ProjectionImpl()
+        : m_projection(new CProjections())
+    {
+        clear();
+    }
 
-	void ProjectionImpl::toUTM(DatumParameters& toDatum)
-	{
-		// Here were out of memory checks for pGridSrc ...
+    void ProjectionImpl::toUTM(DatumParameters& toDatum)
+    {
+// Here were out of memory checks for pGridSrc ...
 
-		// Check UTM zone
-		
-		try
-		{
-			checkZone(true);
-		}
-		catch (const std::exception& e)
-		{
-			// 		if (lResult)
-			// 		{
-			// 			TraceFunction(_T("<< CGpsProjection::ToUTM (Invalid UTM zone provided)\n"));
-			// 			goto _EndToUTM;
-			// 		}
-			// TODO: Throw Invalid UTM Zone
-		}
+// Check UTM zone
 
-		std::unique_ptr<CGpsGridParametersX> pGridDst(new CGpsGridParametersX());
+        try
+        {
+            checkZone(true);
+        }
+        catch (const std::exception& e)
+        {
+// if (lResult)
+// {
+// TraceFunction(_T("<< CGpsProjection::ToUTM (Invalid UTM zone provided)\n"));
+// goto _EndToUTM;
+// }
+// TODO: Throw Invalid UTM Zone
+        }
 
-		// Detect UTM zone parameters based on latitude / longitude
-		if (m_zone)
-		{
-			m_zone = getUTMParameters(pGridDst.get());
-		}
-		else
-		{
-			m_zone = getUTMParameters(m_latitude, m_longitude, pGridDst.get());
-		}
+        std::unique_ptr<CGpsGridParametersX> pGridDst(new CGpsGridParametersX());
 
-		// Set Destination datum
-		// lResult = pDatum->FromOleObject(toDatum);
-		DatumParametersImpl& impl = static_cast<DatumParametersImpl&>(toDatum);
-		CGpsDatumParametersX* datumParameters = impl.getImpl();
+// Detect UTM zone parameters based on latitude / longitude
+        if (m_zone)
+        {
+            m_zone = getUTMParameters(pGridDst.get());
+        }
+        else
+        {
+            m_zone = getUTMParameters(m_latitude, m_longitude, pGridDst.get());
+        }
 
-		std::unique_ptr<CGpsGridParametersX> pGridSrc(new CGpsGridParametersX()); // = WGS84 by default
-		
-		pGridDst->m_cGpsDatumParameters = *datumParameters;
+// Set Destination datum
+// lResult = pDatum->FromOleObject(toDatum);
+        DatumParametersImpl& impl = static_cast<DatumParametersImpl&>(toDatum);
+        CGpsDatumParametersX* datumParameters = impl.getImpl();
 
-		// Perform the transformation
-		doTransform(*pGridSrc, *pGridDst);
-	}
+        std::unique_ptr<CGpsGridParametersX> pGridSrc(new CGpsGridParametersX()); // = WGS84 by default
 
-	void ProjectionImpl::putLongitude(double longitude)
-	{
-		m_longitude = longitude;
-	}
+        pGridDst->m_cGpsDatumParameters = *datumParameters;
 
-	void ProjectionImpl::putLatitude(double latitude)
-	{
-		m_latitude = latitude;
-	}
+// Perform the transformation
+        doTransform(*pGridSrc, *pGridDst);
+    }
 
-	std::string ProjectionImpl::getVersion()
-	{
-		throw std::exception("The method or operation is not implemented.");
-	}
+    void ProjectionImpl::putLongitude(double longitude)
+    {
+        m_longitude = longitude;
+    }
 
-	void ProjectionImpl::clear()
-	{
-		m_latitude = 0.0;
-		m_longitude = 0.0;
+    void ProjectionImpl::putLatitude(double latitude)
+    {
+        m_latitude = latitude;
+    }
 
-		m_altitudeI = 0.0;
-		m_altitudeO = 0.0;
+    std::string ProjectionImpl::getVersion()
+    {
+        throw std::runtime_error("The method or operation is not implemented.");
+    }
 
-		m_northing = 0.0;
-		m_easting = 0.0;
+    void ProjectionImpl::clear()
+    {
+        m_latitude = 0.0;
+        m_longitude = 0.0;
 
-		m_zone = 0L;
-	}
+        m_altitudeI = 0.0;
+        m_altitudeO = 0.0;
 
-	void ProjectionImpl::checkZone(bool enableAutoZone)
-	{
-		if (!enableAutoZone && m_zone == 0L)
-		{
-			throw Exception(errGPS_INVALIDZONE);
-		}
+        m_northing = 0.0;
+        m_easting = 0.0;
 
-		if (std::abs(m_zone) > 60L)
-		{
-			throw Exception(errGPS_INVALIDZONE);
-		}
-	}
+        m_zone = 0L;
+    }
 
-	long ProjectionImpl::getUTMParameters(double latitude, double longitude, CGpsGridParametersX* pParams)
-	{
-		// was: lZone = long((lLongitude + 180) / 6) + 1L;
-		long zone = long((longitude + 180.0) / 6.0) + 1L;
+    void ProjectionImpl::checkZone(bool enableAutoZone)
+    {
+        if (!enableAutoZone && m_zone == 0L)
+        {
+            throw std::runtime_error(errGPS_INVALIDZONE);
+        }
 
-		// Clear
-		pParams->Clear();
+        if (std::abs(m_zone) > 60L)
+        {
+            throw std::runtime_error(errGPS_INVALIDZONE);
+        }
+    }
 
-		// Set Projection
-		pParams->m_lProjection = GPS_PROJECTION_TRANSVERSEMERCATOR;
+    long ProjectionImpl::getUTMParameters(double latitude, double longitude, CGpsGridParametersX* pParams)
+    {
+// was: lZone = long((lLongitude + 180) / 6) + 1L;
+        long zone = long((longitude + 180.0) / 6.0) + 1L;
 
-		// Scale Factor
-		pParams->m_fScaleFactor = 0.9996;
+// Clear
+        pParams->Clear();
 
-		// Longitude Of Origin
-		pParams->m_fOriginLongitude = ((zone - 1L) * 6.0) - 180.0 + 3.0;
+// Set Projection
+        pParams->m_lProjection = GPS_PROJECTION_TRANSVERSEMERCATOR;
 
-		if (latitude >= 0.0)
-		{
-			pParams->m_fFalseEasting = 500000.0;
-			pParams->m_fFalseNorthing = 0.0;
+// Scale Factor
+        pParams->m_fScaleFactor = 0.9996;
 
-			zone *= 1L;
-		}
-		else
-		{
-			pParams->m_fFalseEasting = 500000.0;
-			pParams->m_fFalseNorthing = 10000000.0;
+// Longitude Of Origin
+        pParams->m_fOriginLongitude = ((zone - 1L) * 6.0) - 180.0 + 3.0;
 
-			zone *= -1L;
-		}
+        if (latitude >= 0.0)
+        {
+            pParams->m_fFalseEasting = 500000.0;
+            pParams->m_fFalseNorthing = 0.0;
 
-		return zone;
-	}
+            zone *= 1L;
+        }
+        else
+        {
+            pParams->m_fFalseEasting = 500000.0;
+            pParams->m_fFalseNorthing = 10000000.0;
 
-	long ProjectionImpl::getUTMParameters(CGpsGridParametersX* pParams)
-	{
-		// Clear
-		pParams->Clear();
+            zone *= -1L;
+        }
 
-		// Set Projection
-		pParams->m_lProjection = GPS_PROJECTION_TRANSVERSEMERCATOR;
+        return zone;
+    }
 
-		// Scale Factor
-		pParams->m_fScaleFactor = 0.9996;
+    long ProjectionImpl::getUTMParameters(CGpsGridParametersX* pParams)
+    {
+// Clear
+        pParams->Clear();
 
-		// Longitude Of Origin
-		pParams->m_fOriginLongitude = ((std::abs(m_zone) - 1L) * 6.0) - 180.0 + 3.0;
+// Set Projection
+        pParams->m_lProjection = GPS_PROJECTION_TRANSVERSEMERCATOR;
 
-		if (m_zone > 0L)
-		{
-			pParams->m_fFalseEasting = 500000.0;
-			pParams->m_fFalseNorthing = 0.0;
-		}
-		else
-		{
-			pParams->m_fFalseEasting = 500000.0;
-			pParams->m_fFalseNorthing = 10000000.0;
-		}
+// Scale Factor
+        pParams->m_fScaleFactor = 0.9996;
 
-		return m_zone;
-	}
+// Longitude Of Origin
+        pParams->m_fOriginLongitude = ((std::abs(m_zone) - 1L) * 6.0) - 180.0 + 3.0;
 
-	void ProjectionImpl::doTransform(CGpsGridParametersX& gridSrc, CGpsGridParametersX& gridDst)
-	{
-		CGpsDatumParametersX& datumSrc = gridSrc.m_cGpsDatumParameters;
-		// Check Source Datume
-		checkSourceDatum(datumSrc);
-		
-		CGpsDatumParametersX& datumDst = gridDst.m_cGpsDatumParameters;
-		// Check Destination Datum
-		checkDestinationDatum(datumDst);
+        if (m_zone > 0L)
+        {
+            pParams->m_fFalseEasting = 500000.0;
+            pParams->m_fFalseNorthing = 0.0;
+        }
+        else
+        {
+            pParams->m_fFalseEasting = 500000.0;
+            pParams->m_fFalseNorthing = 10000000.0;
+        }
 
-		// Is Source Grid Easting / Northing, then apply unit conversion
-		if (gridSrc.m_lProjection)
-		{
-			m_projection->m_fEasting = m_easting;
-			m_projection->m_fNorthing = m_northing;
-			m_projection->m_fAltitude = m_altitudeI;
-		}
-		else
-		{
-			m_projection->m_fLatitude = m_latitude;
-			m_projection->m_fLongitude = m_longitude;
-			m_projection->m_fAltitude = m_altitudeI;
-		}
+        return m_zone;
+    }
 
-		// Convert from CGpsGridParametersX to CCfgMapProjection	
-		CCfgMapProjection projSrc;
-		CCfgMapProjection projDst;
-		gridSrc.ToProjectionStruct(projSrc);
-		gridDst.ToProjectionStruct(projDst);
+    void ProjectionImpl::doTransform(CGpsGridParametersX& gridSrc, CGpsGridParametersX& gridDst)
+    {
+        CGpsDatumParametersX& datumSrc = gridSrc.m_cGpsDatumParameters;
+// Check Source Datume
+        checkSourceDatum(datumSrc);
 
-		// Set Grids
-		m_projection->SetGridSrc(projSrc);
-		m_projection->SetGridDst(projDst);
+        CGpsDatumParametersX& datumDst = gridDst.m_cGpsDatumParameters;
+// Check Destination Datum
+        checkDestinationDatum(datumDst);
 
-		// Go
-		m_projection->Forward();
+// Is Source Grid Easting / Northing, then apply unit conversion
+        if (gridSrc.m_lProjection)
+        {
+            m_projection->m_fEasting = m_easting;
+            m_projection->m_fNorthing = m_northing;
+            m_projection->m_fAltitude = m_altitudeI;
+        }
+        else
+        {
+            m_projection->m_fLatitude = m_latitude;
+            m_projection->m_fLongitude = m_longitude;
+            m_projection->m_fAltitude = m_altitudeI;
+        }
 
-		// Is Destination Grid Easting / Northing, then apply unit conversion
-		if (gridDst.m_lProjection)
-		{
-			m_easting = m_projection->m_fEasting;
-			m_northing = m_projection->m_fNorthing;
-			m_altitudeO = m_projection->m_fAltitude;
-		}
-		else
-		{
-			m_latitude = m_projection->m_fLatitude;
-			m_longitude = m_projection->m_fLongitude;
-			m_altitudeO = m_projection->m_fAltitude;
-		}
-	}
+// Convert from CGpsGridParametersX to CCfgMapProjection
+        CCfgMapProjection projSrc;
+        CCfgMapProjection projDst;
+        gridSrc.ToProjectionStruct(projSrc);
+        gridDst.ToProjectionStruct(projDst);
 
-	void ProjectionImpl::checkSourceDatum(const CGpsDatumParametersX& datumSrc)
-	{
-		if (datumSrc.m_fAxis <= 0.0)
-		{
-			throw Exception(errGPS_INVALIDSRCAXIS);
-		}
+// Set Grids
+        m_projection->SetGridSrc(projSrc);
+        m_projection->SetGridDst(projDst);
 
-		// When using ellipsoid, check flattening
-		// TODO: SH woah... use an epsilon here?
-		if (datumSrc.m_fFlattening != 0.0)
-		{
-			if ((datumSrc.m_fFlattening < 250.0) || (datumSrc.m_fFlattening > 350.0))
-			{
-				throw Exception(errGPS_INVALIDSRCFLATTENING);
-			}
-		}
+// Go
+        m_projection->Forward();
 
-		// When using gridfile, check existence
-		if (datumSrc.m_lGridType)
-		{
-			// WHY?... you do have a getlength in CxString... DOH!!11oneeleven
-			// Was:
-			//if (strlen(datumSrc.m_strGrid.GetBuffer()) == 0L)
-			if (datumSrc.m_strGrid.GetLength() == 0L)
-			{
-				throw Exception(errGPS_INVALIDSRCDATUMGRIDFILE);
-			}		
+// Is Destination Grid Easting / Northing, then apply unit conversion
+        if (gridDst.m_lProjection)
+        {
+            m_easting = m_projection->m_fEasting;
+            m_northing = m_projection->m_fNorthing;
+            m_altitudeO = m_projection->m_fAltitude;
+        }
+        else
+        {
+            m_latitude = m_projection->m_fLatitude;
+            m_longitude = m_projection->m_fLongitude;
+            m_altitudeO = m_projection->m_fAltitude;
+        }
+    }
 
-			if (!boost::filesystem::exists(datumSrc.m_strGrid.GetBuffer()))
-			{
-				throw Exception(errGPS_FAILEDLOADSRCDATUMGRIDFILE);
-			}
-		}
-	}
-
-	void ProjectionImpl::checkDestinationDatum(const CGpsDatumParametersX& datumDst)
-	{
-		// SH: The two checks (dest, src) are almost identical, except for the error codes
-
-		if (datumDst.m_fAxis <= 0.0)
-		{
-			throw Exception(errGPS_INVALIDDSTAXIS);
-		}
+    void ProjectionImpl::checkSourceDatum(const CGpsDatumParametersX& datumSrc)
+    {
+        if (datumSrc.m_fAxis <= 0.0)
+        {
+            throw std::runtime_error(errGPS_INVALIDSRCAXIS);
+        }
 
 		// When using ellipsoid, check flattening
-		if (datumDst.m_fFlattening != 0.0)
-		{
-			if ((datumDst.m_fFlattening < 250.0) || (datumDst.m_fFlattening > 350.0))
-			{
-				throw Exception(errGPS_INVALIDDSTFLATTENING);
-			}
-		}
+        if (datumSrc.m_fFlattening != 0.0)
+        {
+            if ((datumSrc.m_fFlattening < 250.0) || (datumSrc.m_fFlattening > 350.0))
+            {
+                throw std::runtime_error(errGPS_INVALIDSRCFLATTENING);
+            }
+        }
 
 		// When using gridfile, check existence
-		if (datumDst.m_lGridType)
-		{
-			if (datumDst.m_strGrid.GetLength())
-			{
-				throw Exception(errGPS_INVALIDDSTDATUMGRIDFILE);
-			}
+		// No gridfiles anymore
+        if (datumSrc.m_lGridType)
+        {
+            if (datumSrc.m_strGrid.empty())
+            {
+                throw std::runtime_error(errGPS_INVALIDSRCDATUMGRIDFILE);
+            }
+        }
+    }
 
-			if (!boost::filesystem::exists(datumDst.m_strGrid.GetBuffer()))
-			{
-				throw Exception(errGPS_FAILEDLOADDSTDATUMGRIDFILE);
-			}
-		}
-	}
+    void ProjectionImpl::checkDestinationDatum(const CGpsDatumParametersX& datumDst)
+    {
+// SH: The two checks (dest, src) are almost identical, except for the error codes
 
-	void ProjectionImpl::putIAltitude(double ialtitude)
-	{
-		m_altitudeI = ialtitude;
-	}
+        if (datumDst.m_fAxis <= 0.0)
+        {
+            throw std::runtime_error(errGPS_INVALIDDSTAXIS);
+        }
 
-	double ProjectionImpl::getEasting()
-	{
-		return m_easting;
-	}
+// When using ellipsoid, check flattening
+        if (datumDst.m_fFlattening != 0.0)
+        {
+            if ((datumDst.m_fFlattening < 250.0) || (datumDst.m_fFlattening > 350.0))
+            {
+                throw std::runtime_error(errGPS_INVALIDDSTFLATTENING);
+            }
+        }
 
-	double ProjectionImpl::getNorthing()
-	{
-		return m_northing;
-	}
+// When using gridfile, check existence
+        if (datumDst.m_lGridType)
+        {
+            if (datumDst.m_strGrid.empty())
+            {
+                throw std::runtime_error(errGPS_INVALIDDSTDATUMGRIDFILE);
+            }
+        }
+    }
 
-	long ProjectionImpl::getZone()
-	{
-		return m_zone;
-	}
+    void ProjectionImpl::putIAltitude(double ialtitude)
+    {
+        m_altitudeI = ialtitude;
+    }
 
-	double ProjectionImpl::getLongitude()
-	{
-		return m_longitude;
-	}
+    double ProjectionImpl::getEasting()
+    {
+        return m_easting;
+    }
 
-	double ProjectionImpl::getLatitude()
-	{
-		return m_latitude;
-	}
+    double ProjectionImpl::getNorthing()
+    {
+        return m_northing;
+    }
 
-	void ProjectionImpl::putEasting(double easting)
-	{
-		m_easting = easting;
-	}
+    long ProjectionImpl::getZone()
+    {
+        return m_zone;
+    }
 
-	void ProjectionImpl::putNorthing(double northing)
-	{
-		m_northing = northing;
-	}
+    double ProjectionImpl::getLongitude()
+    {
+        return m_longitude;
+    }
 
-	void ProjectionImpl::transformGrid(GridParameters& src, GridParameters& dst)
-	{	
-		GridParametersImpl& srcImpl = static_cast<GridParametersImpl&>(src);
-		GridParametersImpl& dstImpl = static_cast<GridParametersImpl&>(dst);
+    double ProjectionImpl::getLatitude()
+    {
+        return m_latitude;
+    }
 
-		doTransform(srcImpl.getImpl(), dstImpl.getImpl());
-	}
+    void ProjectionImpl::putEasting(double easting)
+    {
+        m_easting = easting;
+    }
+
+    void ProjectionImpl::putNorthing(double northing)
+    {
+        m_northing = northing;
+    }
+
+    void ProjectionImpl::transformGrid(GridParameters& src, GridParameters& dst)
+    {
+        GridParametersImpl& srcImpl = static_cast<GridParametersImpl&>(src);
+        GridParametersImpl& dstImpl = static_cast<GridParametersImpl&>(dst);
+
+        doTransform(srcImpl.getImpl(), dstImpl.getImpl());
+    }
 
 }
 

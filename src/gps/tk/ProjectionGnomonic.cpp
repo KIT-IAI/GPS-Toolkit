@@ -19,60 +19,60 @@ CProjectionGnomonic::~CProjectionGnomonic ()
 
 void CProjectionGnomonic::Initialize (CCfgMapProjection & proj)
 {
-	a               = proj.m_fAxis;
+    a = proj.m_fAxis;
 
-    lon0            = DEG2RAD ( proj.m_fOriginLongitude  );
-	lat0			= DEG2RAD ( proj.m_fOriginLatitude   );
-	
-	clat0			= cos ( lat0 );
-	slat0			= sin ( lat0 );
+    lon0 = DEG2RAD (proj.m_fOriginLongitude);
+    lat0 = DEG2RAD (proj.m_fOriginLatitude);
 
-    fe              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseEasting  );
-    fn              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseNorthing );
+    clat0 = cos (lat0);
+    slat0 = sin (lat0);
 
-	return void ();
+    fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
+    fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
+
+    return void ();
 }
 
 void CProjectionGnomonic::Forward ()
 {
-	double lat		= m_fLatitude;
-    double lon		= m_fLongitude;
-  
-    double dlam		= lon - lon0;
+    double lat = m_fLatitude;
+    double lon = m_fLongitude;
 
-	double clat		= cos ( lat );
-	double slat		= sin ( lat );
-		
-	double cc		= slat0 * slat + clat0 * clat * cos ( dlam );
-	double cd		= clat0 * slat - slat0 * clat * cos ( dlam );
+    double dlam = lon - lon0;
 
-	m_fEasting		= clat * sin ( dlam ) / cc;
-	m_fNorthing		= cd / cc;
+    double clat = cos (lat);
+    double slat = sin (lat);
 
-	m_fNorthing		= ( a * m_fNorthing ) + fn;
-	m_fEasting		= ( a * m_fEasting  ) + fe;
-	
+    double cc = slat0 * slat + clat0 * clat * cos (dlam);
+    double cd = clat0 * slat - slat0 * clat * cos (dlam);
+
+    m_fEasting = clat * sin (dlam) / cc;
+    m_fNorthing = cd / cc;
+
+    m_fNorthing = (a * m_fNorthing) + fn;
+    m_fEasting = (a * m_fEasting) + fe;
+
     return void ();
 }
 
 void CProjectionGnomonic::Inverse ()
 {
-	double dx		= ( m_fEasting  - fe ) / a;
-	double dy		= ( m_fNorthing - fn ) / a;
+    double dx = (m_fEasting - fe) / a;
+    double dy = (m_fNorthing - fn) / a;
 
-	double r		= sqrt ( dx * dx + dy * dy );
+    double r = sqrt (dx * dx + dy * dy);
 
-	double c		= atan ( r );
+    double c = atan (r);
 
-	double sc		= sin ( c );
-	double cc		= cos ( c );
+    double sc = sin (c);
+    double cc = cos (c);
 
-	double lat		= asin  ( ( cc * slat0 ) + ( ( ( dy * sc ) * clat0 ) / r ) );
-	double lon		= atan2 ( ( dx * sc ), ( r * clat0 * cc - ( dy * sc ) * slat0 ) );
+    double lat = asin ((cc * slat0) + (((dy * sc) * clat0) / r));
+    double lon = atan2 ((dx * sc), (r * clat0 * cc - (dy * sc) * slat0));
 
-	m_fLatitude		= lat;
-    m_fLongitude	= lon + lon0;
+    m_fLatitude = lat;
+    m_fLongitude = lon + lon0;
 
-	return void ();
+    return void ();
 }
 

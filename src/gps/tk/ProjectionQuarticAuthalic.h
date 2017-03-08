@@ -5,12 +5,12 @@
 class CProjectionQuarticAuthalic : public CProjection
 {
 public:
-				CProjectionQuarticAuthalic	();
-	virtual		~CProjectionQuarticAuthalic	();
+    CProjectionQuarticAuthalic ();
+    virtual ~CProjectionQuarticAuthalic ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };
 

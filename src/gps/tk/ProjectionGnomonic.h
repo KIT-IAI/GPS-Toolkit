@@ -2,19 +2,19 @@
 
 #include "Projection.h"
 
-class CProjectionGnomonic :	public CProjection
+class CProjectionGnomonic : public CProjection
 {
 public:
-				CProjectionGnomonic			();
-	virtual		~CProjectionGnomonic		();
+    CProjectionGnomonic ();
+    virtual ~CProjectionGnomonic ();
 
-	void		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	void		Forward						();
-	void		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 protected:
 
-	double		clat0;
-	double		slat0;
+    double clat0;
+    double slat0;
 };

@@ -19,47 +19,47 @@ CProjectionQuarticAuthalic::~CProjectionQuarticAuthalic ()
 
 void CProjectionQuarticAuthalic::Initialize (CCfgMapProjection & proj)
 {
-	a               = proj.m_fAxis;
+    a = proj.m_fAxis;
 
-    lon0            = DEG2RAD ( proj.m_fOriginLongitude  );
-	
-    fe              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseEasting  );
-    fn              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseNorthing );
+    lon0 = DEG2RAD (proj.m_fOriginLongitude);
 
-	return void ();
+    fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
+    fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
+
+    return void ();
 }
 
 void CProjectionQuarticAuthalic::Forward ()
 {
-	double lat		= m_fLatitude;
-    double lon		= m_fLongitude;
-  
-    double dlam		= lon - lon0;
+    double lat = m_fLatitude;
+    double lon = m_fLongitude;
 
-	double c		= 0.5 * lat;
-	
-	m_fEasting		= ( dlam * cos ( lat ) ) / cos ( c );
-	m_fNorthing		= 2.0 * sin ( c );
+    double dlam = lon - lon0;
 
-	m_fEasting		= ( m_fEasting  * a ) + fe;
-	m_fNorthing		= ( m_fNorthing * a ) + fn;
+    double c = 0.5 * lat;
 
-	return void ();
+    m_fEasting = (dlam * cos (lat)) / cos (c);
+    m_fNorthing = 2.0 * sin (c);
+
+    m_fEasting = (m_fEasting * a) + fe;
+    m_fNorthing = (m_fNorthing * a) + fn;
+
+    return void ();
 }
 
 void CProjectionQuarticAuthalic::Inverse ()
 {
-	double dx		= ( m_fEasting  - fe ) / a;
-	double dy		= ( m_fNorthing - fn ) / a;
+    double dx = (m_fEasting - fe) / a;
+    double dy = (m_fNorthing - fn) / a;
 
-	double h		= AASIN ( dy / 2.0 );
-	double g		= cos ( h ) ;
+    double h = AASIN (dy / 2.0);
+    double g = cos (h) ;
 
-	double lat		= h * 2.0;
-	double lon		= dx / ( cos ( lat ) ) * g;
+    double lat = h * 2.0;
+    double lon = dx / (cos (lat)) * g;
 
-	m_fLatitude		= lat;
-    m_fLongitude	= lon + lon0;
+    m_fLatitude = lat;
+    m_fLongitude = lon + lon0;
 
-	return void ();
+    return void ();
 }

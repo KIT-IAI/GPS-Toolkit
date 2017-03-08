@@ -1,7 +1,7 @@
 #include "StdAfx.h"
 
-#include "DatumGridNadcon.h"
-#include "DatumGridNTv2.h"
+//#include "DatumGridNadcon.h"
+//#include "DatumGridNTv2.h"
 #include "DatumSubGrid.h"
 
 #include "DatumGrid.h"
@@ -9,199 +9,201 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#define DEG2RAD(x) x * ( M_PI / 180.0 )
-#define RAD2DEG(x) x / ( M_PI / 180.0 )
+inline double DEG2RAD(double x)
+{
+	return x * (M_PI / 180.0);
+}
 
-#include <tchar.h>
+inline double RAD2DEG(double x)
+{
+	return x / (M_PI / 180.0);
+}
 
 CDatumGrid::CDatumGrid ()
 {
-	m_pGrids = NULL;
+    m_pGrids = NULL;
 
-	Clear	();
+    Clear ();
 }
 
 CDatumGrid::~CDatumGrid ()
 {
-	Clear	();
+    Clear ();
 
-	if ( m_pGrids )
-	{
-		delete []m_pGrids;
-		m_pGrids = NULL;
-	}
+    if (m_pGrids)
+    {
+        delete []m_pGrids;
+        m_pGrids = NULL;
+    }
 }
 
-VOID CDatumGrid::Clear ()
+void CDatumGrid::Clear ()
 {
-	LONG				l		= 0L;
-	LONG				lCount	= 0L;
+    long l = 0L;
+    long lCount = 0L;
 
-	CDatumSubGrid	*	pGrid	= NULL;
+    CDatumSubGrid * pGrid = NULL;
 
-	if ( m_pGrids )
-	{
-		for ( l = 0L ; l < m_lGrids ; l++ )
-		{
-			pGrid = ( CDatumSubGrid * ) m_pGrids [ l ];
-			
-			if ( pGrid )
-			{
-				delete pGrid;
-				pGrid = NULL;
-			}
-		}
-	}
+    if (m_pGrids)
+    {
+        for (l = 0L ; l < m_lGrids ; l++)
+        {
+            pGrid = (CDatumSubGrid *) m_pGrids [ l ];
 
-	m_lGrids	= 0L;
-	m_lMode		= 0L;
+            if (pGrid)
+            {
+                delete pGrid;
+                pGrid = NULL;
+            }
+        }
+    }
 
-	return VOID ();
+    m_lGrids = 0L;
+    m_lMode = 0L;
+
+    return void ();
 }
 
-LONG CDatumGrid::Load (LPCTSTR lptszFileName)
+long CDatumGrid::Load(const std::wstring& lptszFileName)
 {
-	LONG	lResult	= -1L;
+	return 0;
 
-	// Determine type and load
-	if ( _tcsstr  ( lptszFileName, _T(".gsb" ) ) || _tcsstr  ( lptszFileName, _T(".GSB" ) ) )
-	{
-		CDatumGridNTv2	grid;
-		
-		lResult = grid.Load ( lptszFileName, this );
+	// Disabled. Bau.
+#if 0
+    long lResult = -1L;
 
-		if ( lResult == 0L )
-		{
-			m_lMode = MODE_NTV2;
-		}
+// Determine type and load
+    if (_tcsstr (lptszFileName, _T(".gsb")) || _tcsstr (lptszFileName, _T(".GSB")))
+    {
+        CDatumGridNTv2 grid;
 
-		goto _EndLoad;
-	}
+        lResult = grid.Load (lptszFileName, this);
 
-	if ( _tcsstr ( lptszFileName, _T(".las" ) ) || _tcsstr  ( lptszFileName, _T(".LAS" ) ) )
-	{
-		CDatumGridNadcon	grid;
-		
-		lResult = grid.Load ( lptszFileName, this );
+        if (lResult == 0L)
+        {
+            m_lMode = MODE_NTV2;
+        }
 
-		if ( lResult == 0L )
-		{
-			m_lMode = MODE_NADCON;
-		}
+        goto _EndLoad;
+    }
 
-		goto _EndLoad;
-	}
+    if (_tcsstr (lptszFileName, _T(".las")) || _tcsstr (lptszFileName, _T(".LAS")))
+    {
+        CDatumGridNadcon grid;
 
-	if ( _tcsstr ( lptszFileName, _T(".los") ) || _tcsstr  ( lptszFileName, _T(".LOS" ) ))
-	{
-		CDatumGridNadcon	grid;
+        lResult = grid.Load (lptszFileName, this);
 
-		lResult = grid.Load ( lptszFileName, this );
+        if (lResult == 0L)
+        {
+            m_lMode = MODE_NADCON;
+        }
 
-		if ( lResult == 0L )
-		{
-			m_lMode = MODE_NADCON;
-		}
+        goto _EndLoad;
+    }
 
-		goto _EndLoad;
-	}
+    if (_tcsstr (lptszFileName, _T(".los")) || _tcsstr (lptszFileName, _T(".LOS")))
+    {
+        CDatumGridNadcon grid;
+
+        lResult = grid.Load (lptszFileName, this);
+
+        if (lResult == 0L)
+        {
+            m_lMode = MODE_NADCON;
+        }
+
+        goto _EndLoad;
+    }
 
 _EndLoad:
 
-	return lResult;
+    return lResult;
+#endif
 }
 
-BOOL CDatumGrid::GetShift (double dblLongitude, double dblLatitude, double & dblShiftX, double & dblShiftY)
+bool CDatumGrid::GetShift (double dblLongitude, double dblLatitude, double & dblShiftX, double & dblShiftY)
 {
-	LONG				l		= 0L;
-	
-	BOOL				bValid	= FALSE;
+    long l = 0L;
 
-	CDatumSubGrid	*	pGrid	= NULL;
+    CDatumSubGrid * pGrid = NULL;
 
-	if ( m_lMode == 0L )
-		goto _EndGetShift;
-
-	if ( m_pGrids == NULL )
-		goto _EndGetShift;
-
-	for ( l = 0L ; l < m_lGrids ; l++ )
+	if (m_lMode == 0L)
 	{
-		pGrid = m_pGrids [ l ];
-
-		if ( pGrid )
-		{
-			if ( m_lMode == MODE_NTV2 )
-			{
-				if ( pGrid->PointInGrid ( dblLatitude, -dblLongitude ) )
-				{
-					dblShiftY = pGrid->GetCorrectionLat ( dblLatitude, -dblLongitude );
-					dblShiftX = pGrid->GetCorrectionLon	( dblLatitude, -dblLongitude );
-
-					bValid = TRUE;
-				}
-			}
-
-			if ( m_lMode == MODE_NADCON )
-			{
-				if ( pGrid->PointInGrid ( dblLatitude, dblLongitude ) )
-				{
-					dblShiftY = pGrid->GetCorrectionLat ( dblLatitude, dblLongitude );
-					dblShiftX = pGrid->GetCorrectionLon	( dblLatitude, dblLongitude );
-
-					bValid = TRUE;
-				}
-			}
-		}
+		return false;
 	}
 
-_EndGetShift:
+	if (m_pGrids == NULL)
+	{
+		return false;
+	}
 
-	return bValid;
+    for (l = 0L ; l < m_lGrids ; l++)
+    {
+        pGrid = m_pGrids [ l ];
+
+        if (pGrid)
+        {
+            if (m_lMode == MODE_NTV2)
+            {
+                if (pGrid->PointInGrid (dblLatitude, -dblLongitude))
+                {
+                    dblShiftY = pGrid->GetCorrectionLat (dblLatitude, -dblLongitude);
+                    dblShiftX = pGrid->GetCorrectionLon (dblLatitude, -dblLongitude);
+
+					return true;
+                }
+            }
+
+            if (m_lMode == MODE_NADCON)
+            {
+                if (pGrid->PointInGrid (dblLatitude, dblLongitude))
+                {
+                    dblShiftY = pGrid->GetCorrectionLat (dblLatitude, dblLongitude);
+                    dblShiftX = pGrid->GetCorrectionLon (dblLatitude, dblLongitude);
+
+					return true;
+                }
+            }
+        }
+    }
+
+	return false;
 }
 
-BOOL CDatumGrid::Forward (double & dblLongitude, double & dblLatitude)
+bool CDatumGrid::Forward (double & dblLongitude, double & dblLatitude)
 {
-	BOOL	bValid			= FALSE;
+    double dblLongitude0 = RAD2DEG (dblLongitude);
+    double dblLatitude0 = RAD2DEG (dblLatitude);
 
-	double	dblLongitude0	= RAD2DEG ( dblLongitude );
-	double	dblLatitude0	= RAD2DEG ( dblLatitude  );
+    double dblShiftX = 0.0;
+    double dblShiftY = 0.0;
 
-	double	dblShiftX		= 0.0;
-	double	dblShiftY		= 0.0;
+	if (!GetShift(dblLongitude0, dblLatitude0, dblShiftX, dblShiftY))
+	{
+		return false;
+	}
 
-	if ( GetShift ( dblLongitude0, dblLatitude0, dblShiftX, dblShiftY ) == FALSE )
-		goto _EndForward;
+    dblLongitude -= DEG2RAD (dblShiftX / 3600.0);
+    dblLatitude += DEG2RAD (dblShiftY / 3600.0);
 
-	bValid = TRUE;
-
-	dblLongitude	-= DEG2RAD ( dblShiftX / 3600.0 );
-	dblLatitude		+= DEG2RAD ( dblShiftY / 3600.0 );
-	
-_EndForward:
-
-	return bValid;
+	return true;
 }
 
-BOOL CDatumGrid::Inverse (double & dblLongitude, double & dblLatitude)
+bool CDatumGrid::Inverse (double & dblLongitude, double & dblLatitude)
 {
-	BOOL	bValid			= FALSE;
+    double dblLongitude0 = RAD2DEG (dblLongitude);
+    double dblLatitude0 = RAD2DEG (dblLatitude);
 
-	double	dblLongitude0	= RAD2DEG ( dblLongitude );
-	double	dblLatitude0	= RAD2DEG ( dblLatitude  );
+    double dblShiftX = 0.0;
+    double dblShiftY = 0.0;
 
-	double	dblShiftX		= 0.0;
-	double	dblShiftY		= 0.0;
+	if (!GetShift(dblLongitude0, dblLatitude0, dblShiftX, dblShiftY))
+	{
+		return false;
+	}
 
-	if ( GetShift ( dblLongitude0, dblLatitude0, dblShiftX, dblShiftY ) == FALSE )
-		goto _EndInverse;
+    dblLongitude += DEG2RAD (dblShiftX / 3600.0);
+    dblLatitude -= DEG2RAD (dblShiftY / 3600.0);
 
-	bValid = TRUE;
-
-	dblLongitude	+= DEG2RAD ( dblShiftX / 3600.0 );
-	dblLatitude		-= DEG2RAD ( dblShiftY / 3600.0 );
-	
-_EndInverse:
-
-	return bValid;
+    return true;
 }

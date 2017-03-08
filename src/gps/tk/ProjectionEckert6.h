@@ -5,15 +5,15 @@
 class CProjectionEckert6 : public CProjection
 {
 public:
-				CProjectionEckert6			();
-	virtual		~CProjectionEckert6			();
+    CProjectionEckert6 ();
+    virtual ~CProjectionEckert6 ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		ra, rb, rc;
+    double ra, rb, rc;
 };

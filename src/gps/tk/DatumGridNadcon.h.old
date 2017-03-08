@@ -1,0 +1,30 @@
+#pragma once
+
+#include <string>
+
+#include "DatumGrid.h"
+
+class CDatumGridNadcon
+{
+public:
+
+    CDatumGridNadcon ();
+    virtual ~CDatumGridNadcon ();
+
+    void Clear ();
+
+    long Load (const std::wstring& lptszFileName, CDatumGrid * pGrid);
+
+protected:
+
+    long LoadHeader (CDatumSubGrid * pGrid);
+    long LoadGrid (CDatumSubGrid * pGrid);
+
+    long ReadFloat (FILE * fp, double & f);
+    long ReadDouble (FILE * fp, double & d);
+    long ReadInteger (FILE * fp, int& n);
+    long ReadLong (FILE * fp, long & l);
+
+    FILE * m_fpLas;
+    FILE * m_fpLos;
+};

@@ -5,15 +5,15 @@
 class CProjectionMollweide : public CProjection
 {
 public:
-				CProjectionMollweide		();
-	virtual		~CProjectionMollweide		();
+    CProjectionMollweide ();
+    virtual ~CProjectionMollweide ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		r2, r8;
+    double r2, r8;
 };

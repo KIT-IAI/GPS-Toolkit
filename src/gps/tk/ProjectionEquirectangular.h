@@ -2,14 +2,14 @@
 
 #include "Projection.h"
 
-class CProjectionEquirectangular :	public CProjection
+class CProjectionEquirectangular : public CProjection
 {
 public:
-				CProjectionEquirectangular	();
-	virtual		~CProjectionEquirectangular	();
+    CProjectionEquirectangular ();
+    virtual ~CProjectionEquirectangular ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

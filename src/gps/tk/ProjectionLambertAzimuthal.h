@@ -1,24 +1,24 @@
 #pragma once
 
-class CProjectionLambertAzimuthal :	public CProjection
+class CProjectionLambertAzimuthal : public CProjection
 {
 public:
-				CProjectionLambertAzimuthal	();
-	virtual		~CProjectionLambertAzimuthal();
+    CProjectionLambertAzimuthal ();
+    virtual ~CProjectionLambertAzimuthal();
 
-	void		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	void		Forward						();
-	void		Inverse						();
+    void Forward ();
+    void Inverse ();
 
-	void		ForwardE					();
-	void		InverseE					();
+    void ForwardE ();
+    void InverseE ();
 
-	void		ForwardS					();
-	void		InverseS					();
-	
+    void ForwardS ();
+    void InverseS ();
+
 private:
 
-	double		q0, qp, clat0, slat0, sinb0, cosb0;
+    double q0, qp, clat0, slat0, sinb0, cosb0;
 
 };

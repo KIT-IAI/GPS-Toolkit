@@ -18,37 +18,37 @@ CProjectionMiller::~CProjectionMiller ()
 }
 void CProjectionMiller::Initialize(CCfgMapProjection & proj)
 {
-	a				= proj.m_fAxis;
+    a = proj.m_fAxis;
 
-	lon0            = DEG2RAD ( proj.m_fOriginLongitude );
+    lon0 = DEG2RAD (proj.m_fOriginLongitude);
 
-	fe              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseEasting  );
-    fn              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseNorthing );
+    fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
+    fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
 
-	return void ();
+    return void ();
 }
 
 void CProjectionMiller::Forward()
 {
-	double lat      = m_fLatitude;
-    double lon      = m_fLongitude;
+    double lat = m_fLatitude;
+    double lon = m_fLongitude;
 
-    double dlam     = lon - lon0;
-	
-	m_fEasting		= ( a * dlam ) + fe;
-    m_fNorthing		= ( a * log (tan ( ( M_PI / 4.0 ) + ( lat / 2.5 ) ) ) * 1.25 ) + fn;
-	
-	return void ();
+    double dlam = lon - lon0;
+
+    m_fEasting = (a * dlam) + fe;
+    m_fNorthing = (a * log (tan ((M_PI / 4.0) + (lat / 2.5))) * 1.25) + fn;
+
+    return void ();
 }
 
 void CProjectionMiller::Inverse()
 {
-	double  dx      = m_fEasting  - fe;
-    double  dy      = m_fNorthing - fn;
+    double dx = m_fEasting - fe;
+    double dy = m_fNorthing - fn;
 
-	m_fLatitude		= atan ( sinh (0.8 * dy / a ) ) / 0.8;
-    m_fLongitude	= lon0 + dx / a;
+    m_fLatitude = atan (sinh (0.8 * dy / a)) / 0.8;
+    m_fLongitude = lon0 + dx / a;
 
-	return void ();
+    return void ();
 }
 

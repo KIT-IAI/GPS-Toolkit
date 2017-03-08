@@ -1,55 +1,43 @@
 #pragma once
 
-
-
-#include "CxBase.h"
-#include "CxString.h"
-
-
-
 #include "GpsDatumParametersX.h"
 #include "ProjTypes.h"
 
-
-
 class CSpatialBase;
 
-
-
-class CGpsGridParametersX :	public CCxBase
+class CGpsGridParametersX
 {
 public:
-							CGpsGridParametersX			();
-	virtual					~CGpsGridParametersX		();
+    CGpsGridParametersX();
+    virtual ~CGpsGridParametersX();
 
-	void Clear ();
+    void Clear();
 
-	void LoadFromId (GridId id);
-	LONG LoadStatePlane(LONG lId);
+    void LoadFromId(gps::tk::GridId id);
+    void LoadStatePlane(gps::tk::StatePlaneId id);
 
-	VOID ToProjectionStruct(CCfgMapProjection & proj);
+    void ToProjectionStruct(CCfgMapProjection & proj);
 
 public:
-	std::wstring m_strName;
+    std::wstring m_strName;
 
-	LONG					m_lId;
-	LONG					m_lProjection;
-	LONG					m_lUnits;
+    long m_lId;
+	long m_lProjection;
+	long m_lUnits;
 
-	DOUBLE					m_fFalseEasting;
-	DOUBLE					m_fFalseNorthing;
+    double m_fFalseEasting;
+	double m_fFalseNorthing;
 
-	DOUBLE					m_fOriginLatitude;
-	DOUBLE					m_fOriginLongitude;
+	double m_fOriginLatitude;
+	double m_fOriginLongitude;
 
-	DOUBLE					m_fParallelNorth;
-	DOUBLE					m_fParallelSouth;
+	double m_fParallelNorth;
+	double m_fParallelSouth;
 
-	DOUBLE					m_fAzimuthAngle;
-	DOUBLE					m_fRectifiedGridAngle;
+	double m_fAzimuthAngle;
+	double m_fRectifiedGridAngle;
 
-	DOUBLE					m_fScaleFactor;
-
-	CGpsDatumParametersX	m_cGpsDatumParameters;
+	double m_fScaleFactor;
+    CGpsDatumParametersX m_cGpsDatumParameters;
 };
 

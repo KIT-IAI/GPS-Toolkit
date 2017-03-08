@@ -6,15 +6,15 @@
 
 double gps_round (double x)
 {
-	double	r	= 0.0;
-	double	d	= 0.0;
+    double r = 0.0;
+    double d = 0.0;
 
-	d = modf ( x, &r );
-	
-	if ( d >= 0.999999 )
-		x = ceil  ( x );
+    d = modf (x, &r);
 
-	return x;
+    if (d >= 0.999999)
+        x = ceil (x);
+
+    return x;
 }
 
 /////

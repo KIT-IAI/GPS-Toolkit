@@ -19,98 +19,98 @@ CProjectionSinusoidal::~CProjectionSinusoidal ()
 
 void CProjectionSinusoidal::Initialize(CCfgMapProjection & proj)
 {
-	a				= proj.m_fAxis;
-	
-	if ( proj.m_fFlattening == 0.0 )
-	{
-		m_bSphere		= TRUE;
-	}
-	else
-	{
-		m_bSphere		= FALSE;
+    a = proj.m_fAxis;
 
-		f               = 1.0 / proj.m_fFlattening;
+    if (proj.m_fFlattening == 0.0)
+    {
+        m_bSphere = true;
+    }
+    else
+    {
+        m_bSphere = false;
 
-		e2              = 2.0 * f - pow ( f, 2.0 );
-		e4				= e2 * e2;
-		e6				= e2 * e4;
-		e               = sqrt ( e2 );
-	}
-        
-	lon0            = DEG2RAD ( proj.m_fOriginLongitude );
+        f = 1.0 / proj.m_fFlattening;
 
-	fe              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseEasting  );
-    fn              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseNorthing );
+        e2 = 2.0 * f - pow (f, 2.0);
+        e4 = e2 * e2;
+        e6 = e2 * e4;
+        e = sqrt (e2);
+    }
 
-	return void ();
+    lon0 = DEG2RAD (proj.m_fOriginLongitude);
+
+    fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
+    fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
+
+    return void ();
 }
 
 void CProjectionSinusoidal::Forward()
 {
-	double lat      = m_fLatitude;
-    double lon      = m_fLongitude;
+    double lat = m_fLatitude;
+    double lon = m_fLongitude;
 
-    double dlam     = lon - lon0;
+    double dlam = lon - lon0;
 
-	double slat		= sin ( lat );
-	double clat		= cos ( lat );
-	
-	double mm		= 0.0;
-	double MM		= 0.0;
-	
-	if ( m_bSphere )
-	{
-		m_fEasting	= ( a * dlam * clat ) + fe;
-		m_fNorthing = ( a * lat ) + fn ;
-	}
-	else
-	{
-		mm			= sqrt ( 1.0 - e2 * slat * slat );
-		MM			= a * MLFN ( lat );
+    double slat = sin (lat);
+    double clat = cos (lat);
 
-		m_fEasting	= a * dlam * clat / mm + fe;
-		m_fNorthing = MM + fn;
-	}
+    double mm = 0.0;
+    double MM = 0.0;
 
-	return void ();
+    if (m_bSphere)
+    {
+        m_fEasting = (a * dlam * clat) + fe;
+        m_fNorthing = (a * lat) + fn ;
+    }
+    else
+    {
+        mm = sqrt (1.0 - e2 * slat * slat);
+        MM = a * MLFN (lat);
+
+        m_fEasting = a * dlam * clat / mm + fe;
+        m_fNorthing = MM + fn;
+    }
+
+    return void ();
 }
 
 void CProjectionSinusoidal::Inverse()
 {
-	double  dx      = m_fEasting  - fe;
-    double  dy      = m_fNorthing - fn;
+    double dx = m_fEasting - fe;
+    double dy = m_fNorthing - fn;
 
-	double	lat		= 0.0;
-	double	lon		= 0.0;
+    double lat = 0.0;
+    double lon = 0.0;
 
-	double	slat	= 0.0;
-	double	clat	= 0.0;
-    
-	if ( m_bSphere )
-	{
-		lat = dy / a;
-		lon = ( lon0 + ( dx / cos ( lat ) ) ) / a;
-	}
-	else
-	{
-		lat   = INVMLFN ( dy );
-		
-		// Near 90 degrees
-		if ( fabs ( lat ) >= M_PI_2 ) 
-		{
-			lon = lon0;
-		}
-		else
-		{
-		  slat = sin ( lat);
-		  clat = cos ( lat );
+    double slat = 0.0;
+    double clat = 0.0;
 
-		  lon = lon0 + dx * sqrt(1.0 - e2 * slat * slat) / ( a * clat ) ;
-		}
-	}
+    if (m_bSphere)
+    {
+        lat = dy / a;
+        lon = (lon0 + (dx / cos (lat))) / a;
+    }
+    else
+    {
+        lat = INVMLFN (dy);
 
-	m_fLatitude         = lat;
-    m_fLongitude        = lon;
+// Near 90 degrees
+        if (fabs (lat) >= M_PI_2)
+        {
+            lon = lon0;
+        }
+        else
+        {
+            slat = sin (lat);
+            clat = cos (lat);
 
-	return void ();
+            lon = lon0 + dx * sqrt(1.0 - e2 * slat * slat) / (a * clat) ;
+        }
+    }
+
+    m_fLatitude = lat;
+    m_fLongitude = lon;
+
+    return void ();
 }

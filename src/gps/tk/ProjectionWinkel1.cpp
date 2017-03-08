@@ -19,44 +19,44 @@ CProjectionWinkel1::~CProjectionWinkel1 ()
 
 void CProjectionWinkel1::Initialize (CCfgMapProjection & proj)
 {
-	a               = proj.m_fAxis;
+    a = proj.m_fAxis;
 
-    lon0            = DEG2RAD ( proj.m_fOriginLongitude  );
-	sp1				= DEG2RAD ( 50.4597762521898 );
+    lon0 = DEG2RAD (proj.m_fOriginLongitude);
+    sp1 = DEG2RAD (50.4597762521898);
 
-    fe              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseEasting  );
-    fn              = UnitsToMeters ( proj.m_lUnits, proj.m_fFalseNorthing );
+    fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
+    fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
 
-	return void ();
+    return void ();
 }
 
 void CProjectionWinkel1::Forward ()
 {
-	double lat		= m_fLatitude;
-    double lon		= m_fLongitude;
-  
-    double dlam		= lon - lon0;
+    double lat = m_fLatitude;
+    double lon = m_fLongitude;
 
-	double csp1		= cos ( sp1 );
-	double clat		= cos ( lat  );
+    double dlam = lon - lon0;
 
-	m_fEasting		= ( a * dlam * ( csp1 + clat ) / 2.0 ) + fe;
-	m_fNorthing		= ( a * lat ) + fn;
-	
+    double csp1 = cos (sp1);
+    double clat = cos (lat);
+
+    m_fEasting = (a * dlam * (csp1 + clat) / 2.0) + fe;
+    m_fNorthing = (a * lat) + fn;
+
     return void ();
 }
 
 void CProjectionWinkel1::Inverse ()
 {
-	double dx		= ( m_fEasting  - fe ) / a;
-	double dy		= ( m_fNorthing - fn ) / a;
+    double dx = (m_fEasting - fe) / a;
+    double dy = (m_fNorthing - fn) / a;
 
-	double lat		= dy;
-	double lon		= 2.0 * dx /  ( cos ( sp1 ) + cos ( lat ) );
+    double lat = dy;
+    double lon = 2.0 * dx / (cos (sp1) + cos (lat));
 
-	m_fLatitude		= lat;
-    m_fLongitude	= lon;
+    m_fLatitude = lat;
+    m_fLongitude = lon;
 
-	return void ();
+    return void ();
 }
 

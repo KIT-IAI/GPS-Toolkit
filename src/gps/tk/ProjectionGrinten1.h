@@ -2,14 +2,14 @@
 
 #include "Projection.h"
 
-class CProjectionGrinten1 :	public CProjection
+class CProjectionGrinten1 : public CProjection
 {
 public:
-				CProjectionGrinten1			();
-	virtual		~CProjectionGrinten1		();
+    CProjectionGrinten1 ();
+    virtual ~CProjectionGrinten1 ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

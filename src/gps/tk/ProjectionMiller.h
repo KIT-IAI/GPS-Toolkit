@@ -5,12 +5,12 @@
 class CProjectionMiller : public CProjection
 {
 public:
-				CProjectionMiller			();
-	virtual		~CProjectionMiller			();
+    CProjectionMiller ();
+    virtual ~CProjectionMiller ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };
 

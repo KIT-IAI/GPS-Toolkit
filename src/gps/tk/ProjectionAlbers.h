@@ -3,16 +3,16 @@
 class CProjectionAlbers : public CProjection
 {
 public:
-				CProjectionAlbers			();
-	virtual		~CProjectionAlbers			();
+    CProjectionAlbers ();
+    virtual ~CProjectionAlbers ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		n, nq0, r0, C;
+    double n, nq0, r0, C;
 };
 

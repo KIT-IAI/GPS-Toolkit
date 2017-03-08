@@ -5,20 +5,20 @@
 class CProjectionBonne : public CProjection
 {
 public:
-				CProjectionBonne			();
-	virtual		 ~CProjectionBonne			();
+    CProjectionBonne ();
+    virtual ~CProjectionBonne ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
-	VOID		ForwardS					();
-	VOID		InverseS					();
+    void ForwardS ();
+    void InverseS ();
 
-	VOID		ForwardE					();
-	VOID		InverseE					();
+    void ForwardE ();
+    void InverseE ();
 
-	double		E1, M1;
-	double		ssp1, csp1;
+    double E1, M1;
+    double ssp1, csp1;
 };

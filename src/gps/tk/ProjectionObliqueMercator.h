@@ -3,19 +3,19 @@
 class CProjectionObliqueMercator : public CProjection
 {
 public:
-				CProjectionObliqueMercator	();
-	virtual		~CProjectionObliqueMercator	();
+    CProjectionObliqueMercator ();
+    virtual ~CProjectionObliqueMercator ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		cos4, sfc, uc;
-	double		A, B, D, D2, F, G, H;
-	double		g0, l0, t0;
+    double cos4, sfc, uc;
+    double A, B, D, D2, F, G, H;
+    double g0, l0, t0;
 
-	bool		bHotine;
+    bool bHotine;
 };

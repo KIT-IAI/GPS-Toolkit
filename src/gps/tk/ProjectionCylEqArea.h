@@ -6,12 +6,12 @@ class CProjectionCylEqArea : public CProjection
 {
 public:
 
-				CProjectionCylEqArea		();
-	virtual		~CProjectionCylEqArea		();
+    CProjectionCylEqArea ();
+    virtual ~CProjectionCylEqArea ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };
 

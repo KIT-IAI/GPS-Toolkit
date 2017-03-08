@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClInclude Include="src\gps\DatumParameters.hpp" />
     <ClInclude Include="src\gps\DatumParametersImpl.hpp" />
-    <ClInclude Include="src\gps\Exception.hpp" />
+    <ClInclude Include="src\gps\Errors.hpp" />
     <ClInclude Include="src\gps\GridParametersImpl.hpp" />
     <ClInclude Include="src\gps\Constants.hpp" />
     <ClInclude Include="src\gps\Factory.hpp" />
@@ -29,13 +29,7 @@
     <ClInclude Include="src\gps\GridParameters.hpp" />
     <ClInclude Include="src\gps\Projection.hpp" />
     <ClInclude Include="src\gps\ProjectionImpl.hpp" />
-    <ClInclude Include="src\gps\Settings.hpp" />
-    <ClInclude Include="src\gps\tk\CxBase.h" />
-    <ClInclude Include="src\gps\tk\CxErrors.h" />
-    <ClInclude Include="src\gps\tk\CxString.h" />
     <ClInclude Include="src\gps\tk\DatumGrid.h" />
-    <ClInclude Include="src\gps\tk\DatumGridNadcon.h" />
-    <ClInclude Include="src\gps\tk\DatumGridNTv2.h" />
     <ClInclude Include="src\gps\tk\DatumGridUtils.h" />
     <ClInclude Include="src\gps\tk\Datums.hpp" />
     <ClInclude Include="src\gps\tk\DatumsDat.hpp" />
@@ -47,6 +41,7 @@
     <ClInclude Include="src\gps\tk\GridBuilder.hpp" />
     <ClInclude Include="src\gps\tk\Grids.hpp" />
     <ClInclude Include="src\gps\tk\GridsDat.hpp" />
+    <ClInclude Include="src\gps\tk\IdTypes.hpp" />
     <ClInclude Include="src\gps\tk\Projection.h" />
     <ClInclude Include="src\gps\tk\ProjectionAlbers.h" />
     <ClInclude Include="src\gps\tk\ProjectionAzimuthalEq.h" />
@@ -97,13 +92,7 @@
     <ClCompile Include="src\gps\Factory.cpp" />
     <ClCompile Include="src\gps\GridParametersImpl.cpp" />
     <ClCompile Include="src\gps\ProjectionImpl.cpp" />
-    <ClCompile Include="src\gps\Settings.cpp" />
-    <ClCompile Include="src\gps\tk\CxBase.cpp" />
-    <ClCompile Include="src\gps\tk\CxErrors.cpp" />
-    <ClCompile Include="src\gps\tk\CxString.cpp" />
     <ClCompile Include="src\gps\tk\DatumGrid.cpp" />
-    <ClCompile Include="src\gps\tk\DatumGridNadcon.cpp" />
-    <ClCompile Include="src\gps\tk\DatumGridNTv2.cpp" />
     <ClCompile Include="src\gps\tk\DatumGridUtils.cpp" />
     <ClCompile Include="src\gps\tk\Datums.cpp" />
     <ClCompile Include="src\gps\tk\DatumsDat.cpp" />

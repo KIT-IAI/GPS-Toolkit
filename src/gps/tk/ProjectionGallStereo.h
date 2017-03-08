@@ -5,11 +5,11 @@
 class CProjectionGallStereo : public CProjection
 {
 public:
-				CProjectionGallStereo		();
-	virtual		~CProjectionGallStereo		();
+    CProjectionGallStereo ();
+    virtual ~CProjectionGallStereo ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

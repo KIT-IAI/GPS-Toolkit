@@ -1,0 +1,30 @@
+#pragma once
+
+#include "DatumGrid.h"
+
+class CDatumGridNTv2
+{
+public:
+    CDatumGridNTv2 ();
+    virtual ~CDatumGridNTv2 ();
+
+    void Clear ();
+
+    long Load (LPCTSTR lptszFileName, CDatumGrid * pGrid);
+
+protected:
+
+    long ProcessHeader ();
+    CDatumSubGrid * ProcessGrid ();
+
+    long GetHeaderInt (INT & n);
+    long GetHeaderDouble (double & d);
+    long GetHeaderChar (CHAR * c, INT nMaxLen);
+    long GetDouble (FLOAT & d);
+
+    CDatumGrid * m_pGrid;
+
+    FILE * m_fp;
+
+    INT m_nFiles;
+};

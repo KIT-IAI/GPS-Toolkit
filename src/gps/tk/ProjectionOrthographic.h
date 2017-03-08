@@ -2,19 +2,19 @@
 
 #include "Projection.h"
 
-class CProjectionOrthographic :	public CProjection
+class CProjectionOrthographic : public CProjection
 {
 public:
-				CProjectionOrthographic		();
-	virtual		~CProjectionOrthographic	();
+    CProjectionOrthographic ();
+    virtual ~CProjectionOrthographic ();
 
-	void		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	void		Forward						();
-	void		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 protected:
 
-	double		clat0;
-	double		slat0;
+    double clat0;
+    double slat0;
 };

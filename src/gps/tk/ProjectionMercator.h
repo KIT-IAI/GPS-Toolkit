@@ -3,16 +3,16 @@
 class CProjectionMercator : public CProjection
 {
 public:
-				CProjectionMercator			(void);
-	virtual		~CProjectionMercator		(void);
+    CProjectionMercator (void);
+    virtual ~CProjectionMercator (void);
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		ForwardSphere				();
-	VOID		ForwardEllipse				();
+    void Forward ();
+    void ForwardSphere ();
+    void ForwardEllipse ();
 
-	VOID		Inverse						();
-	VOID		InverseSphere				();
-	VOID		InverseEllipse				();
+    void Inverse ();
+    void InverseSphere ();
+    void InverseEllipse ();
 };

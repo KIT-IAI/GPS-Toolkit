@@ -2,23 +2,23 @@
 
 #include "Projection.h"
 
-class CProjectionAzimuthalEq :	public CProjection
+class CProjectionAzimuthalEq : public CProjection
 {
 public:
-				CProjectionAzimuthalEq		();
-	virtual		~CProjectionAzimuthalEq		();
+    CProjectionAzimuthalEq ();
+    virtual ~CProjectionAzimuthalEq ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		ForwardSphere				();
-	VOID		ForwardEllipse				();
+    void Forward ();
+    void ForwardSphere ();
+    void ForwardEllipse ();
 
-	VOID		Inverse						();
-	VOID		InverseSphere				();
-	VOID		InverseEllipse				();
+    void Inverse ();
+    void InverseSphere ();
+    void InverseEllipse ();
 
 protected:
 
-	double es, N1, G, He, clat0, slat0;
+    double es, N1, G, He, clat0, slat0;
 };

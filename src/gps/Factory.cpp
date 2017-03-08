@@ -5,15 +5,15 @@
 
 namespace gps
 {
-	GridParameters* Factory::createGridParameters()
-	{
-		return new GridParametersImpl();
-	}
+    GridParameters* Factory::createGridParameters()
+    {
+        return new GridParametersImpl();
+    }
 
-	Projection* Factory::createProjection()
-	{
-		return new ProjectionImpl();
-	}
+    Projection* Factory::createProjection()
+    {
+        return new ProjectionImpl();
+    }
 
 }
 

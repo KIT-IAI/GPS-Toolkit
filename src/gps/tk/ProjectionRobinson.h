@@ -2,14 +2,14 @@
 
 #include "Projection.h"
 
-class CProjectionRobinson :	public CProjection
+class CProjectionRobinson : public CProjection
 {
 public:
-				CProjectionRobinson			();
-	virtual		~CProjectionRobinson		();
+    CProjectionRobinson ();
+    virtual ~CProjectionRobinson ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

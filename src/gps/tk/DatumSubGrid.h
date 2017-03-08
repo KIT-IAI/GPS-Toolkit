@@ -3,36 +3,36 @@
 class CDatumSubGrid
 {
 public:
-					CDatumSubGrid		();
-	virtual			~CDatumSubGrid		();
+    CDatumSubGrid ();
+    virtual ~CDatumSubGrid ();
 
-	VOID			Clear				();
+    void Clear ();
 
-	double			GetCorrectionLat	(double dblLat, double dblLon);
-	double			GetCorrectionLon	(double dblLat, double dblLon);
+    double GetCorrectionLat (double dblLat, double dblLon);
+    double GetCorrectionLon (double dblLat, double dblLon);
 
-	BOOL			PointInGrid			(double dblLat, double dblLon);
+    bool PointInGrid (double dblLat, double dblLon);
 
-	VOID			AddCorrection		(double dblLat, double dblLon);
+    void AddCorrection (double dblLat, double dblLon);
 
-	LONG			Allocate			(LONG lRecords);
+    long Allocate (long lRecords);
 
-	double			m_dblLatMin;
-	double			m_dblLatMax;
-	double			m_dblLonMin;
-	double			m_dblLonMax;
+    double m_dblLatMin;
+    double m_dblLatMax;
+    double m_dblLonMin;
+    double m_dblLonMax;
 
-	double			m_dblLatSpc;
-	double			m_dblLonSpc;
+    double m_dblLatSpc;
+    double m_dblLonSpc;
 
-	LONG			m_lRecords;
-	LONG			m_lCurrent;
+    long m_lRecords;
+    long m_lCurrent;
 
-	LONG			m_lRows;
-	LONG			m_lCols;
+    long m_lRows;
+    long m_lCols;
 
 private:
 
-	float		*	m_pdblLatitudes;
-	float		*	m_pdblLongitudes;
+    float * m_pdblLatitudes;
+    float * m_pdblLongitudes;
 };

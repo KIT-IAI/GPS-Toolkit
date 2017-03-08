@@ -5,11 +5,11 @@
 class CProjectionSinusoidal : public CProjection
 {
 public:
-				CProjectionSinusoidal		();
-	virtual		~CProjectionSinusoidal		();
+    CProjectionSinusoidal ();
+    virtual ~CProjectionSinusoidal ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

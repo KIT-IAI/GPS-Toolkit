@@ -5,11 +5,11 @@
 class CProjectionPlateCarree : public CProjection
 {
 public:
-				CProjectionPlateCarree		();
-	virtual		~CProjectionPlateCarree		();
+    CProjectionPlateCarree ();
+    virtual ~CProjectionPlateCarree ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

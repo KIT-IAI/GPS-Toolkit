@@ -3,16 +3,16 @@
 class CProjectionObliqueStereo : public CProjection
 {
 public:
-				CProjectionObliqueStereo	();
-	virtual		~CProjectionObliqueStereo	();
+    CProjectionObliqueStereo ();
+    virtual ~CProjectionObliqueStereo ();
 
-	void		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	void		Forward						();
-	void		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		m, n, b0, rb;
+    double m, n, b0, rb;
 
 };

@@ -5,16 +5,16 @@
 class CProjectionSwissMercator : public CProjection
 {
 public:
-				CProjectionSwissMercator	();
-	virtual		~CProjectionSwissMercator	();
+    CProjectionSwissMercator ();
+    virtual ~CProjectionSwissMercator ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		c, ee, ep;
-	double		K, R;
+    double c, ee, ep;
+    double K, R;
 };

@@ -5,11 +5,11 @@
 class CProjectionWinkel1 : public CProjection
 {
 public:
-				CProjectionWinkel1			();
-	virtual		~CProjectionWinkel1			();
+    CProjectionWinkel1 ();
+    virtual ~CProjectionWinkel1 ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

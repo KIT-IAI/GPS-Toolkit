@@ -5,6 +5,4 @@
 #include "Projection.hpp"
 #include "DatumParameters.hpp"
 
-#include "Settings.hpp"
-
 #include "Factory.hpp"

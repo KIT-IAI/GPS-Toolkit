@@ -8,27 +8,27 @@ class CGpsGridParametersX;
 
 namespace gps
 {
-	namespace tk
-	{
-		
+    namespace tk
+    {
+        class Grids
+        {
+        public:
+            Grids(Grids& rhs) = delete;
+            Grids& operator=(Grids& rhs) = delete;
 
-		class Grids
-		{
-		public:
-			Grids(Grids& rhs) = delete;
-			Grids& operator=(Grids& rhs) = delete;
+            static Grids& getInstance();
 
-			static Grids& getInstance();
+            void load(GridId id, CGpsGridParametersX* params);
+            void loadByStatePlane(GridId lID, CGpsGridParametersX* params);
 
-			void load(GridId id, CGpsGridParametersX* params);
+        private:
+            Grids();
 
-		private:
-			Grids() {}
+        private:
+            std::unordered_map<GridId, const RecordGrid*> m_grids;
+            std::unordered_map<StatePlaneId, GridId> m_statePlanes;
+        };
 
-		private:
-			std::unordered_map<GridId, RecordGrid> m_grids;
-		};
-
-	}
+    }
 }
 

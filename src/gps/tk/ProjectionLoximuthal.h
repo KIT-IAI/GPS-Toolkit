@@ -5,16 +5,16 @@
 class CProjectionLoximuthal : public CProjection
 {
 public:
-				CProjectionLoximuthal		();
-	virtual		~CProjectionLoximuthal		();
+    CProjectionLoximuthal ();
+    virtual ~CProjectionLoximuthal ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 protected:
 
-	double		tsp1;
-	double		csp1;
+    double tsp1;
+    double csp1;
 };

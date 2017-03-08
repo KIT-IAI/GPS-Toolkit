@@ -3,15 +3,15 @@
 class CProjectionPolarStereo : public CProjection
 {
 public:
-				CProjectionPolarStereo		();
-	virtual		~CProjectionPolarStereo		();
+    CProjectionPolarStereo ();
+    virtual ~CProjectionPolarStereo ();
 
-	void		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	void		Forward						();
-	void		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		slat0, clat0, hem;
+    double slat0, clat0, hem;
 };

@@ -3,16 +3,16 @@
 class CProjectionKrovak : public CProjection
 {
 public:
-				CProjectionKrovak			();
-	virtual		~CProjectionKrovak			();
+    CProjectionKrovak ();
+    virtual ~CProjectionKrovak ();
 
-	void		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	void		Forward						();
-	void		Inverse						();
+    void Forward ();
+    void Inverse ();
 
 private:
 
-	double		alfa, k, ro0, ssp1;
+    double alfa, k, ro0, ssp1;
 };
 

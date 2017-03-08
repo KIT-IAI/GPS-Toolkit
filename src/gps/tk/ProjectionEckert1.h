@@ -5,11 +5,11 @@
 class CProjectionEckert1 : public CProjection
 {
 public:
-				CProjectionEckert1			();
-	virtual		~CProjectionEckert1			();
+    CProjectionEckert1 ();
+    virtual ~CProjectionEckert1 ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };

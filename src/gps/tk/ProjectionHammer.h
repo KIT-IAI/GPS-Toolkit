@@ -5,12 +5,12 @@
 class CProjectionHammer : public CProjection
 {
 public:
-				CProjectionHammer			();
-	virtual		~CProjectionHammer			();
+    CProjectionHammer ();
+    virtual ~CProjectionHammer ();
 
-	VOID		Initialize					(CCfgMapProjection & proj);
+    void Initialize (CCfgMapProjection & proj);
 
-	VOID		Forward						();
-	VOID		Inverse						();
+    void Forward ();
+    void Inverse ();
 };
 

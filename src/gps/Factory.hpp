@@ -6,11 +6,11 @@
 
 namespace gps
 {
-	class Factory
-	{
-	public:
-		GridParameters* createGridParameters();
-		Projection* createProjection();
-	};
+    class Factory
+    {
+    public:
+        GridParameters* createGridParameters();
+        Projection* createProjection();
+    };
 }
 

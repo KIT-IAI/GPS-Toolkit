@@ -1,30 +1,32 @@
 #pragma once
 
+#include <string>
+
 #include "DatumSubGrid.h"
 
-#define MODE_NADCON			1
-#define MODE_NTV2			2
+#define MODE_NADCON 1
+#define MODE_NTV2 2
 
 class CDatumGrid
 {
 public:
-						CDatumGrid		();
-	virtual				~CDatumGrid		();
+    CDatumGrid ();
+    virtual ~CDatumGrid ();
 
-	VOID				Clear			();
+    void Clear ();
 
-	LONG				Load			(LPCTSTR lptszFileName);
+    long Load (const std::wstring& lptszFileName);
 
-	BOOL				GetShift		(double dblLongitude, double dblLatitude, double & dblShiftX, double & dblShiftY);
-	
-	BOOL				Forward			(double & dblLongitude, double & dblLatitude);
-	BOOL				Inverse			(double & dblLongitude, double & dblLatitude);
+    bool GetShift (double dblLongitude, double dblLatitude, double & dblShiftX, double & dblShiftY);
 
-	CDatumSubGrid	**	m_pGrids;
+    bool Forward (double & dblLongitude, double & dblLatitude);
+    bool Inverse (double & dblLongitude, double & dblLatitude);
 
-	LONG				m_lGrids;
+    CDatumSubGrid ** m_pGrids;
+
+    long m_lGrids;
 
 private:
 
-	LONG				m_lMode;	
+    long m_lMode;
 };

@@ -1,43 +1,44 @@
 #pragma once
 
 #include "Datums.hpp"
+#include "IdTypes.hpp"
 
 class CCfgMapProjection;
 
 class CGpsDatumParametersX
 {
 public:
-	CGpsDatumParametersX();
+    CGpsDatumParametersX();
 
-	void Clear();
+    void Clear();
 
-	void Inverse();
+    void Inverse();
 
-	void ToProjectionStruct(CCfgMapProjection& proj);
+    void ToProjectionStruct(CCfgMapProjection& proj);
 
-	void LoadFromId(gps::tk::DatumId id);
+    void LoadFromId(gps::tk::DatumId id);
 
-	std::wstring m_strName;
-	std::wstring m_strGrid;
+    std::wstring m_strName;
+    std::wstring m_strGrid;
 
-	gps::tk::DatumId m_lId;
+    gps::tk::DatumId m_lId;
 
-	long m_lGridType;
+    long m_lGridType;
 
-	double m_fScaleFactor;
+    double m_fScaleFactor;
 
-	double m_fPrimeMeridian;
+    double m_fPrimeMeridian;
 
-	double m_fTranslationX;
-	double m_fTranslationY;
-	double m_fTranslationZ;
+    double m_fTranslationX;
+    double m_fTranslationY;
+    double m_fTranslationZ;
 
-	double m_fRotationX;
-	double m_fRotationY;
-	double m_fRotationZ;
+    double m_fRotationX;
+    double m_fRotationY;
+    double m_fRotationZ;
 
-	double m_fAxis;
-	double m_fFlattening;
+    double m_fAxis;
+    double m_fFlattening;
 };
 
 
