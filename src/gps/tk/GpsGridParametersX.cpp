@@ -3,62 +3,23 @@
 #include <string>
 #include <locale>
 #include <codecvt>
-//#include <boost/locale.hpp>
-
-/////////////////////////////////////////////////////////////////////////////
 
 #include "GpsGridParametersX.h"
-
-/////////////////////////////////////////////////////////////////////////////
-
 #include "GpsConstantsX.h"
-
-/////////////////////////////////////////////////////////////////////////////
-
-#include "SpatialBase.h"
-
-/////////////////////////////////////////////////////////////////////////////
-
 #include "GpsDefs.h"
-
-/////////////////////////////////////////////////////////////////////////////
-
 #include "CxErrors.h"
 
-//////////////////////////////////////////////////////////////////////
-
-CGpsGridParametersX::CGpsGridParametersX () : CCxBase ( _T("CGpsGridParametersX") )
+CGpsGridParametersX::CGpsGridParametersX ()
 {
-	TraceFunction ( _T ( ">> CGpsGridParametersX::CGpsGridParametersX\n" ) );
-
-	m_pSpatialBase	= NULL;
-
-	Clear	();
-
-	TraceFunction ( _T ( "<< CGpsGridParametersX::CGpsGridParametersX\n" ) );
+	Clear();
 }
-
-/////////////////////////////////////////////////////////////////////////////
 
 CGpsGridParametersX::~CGpsGridParametersX ()
 {
-	TraceFunction ( _T ( ">> CGpsGridParametersX::~CGpsGridParametersX\n" ) );
-	
-	if ( m_pSpatialBase )
-	{
-		delete m_pSpatialBase;
-		m_pSpatialBase = NULL;
-	}
-	
-	TraceFunction ( _T ( "<< CGpsGridParametersX::~CGpsGridParametersX\n" ) );
 }
-
-/////////////////////////////////////////////////////////////////////////////
 
 VOID CGpsGridParametersX::Clear ()
 {
-	TraceFunction ( _T ( ">> CGpsGridParametersX::Clear\n" ) );
-
 	m_strName				= _T("");
 
 	m_lId					= 0L;
@@ -80,11 +41,9 @@ VOID CGpsGridParametersX::Clear ()
 	m_fScaleFactor			= 0.0;
 
 	m_cGpsDatumParameters.Clear ();
-
-	TraceFunction ( _T ( "<< CGpsGridParametersX::Clear\n" ) );
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 VOID CGpsGridParametersX::ToProjectionStruct (CCfgMapProjection & proj)
 {
@@ -134,7 +93,7 @@ VOID CGpsGridParametersX::ToProjectionStruct (CCfgMapProjection & proj)
 	return VOID ();
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 LONG CGpsGridParametersX::SaveToFile (CCxString & strFileName)
 {
@@ -196,7 +155,7 @@ _EndSaveToFile:
 	return lResult;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 LONG CGpsGridParametersX::LoadFromFile (CCxString & strFileName)
 {
@@ -310,7 +269,7 @@ _EndLoadFromFile:
 	return lResult;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 LONG CGpsGridParametersX::LoadFromId (LONG lID)
 {
@@ -334,7 +293,7 @@ _EndLoadFromId:
 	return lResult;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 LONG CGpsGridParametersX::LoadStatePlane (LONG lID)
 {
@@ -358,7 +317,7 @@ _EndLoadFromId:
 	return lResult;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 LONG CGpsGridParametersX::GetFirstGrid ()
 {
@@ -382,7 +341,7 @@ _EndGetFirstGrid:
 	return lResult;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 LONG CGpsGridParametersX::GetNextGrid ()
 {
@@ -406,4 +365,4 @@ _EndGetNextGrid:
 	return lResult;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+

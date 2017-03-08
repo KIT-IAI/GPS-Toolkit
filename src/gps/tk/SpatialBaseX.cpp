@@ -190,7 +190,7 @@ _EndSetStatePlane:
 	return lResult;
 }
 
-long CSpatialBase::SetGrid(LONG lCode, CGpsGridParametersX * pParams)
+long CSpatialBase::SetGrid(LONG lCode, CGpsGridParametersX* pParams)
 {
 	LONG	lResult = -1L;
 	LONG	lDatum = 0L;

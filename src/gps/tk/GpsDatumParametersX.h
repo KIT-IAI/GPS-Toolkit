@@ -1,67 +1,43 @@
 #pragma once
 
-/////////////////////////////////////////////////////////////////////////////
+#include "Datums.hpp"
 
-#include "CxBase.h"
-#include "CxString.h"
+class CCfgMapProjection;
 
-/////////////////////////////////////////////////////////////////////////////
-
-#include "ProjTypes.h"
-
-/////////////////////////////////////////////////////////////////////////////
-
-class CSpatialBase;
-
-/////////////////////////////////////////////////////////////////////////////
-
-class CGpsDatumParametersX : public CCxBase
+class CGpsDatumParametersX
 {
 public:
-					CGpsDatumParametersX	();
-	virtual			~CGpsDatumParametersX	();
+	CGpsDatumParametersX();
 
-	VOID			Clear					();
+	void Clear();
 
-	VOID			Inverse					();
+	void Inverse();
 
-	LONG			SaveToFile				(CCxString & strFileName);
-	LONG			LoadFromFile			(CCxString & strFileName);
+	void ToProjectionStruct(CCfgMapProjection& proj);
 
-	VOID			ToProjectionStruct		(CCfgMapProjection & proj);
+	void LoadFromId(gps::tk::DatumId id);
 
-	CGpsDatumParametersX	&	operator =	(const CGpsDatumParametersX & other);
+	std::wstring m_strName;
+	std::wstring m_strGrid;
 
-	LONG			LoadFromId				(LONG lId);
+	gps::tk::DatumId m_lId;
 
-	LONG			GetFirstDatum			();
-	LONG			GetNextDatum			();
+	long m_lGridType;
 
-	CCxString		m_strName;
-	CCxString		m_strGrid;
+	double m_fScaleFactor;
 
-	LONG			m_lId;
+	double m_fPrimeMeridian;
 
-	LONG			m_lGridType;
+	double m_fTranslationX;
+	double m_fTranslationY;
+	double m_fTranslationZ;
 
-	DOUBLE			m_fScaleFactor;
+	double m_fRotationX;
+	double m_fRotationY;
+	double m_fRotationZ;
 
-	DOUBLE			m_fPrimeMeridian;
-
-	DOUBLE			m_fTranslationX;
-	DOUBLE			m_fTranslationY;
-	DOUBLE			m_fTranslationZ;
-	
-	DOUBLE			m_fRotationX;
-	DOUBLE			m_fRotationY;
-	DOUBLE			m_fRotationZ;
-
-	DOUBLE			m_fAxis;
-	DOUBLE			m_fFlattening;
-
-protected:
-
-	CSpatialBase *	m_pSpatialBase;
+	double m_fAxis;
+	double m_fFlattening;
 };
 
-/////////////////////////////////////////////////////////////////////////////
+

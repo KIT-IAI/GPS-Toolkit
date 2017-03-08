@@ -58,11 +58,11 @@ public:
 	CCxString	strName;
 };
 
-class CSpatialBase
+class CSpatialBaseX
 {
 public:
-						CSpatialBase	();
-	virtual				~CSpatialBase	();
+						CSpatialBaseX	();
+	virtual				~CSpatialBaseX	();
 
 	void				LoadDatums		();
 	void				LoadGrids		();

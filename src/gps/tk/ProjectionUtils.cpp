@@ -1,19 +1,19 @@
 #include "StdAfx.h"
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #include "ProjectionUtils.h"
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #include "GpsConstantsX.h"
 
-//////////////////////////////////////////////////////////////////////////////
+/
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define DEG2RAD(x)	x * ( M_PI    / 180.00  );
 #define RAD2DEG(x)  x * ( 180.00  / M_PI    );
@@ -21,7 +21,7 @@
 #define SEC2RAD(x)  x * ( M_PI / 648000.00 );
 #define RAD2SEC(x)  x * ( 648000.00 / M_PI );
 
-/////////////////////////////////////////////////////////////////////////////
+
 /*
 VOID xyz2plh (double x, double y, double z, double & p, double & l, double & h, CCfgMapProjection * pParams)
 {
@@ -54,7 +54,7 @@ VOID xyz2plh (double x, double y, double z, double & p, double & l, double & h, 
 	return VOID ();
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 */
 
 VOID xyz2plh (double x, double y, double z, double & p, double & l, double & h, CCfgMapProjection * pParams)
@@ -90,7 +90,7 @@ VOID xyz2plh (double x, double y, double z, double & p, double & l, double & h, 
 	return VOID ();
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 VOID plh2xyz (double p, double l, double h, double & x, double & y, double & z, CCfgMapProjection * pParams)
 {
@@ -116,7 +116,7 @@ VOID plh2xyz (double p, double l, double h, double & x, double & y, double & z, 
 	return VOID ();	
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 VOID towgs84 (double x, double y, double z, double & xx, double & yy, double & zz, CCfgMapProjection * pParams)
 {
@@ -148,7 +148,7 @@ VOID towgs84 (double x, double y, double z, double & xx, double & yy, double & z
 	return VOID ();
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 VOID fromwgs84 (double x, double y, double z, double & xx, double & yy, double & zz, CCfgMapProjection * pParams)
 {
@@ -180,7 +180,7 @@ VOID fromwgs84 (double x, double y, double z, double & xx, double & yy, double &
 	return VOID ();
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 double MetersToUnits (long lUnits, double dblMeters)
 {
@@ -264,7 +264,7 @@ double MetersToUnits (long lUnits, double dblMeters)
 	return dblReturn;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 double UnitsToMeters (long lUnits, double dblUnits)
 {
@@ -348,5 +348,5 @@ double UnitsToMeters (long lUnits, double dblUnits)
 	return dblReturn;
 }
 
-/////////////////////////////////////////////////////////////////////////////
+
 

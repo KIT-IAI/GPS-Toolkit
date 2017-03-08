@@ -1,11 +1,7 @@
 #include "StdAfx.h"
 
-//////////////////////////////////////////////////////////////////////////////
-
 #include "Projection.h"
 #include "Projections.h"
-
-//////////////////////////////////////////////////////////////////////////////
 
 #include "ProjectionAlbers.h"
 #include "ProjectionKrovak.h"
@@ -43,19 +39,11 @@
 #include "ProjectionQuarticAuthalic.h"
 #include "ProjectionAzimuthalEq.h"
 
-//////////////////////////////////////////////////////////////////////////////
-
 #include "ProjectionUtils.h"
-
-//////////////////////////////////////////////////////////////////////////////
 
 #include "GpsConstantsX.h"
 
-//////////////////////////////////////////////////////////////////////////////
-
 #include "DatumGrid.h"
-
-//////////////////////////////////////////////////////////////////////////////
 
 CProjections::CProjections ()
 {
@@ -75,8 +63,6 @@ CProjections::CProjections ()
 	m_projSrc.Clear	();
 	m_projDst.Clear	();
 }
-
-//////////////////////////////////////////////////////////////////////////////
 
 CProjections::~CProjections ()
 {
@@ -98,8 +84,6 @@ CProjections::~CProjections ()
 		m_pGrid = NULL;
 	}
 }
-
-//////////////////////////////////////////////////////////////////////////////
 
 VOID CProjections::Forward ()
 {
@@ -263,8 +247,6 @@ VOID CProjections::Forward ()
 	return void ();
 }
 
-//////////////////////////////////////////////////////////////////////////////
-
 VOID CProjections::Inverse ()
 {
 	double  xx      = 0.0;
@@ -337,8 +319,6 @@ VOID CProjections::Inverse ()
 	}
 }
 
-//////////////////////////////////////////////////////////////////////////////
-
 BOOL CProjections::IsSameDatum (CCfgMapProjection & proj1, CCfgMapProjection & proj2)
 {
 	if ( ( proj1.m_fAxis			== proj2.m_fAxis			) &&
@@ -359,8 +339,6 @@ BOOL CProjections::IsSameDatum (CCfgMapProjection & proj1, CCfgMapProjection & p
 	return FALSE;
 }
 
-//////////////////////////////////////////////////////////////////////////////
-
 BOOL CProjections::IsEllipsoidToSphere (CCfgMapProjection & proj1, CCfgMapProjection & proj2)
 {
 	if ( ( proj1.m_fFlattening == 0.0 ) || ( proj2.m_fFlattening == 0.0 ) )
@@ -368,8 +346,6 @@ BOOL CProjections::IsEllipsoidToSphere (CCfgMapProjection & proj1, CCfgMapProjec
 
 	return FALSE;
 }
-
-//////////////////////////////////////////////////////////////////////////////
 
 VOID CProjections::SetGridSrc	(CCfgMapProjection & proj)
 {
@@ -404,8 +380,6 @@ _EndSetGridSrc:
 	return void ();	
 }
 
-//////////////////////////////////////////////////////////////////////////////
-
 VOID CProjections::SetGridDst	(CCfgMapProjection & proj)
 {
 	// If same grid is already set, return;
@@ -438,8 +412,6 @@ _EndSetGridDst:
 
 	return void ();
 }
-
-//////////////////////////////////////////////////////////////////////////////
 
 CProjection * CProjections::CreateProjection (CCfgMapProjection & proj)
 {
@@ -582,6 +554,4 @@ CProjection * CProjections::CreateProjection (CCfgMapProjection & proj)
 
 	return pProj;
 }
-
-//////////////////////////////////////////////////////////////////////////////
 

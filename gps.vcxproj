@@ -37,12 +37,15 @@
     <ClInclude Include="src\gps\tk\DatumGridNadcon.h" />
     <ClInclude Include="src\gps\tk\DatumGridNTv2.h" />
     <ClInclude Include="src\gps\tk\DatumGridUtils.h" />
+    <ClInclude Include="src\gps\tk\Datums.hpp" />
     <ClInclude Include="src\gps\tk\DatumsDat.hpp" />
     <ClInclude Include="src\gps\tk\DatumSubGrid.h" />
     <ClInclude Include="src\gps\tk\GpsConstantsX.h" />
     <ClInclude Include="src\gps\tk\GpsDatumParametersX.h" />
     <ClInclude Include="src\gps\tk\GpsDefs.h" />
     <ClInclude Include="src\gps\tk\GpsGridParametersX.h" />
+    <ClInclude Include="src\gps\tk\GridBuilder.hpp" />
+    <ClInclude Include="src\gps\tk\Grids.hpp" />
     <ClInclude Include="src\gps\tk\GridsDat.hpp" />
     <ClInclude Include="src\gps\tk\Projection.h" />
     <ClInclude Include="src\gps\tk\ProjectionAlbers.h" />
@@ -83,11 +86,13 @@
     <ClInclude Include="src\gps\tk\ProjectionUtils.h" />
     <ClInclude Include="src\gps\tk\ProjectionWinkel1.h" />
     <ClInclude Include="src\gps\tk\ProjTypes.h" />
+    <ClInclude Include="src\gps\tk\RecordDatum.hpp" />
+    <ClInclude Include="src\gps\tk\RecordGrid.hpp" />
     <ClInclude Include="src\gps\tk\resource.h" />
-    <ClInclude Include="src\gps\tk\SpatialBase.h" />
     <ClInclude Include="src\gps\tk\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\gps\Constants.cpp" />
     <ClCompile Include="src\gps\DatumParametersImpl.cpp" />
     <ClCompile Include="src\gps\Factory.cpp" />
     <ClCompile Include="src\gps\GridParametersImpl.cpp" />
@@ -100,10 +105,12 @@
     <ClCompile Include="src\gps\tk\DatumGridNadcon.cpp" />
     <ClCompile Include="src\gps\tk\DatumGridNTv2.cpp" />
     <ClCompile Include="src\gps\tk\DatumGridUtils.cpp" />
+    <ClCompile Include="src\gps\tk\Datums.cpp" />
     <ClCompile Include="src\gps\tk\DatumsDat.cpp" />
     <ClCompile Include="src\gps\tk\DatumSubGrid.cpp" />
     <ClCompile Include="src\gps\tk\GpsDatumParametersX.cpp" />
     <ClCompile Include="src\gps\tk\GpsGridParametersX.cpp" />
+    <ClCompile Include="src\gps\tk\Grids.cpp" />
     <ClCompile Include="src\gps\tk\GridsDat.cpp" />
     <ClCompile Include="src\gps\tk\Projection.cpp" />
     <ClCompile Include="src\gps\tk\ProjectionAlbers.cpp" />
@@ -143,7 +150,8 @@
     <ClCompile Include="src\gps\tk\ProjectionTransverseMercator.cpp" />
     <ClCompile Include="src\gps\tk\ProjectionUtils.cpp" />
     <ClCompile Include="src\gps\tk\ProjectionWinkel1.cpp" />
-    <ClCompile Include="src\gps\tk\SpatialBase.cpp" />
+    <ClCompile Include="src\gps\tk\RecordDatum.cpp" />
+    <ClCompile Include="src\gps\tk\RecordGrid.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BC272247-A408-4E41-A8CD-8C3A0E5211D8}</ProjectGuid>

@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_DEVICE_FORMAT_DEFAULT						0
 #define GPS_DEVICE_FORMAT_8N1							1
@@ -6,7 +6,7 @@
 #define GPS_DEVICE_FORMAT_8N2							3
 #define GPS_DEVICE_FORMAT_7E2							4
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_NMEA_FILTER_GGA								1
 #define GPS_NMEA_FILTER_GLL								2
@@ -17,32 +17,32 @@
 #define GPS_NMEA_FILTER_RME								4096
 #define GPS_NMEA_FILTER_RMZ								8192
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_SPEED_KNOTS									0
 #define GPS_SPEED_MILESPERHOUR							1
 #define GPS_SPEED_KILOMETERSPERHOUR						2
 #define GPS_SPEED_METERSPERSECOND						3
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_ALTITUDE_METERS								0
 #define GPS_ALTITUDE_FEET								1
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_LATLONFORMAT_D								0
 #define GPS_LATLONFORMAT_DM								1
 #define GPS_LATLONFORMAT_DMS							2
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_GRIDTYPE_NONE								0
 #define	GPS_GRIDTYPE_NADCON								3
 #define GPS_GRIDTYPE_HARN								4
 #define GPS_GRIDTYPE_NTV2								5
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_PROJECTION_NONE								0
 #define GPS_PROJECTION_LAMBERT1SP						100
@@ -88,7 +88,7 @@
 #define GPS_PROJECTION_QUARTICAUTHALIC					420
 #define GPS_PROJECTION_AZIMUTHALEQUIDISTANT				430
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define GPS_PROJECTION_UNITS_M							9001
 #define GPS_PROJECTION_UNITS_KM							9036
@@ -122,12 +122,12 @@
 #define GPS_PROJECTION_UNITS_YDCLA						9037
 #define GPS_PROJECTION_UNITS_YDSE						9040
 
-/////////////////////////////////////////////////////////////////////////////
+
 
 #define	GPS_QUALITY_NOFIX								0
 #define	GPS_QUALITY_FIX									1
 #define GPS_QUALITY_DIFFERENTIAL						2
 #define GPS_QUALITY_PPS									3
 
-/////////////////////////////////////////////////////////////////////////////
+
 
