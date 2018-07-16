@@ -65,8 +65,6 @@ void CProjectionSwissMercator::Forward ()
 
     m_fEasting = R * lordp + fe;
     m_fNorthing = R * log (tan (M_PI_4 + lardp / 2.0)) + fn;
-
-    return void ();
 }
 
 void CProjectionSwissMercator::Inverse ()
@@ -101,6 +99,4 @@ void CProjectionSwissMercator::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }

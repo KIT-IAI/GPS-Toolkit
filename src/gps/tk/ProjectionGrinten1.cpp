@@ -35,8 +35,6 @@ void CProjectionGrinten1::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionGrinten1::Forward ()
@@ -93,8 +91,6 @@ void CProjectionGrinten1::Forward ()
 
     m_fNorthing = (a * m_fNorthing) + fn;
     m_fEasting = (a * m_fEasting) + fe;
-
-    return void ();
 }
 
 void CProjectionGrinten1::Inverse ()
@@ -161,7 +157,5 @@ void CProjectionGrinten1::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }
 

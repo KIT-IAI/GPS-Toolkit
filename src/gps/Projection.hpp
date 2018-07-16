@@ -23,7 +23,6 @@ namespace gps
 
         virtual void putEasting(double easting) = 0;
         virtual void putNorthing(double northing) = 0;
-        virtual void putIAltitude(double ialtitude) = 0;
 
         virtual void transformGrid(GridParameters& src, GridParameters& dst) = 0;
 

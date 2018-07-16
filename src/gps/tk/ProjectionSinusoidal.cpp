@@ -41,8 +41,6 @@ void CProjectionSinusoidal::Initialize(CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionSinusoidal::Forward()
@@ -71,8 +69,6 @@ void CProjectionSinusoidal::Forward()
         m_fEasting = a * dlam * clat / mm + fe;
         m_fNorthing = MM + fn;
     }
-
-    return void ();
 }
 
 void CProjectionSinusoidal::Inverse()
@@ -111,6 +107,4 @@ void CProjectionSinusoidal::Inverse()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }

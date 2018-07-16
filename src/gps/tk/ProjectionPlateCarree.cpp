@@ -26,8 +26,6 @@ void CProjectionPlateCarree::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionPlateCarree::Forward ()
@@ -40,8 +38,6 @@ void CProjectionPlateCarree::Forward ()
 
     m_fEasting = a * dlon;
     m_fNorthing = a * dlat;
-
-    return void ();
 }
 
 void CProjectionPlateCarree::Inverse ()
@@ -54,6 +50,4 @@ void CProjectionPlateCarree::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }

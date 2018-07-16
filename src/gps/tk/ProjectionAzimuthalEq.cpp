@@ -51,8 +51,6 @@ void CProjectionAzimuthalEq::Initialize(CCfgMapProjection & proj)
     N1 = 1.0 / sqrt (1.0 - e2 * slat0 * slat0);
     G = slat0 * (e / sqrt (es));
     He = (e / sqrt (es)) * clat0;
-
-    return void ();
 }
 
 void CProjectionAzimuthalEq::Forward ()
@@ -65,8 +63,6 @@ void CProjectionAzimuthalEq::Forward ()
     {
         ForwardEllipse ();
     }
-
-    return void ();
 }
 
 void CProjectionAzimuthalEq::ForwardSphere ()
@@ -92,8 +88,6 @@ void CProjectionAzimuthalEq::ForwardSphere ()
 
     m_fEasting = (m_fEasting * a) + fe;
     m_fNorthing = (m_fNorthing * a) + fn;
-
-    return void ();
 }
 
 void CProjectionAzimuthalEq::ForwardEllipse ()
@@ -132,8 +126,6 @@ void CProjectionAzimuthalEq::ForwardEllipse ()
 
     m_fEasting = (m_fEasting * a) + fe;
     m_fNorthing = (m_fNorthing * a) + fn;
-
-    return void ();
 }
 
 void CProjectionAzimuthalEq::Inverse ()
@@ -146,8 +138,6 @@ void CProjectionAzimuthalEq::Inverse ()
     {
         InverseEllipse ();
     }
-
-    return void ();
 }
 
 void CProjectionAzimuthalEq::InverseEllipse ()
@@ -174,8 +164,6 @@ void CProjectionAzimuthalEq::InverseEllipse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }
 
 void CProjectionAzimuthalEq::InverseSphere ()
@@ -195,7 +183,5 @@ void CProjectionAzimuthalEq::InverseSphere ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }
 

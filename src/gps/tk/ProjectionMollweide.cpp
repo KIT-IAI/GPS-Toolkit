@@ -34,8 +34,6 @@ void CProjectionMollweide::Initialize (CCfgMapProjection & proj)
 
     r2 = sqrt (2.0) * a;
     r8 = sqrt (8.0) * a;
-
-    return void ();
 }
 
 void CProjectionMollweide::Forward ()
@@ -56,8 +54,6 @@ void CProjectionMollweide::Forward ()
 
     m_fEasting = (r8 / M_PI) * dlam * cos (tp / 2.0) + fe;
     m_fNorthing = r2 * sin (tp / 2.0) + fn;
-
-    return void ();
 }
 
 void CProjectionMollweide::Inverse ()
@@ -74,7 +70,5 @@ void CProjectionMollweide::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

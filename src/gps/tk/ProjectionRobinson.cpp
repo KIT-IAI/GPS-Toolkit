@@ -91,8 +91,6 @@ void CProjectionRobinson::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionRobinson::Forward ()
@@ -113,8 +111,6 @@ void CProjectionRobinson::Forward ()
 
     m_fEasting = (a * dblX * FXC * lam) + fe;
     m_fNorthing = (a * dblY * FYC) + fn;
-
-    return void ();
 }
 
 void CProjectionRobinson::Inverse ()
@@ -173,6 +169,4 @@ void CProjectionRobinson::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }

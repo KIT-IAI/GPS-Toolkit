@@ -64,8 +64,6 @@ void CProjectionObliqueMercator::Initialize (CCfgMapProjection & proj)
     uc = (A / B) * atan (sqrt (D2 - 1.0) / cos (azi)) * SIGN (lat0);
 
     bHotine = (proj.m_lProjection == GPS_PROJECTION_HOTINEOBLIQUEMERCATOR) ? true : false;
-
-    return void ();
 }
 
 void CProjectionObliqueMercator::Forward ()
@@ -87,8 +85,6 @@ void CProjectionObliqueMercator::Forward ()
 
     m_fEasting = (v * cos (rga)) + (u * sin (rga)) + fe;
     m_fNorthing = (u * cos (rga)) - (v * sin (rga)) + fn;
-
-    return void ();
 }
 
 void CProjectionObliqueMercator::Inverse ()
@@ -121,7 +117,5 @@ void CProjectionObliqueMercator::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

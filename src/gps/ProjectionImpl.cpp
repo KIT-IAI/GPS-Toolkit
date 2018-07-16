@@ -275,11 +275,6 @@ namespace gps
         }
     }
 
-    void ProjectionImpl::putIAltitude(double ialtitude)
-    {
-        m_altitudeI = ialtitude;
-    }
-
     double ProjectionImpl::getEasting()
     {
         return m_easting;

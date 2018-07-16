@@ -53,8 +53,6 @@ void CProjectionTransverseMercator::Initialize (CCfgMapProjection & proj)
     cp = 15.0 * a * (tn2 - tn3 + 3.0 * (tn4 - tn5) / 4.0) / 16.0;
     dp = 35.0 * a * (tn3 - tn4 + 11.0 * tn5 / 16.0) / 48.0;
     ep = 315.0 * a * (tn4 - tn5) / 512.0;
-
-    return void ();
 }
 
 void CProjectionTransverseMercator::Forward ()
@@ -112,8 +110,6 @@ void CProjectionTransverseMercator::Forward ()
         m_fEasting = fe + x;
         m_fNorthing = fn + y;
     }
-
-    return void ();
 }
 
 void CProjectionTransverseMercator::Inverse ()
@@ -189,6 +185,4 @@ void CProjectionTransverseMercator::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }

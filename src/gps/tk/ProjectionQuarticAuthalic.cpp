@@ -25,8 +25,6 @@ void CProjectionQuarticAuthalic::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionQuarticAuthalic::Forward ()
@@ -43,8 +41,6 @@ void CProjectionQuarticAuthalic::Forward ()
 
     m_fEasting = (m_fEasting * a) + fe;
     m_fNorthing = (m_fNorthing * a) + fn;
-
-    return void ();
 }
 
 void CProjectionQuarticAuthalic::Inverse ()
@@ -60,6 +56,4 @@ void CProjectionQuarticAuthalic::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }

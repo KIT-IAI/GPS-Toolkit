@@ -28,8 +28,6 @@ void CProjectionEquirectangular::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionEquirectangular::Forward ()
@@ -42,8 +40,6 @@ void CProjectionEquirectangular::Forward ()
 
     m_fEasting = a * dlon * cos (sp1);
     m_fNorthing = a * dlat;
-
-    return void ();
 }
 
 void CProjectionEquirectangular::Inverse ()
@@ -56,7 +52,5 @@ void CProjectionEquirectangular::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

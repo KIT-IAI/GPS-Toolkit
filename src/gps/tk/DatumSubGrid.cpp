@@ -183,16 +183,12 @@ bool CDatumSubGrid::PointInGrid(double dblLat, double dblLon)
 void CDatumSubGrid::AddCorrection(double dblLat, double dblLon)
 {
     if (m_lCurrent >= m_lRecords)
-        goto _EndAddCorrection;
+        return;
 
     m_pdblLatitudes [ m_lCurrent ] = dblLat;
     m_pdblLongitudes [ m_lCurrent ] = dblLon;
 
     m_lCurrent++;
-
-_EndAddCorrection:
-
-    return void ();
 }
 
 /////

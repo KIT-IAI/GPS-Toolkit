@@ -31,8 +31,6 @@ void CProjectionGallStereo::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionGallStereo::Forward ()
@@ -46,8 +44,6 @@ void CProjectionGallStereo::Forward ()
 
     m_fEasting = (a * XF * dlam) + fe;
     m_fNorthing = (a * YF * tlat) + fn;
-
-    return void ();
 }
 
 void CProjectionGallStereo::Inverse ()
@@ -60,7 +56,5 @@ void CProjectionGallStereo::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

@@ -63,8 +63,6 @@ void CProjectionObliqueStereo::Initialize (CCfgMapProjection & proj)
 
 // Gauss projectie m constante:
     m = w0 - n * q0;
-
-    return void ();
 }
 
 void CProjectionObliqueStereo::Forward ()
@@ -111,8 +109,6 @@ void CProjectionObliqueStereo::Forward ()
         m_fEasting = r * sa + fe;
         m_fNorthing = r * ca + fn;
     }
-
-    return void ();
 }
 
 void CProjectionObliqueStereo::Inverse ()
@@ -183,7 +179,5 @@ void CProjectionObliqueStereo::Inverse ()
         m_fLongitude = lab;
         m_fLatitude = phi;
     }
-
-    return void ();
 }
 

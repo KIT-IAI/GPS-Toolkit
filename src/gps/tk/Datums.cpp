@@ -3037,6 +3037,30 @@ namespace gps
         void Datums::load(DatumId id, CGpsDatumParametersX* params)
         {
             params->Clear();
+
+			auto it = m_datums.find(id);
+
+			if (it != m_datums.end())
+			{
+				const auto& datum = *it->second;
+
+				params->m_fAxis = datum.dblAxis;
+				params->m_fFlattening = datum.dblInverseFlattening;
+				params->m_fScaleFactor = datum.dblScaleFactor;
+				params->m_fPrimeMeridian = datum.dblPrimeMeridian;
+				params->m_fTranslationX = datum.dblTranslationX;
+				params->m_fTranslationY = datum.dblTranslationY;
+				params->m_fTranslationZ = datum.dblTranslationZ;
+				params->m_fRotationX = datum.dblRotationX;
+				params->m_fRotationY = datum.dblRotationY;
+				params->m_fRotationZ = datum.dblRotationZ;
+				params->m_lId = datum.numId;
+				params->m_strName = datum.strName;
+			}
+			else
+			{
+				throw std::runtime_error("");
+			}
         }
 	}
 }

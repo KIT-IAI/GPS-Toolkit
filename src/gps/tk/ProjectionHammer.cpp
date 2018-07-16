@@ -25,8 +25,6 @@ void CProjectionHammer::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionHammer::Forward ()
@@ -45,8 +43,6 @@ void CProjectionHammer::Forward ()
 
     m_fNorthing = (a * m_fNorthing) + fn;
     m_fEasting = (a * m_fEasting) + fe;
-
-    return void ();
 }
 
 void CProjectionHammer::Inverse ()
@@ -61,6 +57,4 @@ void CProjectionHammer::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }

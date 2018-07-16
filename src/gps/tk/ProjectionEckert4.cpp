@@ -30,8 +30,6 @@ void CProjectionEckert4::Initialize (CCfgMapProjection & proj)
 
     ra0 = 0.42223820031577120149 * a;
     ra1 = 1.32650042817700232218 * a;
-
-    return void ();
 }
 
 void CProjectionEckert4::Forward ()
@@ -58,8 +56,6 @@ void CProjectionEckert4::Forward ()
 
     m_fEasting = ra0 * dlam * (1.0 + cos (t)) + fe;
     m_fNorthing = ra1 * sin (t) + fn;
-
-    return void ();
 }
 
 void CProjectionEckert4::Inverse ()
@@ -85,7 +81,5 @@ void CProjectionEckert4::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

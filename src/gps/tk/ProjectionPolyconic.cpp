@@ -52,8 +52,6 @@ void CProjectionPolyconic::Initialize(CCfgMapProjection & proj)
 
         M0 = a * MLFN (lat0);
     }
-
-    return void ();
 }
 
 void CProjectionPolyconic::Forward ()
@@ -62,8 +60,6 @@ void CProjectionPolyconic::Forward ()
         ForwardS ();
     else
         ForwardE ();
-
-    return void ();
 }
 
 void CProjectionPolyconic::ForwardE ()
@@ -84,8 +80,6 @@ void CProjectionPolyconic::ForwardE ()
 
     m_fEasting = NN * sin (EE) + fe;
     m_fNorthing = MM - M0 + NN * (1.0 - cos (EE)) + fn;
-
-    return void ();
 }
 
 void CProjectionPolyconic::ForwardS ()
@@ -112,8 +106,6 @@ void CProjectionPolyconic::ForwardS ()
 
     m_fEasting = (a * m_fEasting) + fe;
     m_fNorthing = (a * m_fNorthing) + fn;
-
-    return void ();
 }
 
 void CProjectionPolyconic::Inverse ()
@@ -122,8 +114,6 @@ void CProjectionPolyconic::Inverse ()
         InverseS ();
     else
         InverseE ();
-
-    return void ();
 }
 
 void CProjectionPolyconic::InverseE ()
@@ -175,8 +165,6 @@ void CProjectionPolyconic::InverseE ()
         m_fLatitude = p;
         m_fLongitude = asin (da * CC) / sin (m_fLatitude) + lon0;
     }
-
-    return void ();
 }
 
 void CProjectionPolyconic::InverseS ()
@@ -219,6 +207,4 @@ void CProjectionPolyconic::InverseS ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }

@@ -60,8 +60,6 @@ void CProjectionMercator::Initialize(CCfgMapProjection & proj)
     {
         k0 = cos (abs (sp1)) / sqrt (1.0 - pow (e * sin (abs (sp1)), 2.0));
     }
-
-    return void ();
 }
 
 void CProjectionMercator::Forward ()
@@ -74,8 +72,6 @@ void CProjectionMercator::Forward ()
     {
         ForwardEllipse ();
     }
-
-    return void ();
 }
 
 void CProjectionMercator::ForwardEllipse ()
@@ -87,8 +83,6 @@ void CProjectionMercator::ForwardEllipse ()
 
     m_fEasting = fe + a * k0 * (lon - lon0);
     m_fNorthing = fn + a * k0 * log (c);
-
-    return void ();
 }
 
 void CProjectionMercator::ForwardSphere ()
@@ -98,8 +92,6 @@ void CProjectionMercator::ForwardSphere ()
 
     m_fEasting = fe + a * k0 * (lon - lon0);
     m_fNorthing = fn + a * k0 * log (tan (M_PI_4 + (lat / 2.0)));
-
-    return void ();
 }
 
 void CProjectionMercator::Inverse ()
@@ -112,8 +104,6 @@ void CProjectionMercator::Inverse ()
     {
         InverseEllipse ();
     }
-
-    return void ();
 }
 
 void CProjectionMercator::InverseEllipse ()

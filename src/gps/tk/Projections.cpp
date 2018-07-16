@@ -245,8 +245,6 @@ void CProjections::Forward ()
 
         m_fAltitude = h;
     }
-
-    return void ();
 }
 
 void CProjections::Inverse ()
@@ -323,91 +321,82 @@ void CProjections::Inverse ()
 
 bool CProjections::IsSameDatum (CCfgMapProjection & proj1, CCfgMapProjection & proj2)
 {
-	return ((proj1.m_fAxis == proj2.m_fAxis) &&
-		(proj1.m_lMapDatum == proj2.m_lMapDatum) &&
-		(proj1.m_lTransformation == proj2.m_lTransformation) &&
-		(proj1.m_fFlattening == proj2.m_fFlattening) &&
-		(proj1.m_fRotationX == proj2.m_fRotationX) &&
-		(proj1.m_fRotationY == proj2.m_fRotationY) &&
-		(proj1.m_fRotationZ == proj2.m_fRotationZ) &&
-		(proj1.m_fTranslationX == proj2.m_fTranslationX) &&
-		(proj1.m_fTranslationY == proj2.m_fTranslationY) &&
-		(proj1.m_fTranslationZ == proj2.m_fTranslationZ) &&
-		(proj1.m_fScaleFactor == proj2.m_fScaleFactor));
+  return ((proj1.m_fAxis == proj2.m_fAxis) &&
+    (proj1.m_lMapDatum == proj2.m_lMapDatum) &&
+    (proj1.m_lTransformation == proj2.m_lTransformation) &&
+    (proj1.m_fFlattening == proj2.m_fFlattening) &&
+    (proj1.m_fRotationX == proj2.m_fRotationX) &&
+    (proj1.m_fRotationY == proj2.m_fRotationY) &&
+    (proj1.m_fRotationZ == proj2.m_fRotationZ) &&
+    (proj1.m_fTranslationX == proj2.m_fTranslationX) &&
+    (proj1.m_fTranslationY == proj2.m_fTranslationY) &&
+    (proj1.m_fTranslationZ == proj2.m_fTranslationZ) &&
+    (proj1.m_fScaleFactor == proj2.m_fScaleFactor));
 }
 
 bool CProjections::IsEllipsoidToSphere (CCfgMapProjection & proj1, CCfgMapProjection & proj2)
 {
-	return ((proj1.m_fFlattening == 0.0) || (proj2.m_fFlattening == 0.0));
+  return ((proj1.m_fFlattening == 0.0) || (proj2.m_fFlattening == 0.0));
 }
 
 void CProjections::SetGridSrc (CCfgMapProjection & proj)
 {
 // If same grid is already set, return;
-    if (proj == m_projSrc)
-        goto _EndSetGridSrc;
+  if (proj == m_projSrc)
+    return;
 
 // Set new grid, delete old projection first
-    if (m_pProjSrc)
-    {
-        delete m_pProjSrc;
-        m_pProjSrc = NULL;
-    }
+  if (m_pProjSrc)
+  {
+    delete m_pProjSrc;
+    m_pProjSrc = NULL;
+  }
 
 // Store new source grid parameters
-    m_projSrc = proj;
+  m_projSrc = proj;
 
 // Create projection
-    m_pProjSrc = CreateProjection (proj);
+  m_pProjSrc = CreateProjection (proj);
 
 // Load NadCon File ?
-    if (proj.m_lTransformation >= 3L)
+  if (proj.m_lTransformation >= 3L)
+  {
+    if (m_pGrid)
     {
-		
-         if (m_pGrid)
-         {
-			 throw std::runtime_error("Unsupported operation: Load NADCON file");
-             //m_pGrid->Load (proj.m_lpszGridFile.GetBuffer());
-         }
+      throw std::runtime_error("Unsupported operation: Load NADCON file");
+        //m_pGrid->Load (proj.m_lpszGridFile.GetBuffer());
     }
-
-_EndSetGridSrc:
-
-    return void ();
+  }
 }
 
 void CProjections::SetGridDst (CCfgMapProjection & proj)
 {
 // If same grid is already set, return;
-    if (proj == m_projDst)
-        goto _EndSetGridDst;
+  if (proj == m_projDst)
+    return;
 
 // Set new grid, delete old projection first
-    if (m_pProjDst)
-    {
-        delete m_pProjDst;
-        m_pProjDst = NULL;
-    }
+  if (m_pProjDst)
+  {
+    delete m_pProjDst;
+    m_pProjDst = NULL;
+  }
 
 // Store new destination grid parameters
-    m_projDst = proj;
+  m_projDst = proj;
 
 // Create projection
-    m_pProjDst = CreateProjection (proj);
+  m_pProjDst = CreateProjection (proj);
 
 // Load NadCon File ?
-    if (proj.m_lTransformation >= 3L)
+  if (proj.m_lTransformation >= 3L)
+  {
+    if (m_pGrid)
     {
-        if (m_pGrid)
-        {
-			throw std::runtime_error("Invalid operation: Load NADCON file");
-            //m_pGrid->Load (proj.m_lpszGridFile.GetBuffer());
-        }
+      throw std::runtime_error("Invalid operation: Load NADCON file");
+        //m_pGrid->Load (proj.m_lpszGridFile.GetBuffer());
     }
-
-_EndSetGridDst:
-
-    return void ();
+  }
 }
 
 CProjection * CProjections::CreateProjection (CCfgMapProjection & proj)

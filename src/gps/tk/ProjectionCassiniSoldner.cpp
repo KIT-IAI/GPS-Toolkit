@@ -64,8 +64,6 @@ void CProjectionCassiniSoldner::Initialize(CCfgMapProjection &proj)
 
         M0 = a * MLFN (lat0); //((c0 * lat0) - s2lat0 + s4lat0 - s6lat0);
     }
-
-    return void ();
 }
 
 void CProjectionCassiniSoldner::Forward ()
@@ -74,8 +72,6 @@ void CProjectionCassiniSoldner::Forward ()
         ForwardS ();
     else
         ForwardE ();
-
-    return void ();
 }
 
 void CProjectionCassiniSoldner::ForwardE ()
@@ -105,8 +101,6 @@ void CProjectionCassiniSoldner::ForwardE ()
 
     m_fEasting = NN * (AA - (TT * A3 / 6.0) - (8.0 - TT + 8.0 * CC) * (TT * A5 / 120.0)) + fe;
     m_fNorthing = MM - M0 + NN * tlat * ((A2 / 2.0) + (5.0 - TT + 6.0 * CC) * A4 / 24.0) + fn;
-
-    return void ();
 }
 
 void CProjectionCassiniSoldner::ForwardS ()
@@ -121,8 +115,6 @@ void CProjectionCassiniSoldner::ForwardS ()
 
     m_fEasting = (a * (asin (clat * sin (dlam)))) + fe;
     m_fNorthing = (a * (atan2 (tlat, cos (dlam)) - lat0)) + fn;
-
-    return void ();
 }
 
 void CProjectionCassiniSoldner::Inverse ()
@@ -131,8 +123,6 @@ void CProjectionCassiniSoldner::Inverse ()
         InverseS ();
     else
         InverseE ();
-
-    return void ();
 }
 
 void CProjectionCassiniSoldner::InverseE ()
@@ -168,8 +158,6 @@ void CProjectionCassiniSoldner::InverseE ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 
 void CProjectionCassiniSoldner::InverseS ()
@@ -184,7 +172,5 @@ void CProjectionCassiniSoldner::InverseS ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

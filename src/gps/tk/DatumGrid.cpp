@@ -11,12 +11,12 @@
 
 inline double DEG2RAD(double x)
 {
-	return x * (M_PI / 180.0);
+  return x * (M_PI / 180.0);
 }
 
 inline double RAD2DEG(double x)
 {
-	return x / (M_PI / 180.0);
+  return x / (M_PI / 180.0);
 }
 
 CDatumGrid::CDatumGrid ()
@@ -60,15 +60,13 @@ void CDatumGrid::Clear ()
 
     m_lGrids = 0L;
     m_lMode = 0L;
-
-    return void ();
 }
 
 long CDatumGrid::Load(const std::wstring& lptszFileName)
 {
-	return 0;
+  return 0;
 
-	// Disabled. Bau.
+  // Disabled. Bau.
 #if 0
     long lResult = -1L;
 
@@ -127,15 +125,15 @@ bool CDatumGrid::GetShift (double dblLongitude, double dblLatitude, double & dbl
 
     CDatumSubGrid * pGrid = NULL;
 
-	if (m_lMode == 0L)
-	{
-		return false;
-	}
+  if (m_lMode == 0L)
+  {
+    return false;
+  }
 
-	if (m_pGrids == NULL)
-	{
-		return false;
-	}
+  if (m_pGrids == NULL)
+  {
+    return false;
+  }
 
     for (l = 0L ; l < m_lGrids ; l++)
     {
@@ -150,7 +148,7 @@ bool CDatumGrid::GetShift (double dblLongitude, double dblLatitude, double & dbl
                     dblShiftY = pGrid->GetCorrectionLat (dblLatitude, -dblLongitude);
                     dblShiftX = pGrid->GetCorrectionLon (dblLatitude, -dblLongitude);
 
-					return true;
+          return true;
                 }
             }
 
@@ -161,13 +159,13 @@ bool CDatumGrid::GetShift (double dblLongitude, double dblLatitude, double & dbl
                     dblShiftY = pGrid->GetCorrectionLat (dblLatitude, dblLongitude);
                     dblShiftX = pGrid->GetCorrectionLon (dblLatitude, dblLongitude);
 
-					return true;
+          return true;
                 }
             }
         }
     }
 
-	return false;
+  return false;
 }
 
 bool CDatumGrid::Forward (double & dblLongitude, double & dblLatitude)
@@ -178,15 +176,15 @@ bool CDatumGrid::Forward (double & dblLongitude, double & dblLatitude)
     double dblShiftX = 0.0;
     double dblShiftY = 0.0;
 
-	if (!GetShift(dblLongitude0, dblLatitude0, dblShiftX, dblShiftY))
-	{
-		return false;
-	}
+  if (!GetShift(dblLongitude0, dblLatitude0, dblShiftX, dblShiftY))
+  {
+    return false;
+  }
 
     dblLongitude -= DEG2RAD (dblShiftX / 3600.0);
     dblLatitude += DEG2RAD (dblShiftY / 3600.0);
 
-	return true;
+  return true;
 }
 
 bool CDatumGrid::Inverse (double & dblLongitude, double & dblLatitude)
@@ -197,10 +195,10 @@ bool CDatumGrid::Inverse (double & dblLongitude, double & dblLatitude)
     double dblShiftX = 0.0;
     double dblShiftY = 0.0;
 
-	if (!GetShift(dblLongitude0, dblLatitude0, dblShiftX, dblShiftY))
-	{
-		return false;
-	}
+  if (!GetShift(dblLongitude0, dblLatitude0, dblShiftX, dblShiftY))
+  {
+    return false;
+  }
 
     dblLongitude += DEG2RAD (dblShiftX / 3600.0);
     dblLatitude -= DEG2RAD (dblShiftY / 3600.0);

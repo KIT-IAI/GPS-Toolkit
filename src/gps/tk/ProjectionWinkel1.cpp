@@ -26,8 +26,6 @@ void CProjectionWinkel1::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionWinkel1::Forward ()
@@ -42,8 +40,6 @@ void CProjectionWinkel1::Forward ()
 
     m_fEasting = (a * dlam * (csp1 + clat) / 2.0) + fe;
     m_fNorthing = (a * lat) + fn;
-
-    return void ();
 }
 
 void CProjectionWinkel1::Inverse ()
@@ -56,7 +52,5 @@ void CProjectionWinkel1::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

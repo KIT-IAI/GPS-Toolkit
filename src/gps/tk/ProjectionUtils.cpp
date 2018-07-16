@@ -40,8 +40,6 @@ void xyz2plh (double x, double y, double z, double & p, double & l, double & h, 
 
  h = sqrt (x * x + y * y) / cos (p) - N;
  }
-
- return void ();
 }
 */
 
@@ -72,8 +70,6 @@ void xyz2plh (double x, double y, double z, double & p, double & l, double & h, 
 
         h = sqrt (x * x + y * y) / cos (p) - N;
     }
-
-    return void ();
 }
 
 void plh2xyz (double p, double l, double h, double & x, double & y, double & z, CCfgMapProjection * pParams)
@@ -96,8 +92,6 @@ void plh2xyz (double p, double l, double h, double & x, double & y, double & z, 
     x = (N + h) * cos (p) * cos (l);
     y = (N + h) * cos (p) * sin (l);
     z = (N * (1.0 - e2) + h) * sin (p);
-
-    return void ();
 }
 
 void towgs84 (double x, double y, double z, double & xx, double & yy, double & zz, CCfgMapProjection * pParams)
@@ -126,8 +120,6 @@ void towgs84 (double x, double y, double z, double & xx, double & yy, double & z
     zz = z + fTranslationZ - fRotationY * x
          + fRotationX * y
          + fScaleFactor * z;
-
-    return void ();
 }
 
 void fromwgs84 (double x, double y, double z, double & xx, double & yy, double & zz, CCfgMapProjection * pParams)
@@ -156,8 +148,6 @@ void fromwgs84 (double x, double y, double z, double & xx, double & yy, double &
     zz = z - fTranslationZ + fRotationY * x
          - fRotationX * y
          - fScaleFactor * z;
-
-    return void ();
 }
 
 double MetersToUnits (long lUnits, double dblMeters)

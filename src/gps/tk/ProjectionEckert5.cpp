@@ -30,8 +30,6 @@ void CProjectionEckert5::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionEckert5::Forward ()
@@ -43,8 +41,6 @@ void CProjectionEckert5::Forward ()
 
     m_fEasting = (a * XF * (1.0 + cos (lat)) * dlam) + fe;
     m_fNorthing = (a * YF * lat) + fn;
-
-    return void ();
 }
 
 void CProjectionEckert5::Inverse ()
@@ -57,7 +53,5 @@ void CProjectionEckert5::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

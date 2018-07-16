@@ -52,8 +52,6 @@ void CProjectionBonne::Initialize(CCfgMapProjection & proj)
 
     M1 = a * MLFN (sp1);
     E1 = (ssp1 == 0.0) ? 0.0 : a * MSFN (sp1) / ssp1;
-
-    return void ();
 }
 
 void CProjectionBonne::Forward ()
@@ -62,8 +60,6 @@ void CProjectionBonne::Forward ()
         ForwardS ();
     else
         ForwardE ();
-
-    return void ();
 }
 
 void CProjectionBonne::ForwardE ()
@@ -81,8 +77,6 @@ void CProjectionBonne::ForwardE ()
 
     m_fEasting = rho * sin (EE) + fe;
     m_fNorthing = (E1 - rho * cos (EE)) + fn;
-
-    return void ();
 }
 
 void CProjectionBonne::ForwardS ()
@@ -104,8 +98,6 @@ void CProjectionBonne::ForwardS ()
         m_fEasting = (a * rho * sin (E)) + fe;
         m_fNorthing = (a * (csp1 - rho * cos (E))) + fn;
     }
-
-    return void ();
 }
 
 void CProjectionBonne::Inverse()
@@ -114,8 +106,6 @@ void CProjectionBonne::Inverse()
         InverseS ();
     else
         InverseE ();
-
-    return void ();
 }
 
 void CProjectionBonne::InverseE ()
@@ -152,8 +142,6 @@ void CProjectionBonne::InverseE ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 
 void CProjectionBonne::InverseS ()
@@ -175,7 +163,5 @@ void CProjectionBonne::InverseS ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 

@@ -39,8 +39,6 @@ namespace gps
 
         virtual void transformGrid(GridParameters& src, GridParameters& dst);
 
-        virtual void putIAltitude(double ialtitude);
-
     private:
         virtual void checkZone(bool enableAutoZone);
 

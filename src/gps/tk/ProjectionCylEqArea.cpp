@@ -51,8 +51,6 @@ void CProjectionCylEqArea::Initialize(CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionCylEqArea::Forward()
@@ -76,8 +74,6 @@ void CProjectionCylEqArea::Forward()
         m_fEasting = (a * k0 * dlam) + fe;
         m_fNorthing = (a * 0.5 * q / k0) + fn;
     }
-
-    return void ();
 }
 
 void CProjectionCylEqArea::Inverse()
@@ -114,6 +110,4 @@ void CProjectionCylEqArea::Inverse()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }

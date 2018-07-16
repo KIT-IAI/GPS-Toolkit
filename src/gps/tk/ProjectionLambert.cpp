@@ -82,8 +82,6 @@ void CProjectionLambert::Initialize (CCfgMapProjection & proj)
 
     f1 = m1 / (n * pow (t1, n));
     rf = k0 * a * f1 * pow (t3, n);
-
-    return void ();
 }
 
 void CProjectionLambert::Forward ()
@@ -105,8 +103,6 @@ void CProjectionLambert::Forward ()
     {
         m_fEasting = fe - r * sin (t - ta);
     }
-
-    return void ();
 }
 
 void CProjectionLambert::Inverse ()
@@ -149,7 +145,5 @@ void CProjectionLambert::Inverse ()
 
     m_fLatitude = phi0;
     m_fLongitude = lab0;
-
-    return void ();
 }
 

@@ -29,8 +29,6 @@ void CProjectionGnomonic::Initialize (CCfgMapProjection & proj)
 
     fe = UnitsToMeters (proj.m_lUnits, proj.m_fFalseEasting);
     fn = UnitsToMeters (proj.m_lUnits, proj.m_fFalseNorthing);
-
-    return void ();
 }
 
 void CProjectionGnomonic::Forward ()
@@ -51,8 +49,6 @@ void CProjectionGnomonic::Forward ()
 
     m_fNorthing = (a * m_fNorthing) + fn;
     m_fEasting = (a * m_fEasting) + fe;
-
-    return void ();
 }
 
 void CProjectionGnomonic::Inverse ()
@@ -72,7 +68,5 @@ void CProjectionGnomonic::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }
 

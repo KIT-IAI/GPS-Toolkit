@@ -55,8 +55,6 @@ void CProjectionAlbers::Initialize (CCfgMapProjection & proj)
     C = m1 * m1 + n * q1;
 
     r0 = (a / n) * sqrt (C - (n * q0));
-
-    return void ();
 }
 
 void CProjectionAlbers::Forward ()
@@ -78,8 +76,6 @@ void CProjectionAlbers::Forward ()
 
     m_fEasting = r * sin (t) + fe;
     m_fNorthing = r0 - r * cos (t) + fn;
-
-    return void ();
 }
 
 void CProjectionAlbers::Inverse ()

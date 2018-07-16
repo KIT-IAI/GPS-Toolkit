@@ -59,8 +59,6 @@ void CProjectionLambertAzimuthal::Initialize (CCfgMapProjection & proj)
 
     sinb0 = q0 / qp;
     cosb0 = sqrt (1.0 - sinb0 * sinb0);
-
-    return void ();
 }
 
 void CProjectionLambertAzimuthal::Forward ()
@@ -97,8 +95,6 @@ void CProjectionLambertAzimuthal::ForwardE ()
 
     m_fEasting = fe + ((B * D) * (cosb * sin (lon - lon0)));
     m_fNorthing = fn + (B / D) * ((cosb0 * sinb) - (sinb0 * cosb * cos (lon - lon0)));
-
-    return void ();
 }
 
 void CProjectionLambertAzimuthal::ForwardS ()
@@ -120,8 +116,6 @@ void CProjectionLambertAzimuthal::ForwardS ()
 
     m_fEasting = fe + (k * clat * slam);
     m_fNorthing = fn + (k * (clat0 * slat - slat0 * clat * clam));
-
-    return void ();
 }
 
 void CProjectionLambertAzimuthal::Inverse ()
@@ -130,8 +124,6 @@ void CProjectionLambertAzimuthal::Inverse ()
         InverseS ();
     else
         InverseE ();
-
-    return void ();
 }
 
 void CProjectionLambertAzimuthal::InverseS ()
@@ -178,8 +170,6 @@ void CProjectionLambertAzimuthal::InverseS ()
 
     m_fLatitude = lat;
     m_fLongitude = lon;
-
-    return void ();
 }
 
 void CProjectionLambertAzimuthal::InverseE ()
@@ -223,7 +213,5 @@ void CProjectionLambertAzimuthal::InverseE ()
         m_fLatitude = b + c1 + c2 + c3;
         m_fLongitude = lon0 + atan ((dx * sin (C)) / (D * p * cosb0 * cos (C) - pow (D, 2) * dy * sinb0 * sin (C)));
     }
-
-    return void ();
 }
 

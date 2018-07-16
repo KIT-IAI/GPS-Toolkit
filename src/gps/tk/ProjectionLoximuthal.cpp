@@ -32,8 +32,6 @@ void CProjectionLoximuthal::Initialize (CCfgMapProjection & proj)
 
     tsp1 = tan (M_PI_4 + 0.5 * sp1);
     csp1 = cos (sp1);
-
-    return void ();
 }
 
 void CProjectionLoximuthal::Forward ()
@@ -60,8 +58,6 @@ void CProjectionLoximuthal::Forward ()
 
     m_fEasting = (fEasting * a) + fe;
     m_fNorthing = (fNorthing * a) + fn;
-
-    return void ();
 }
 
 void CProjectionLoximuthal::Inverse ()
@@ -92,7 +88,5 @@ void CProjectionLoximuthal::Inverse ()
 
     m_fLatitude = lat;
     m_fLongitude = lon + lon0;
-
-    return void ();
 }
 
