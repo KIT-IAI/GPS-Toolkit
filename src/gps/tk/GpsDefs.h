@@ -9,10 +9,6 @@
 #endif // WIN64
 #endif // SZ_VERSION
 
-#define REG_ROOT _T("SOFTWARE\\Eye4Software\\GpsToolkit")
-
-#define REG_SERIAL _T("RegistrationKey")
-
 #define RESERVED_CHECK 24253938
 
 #define CFG_FIELD_HEADER 0

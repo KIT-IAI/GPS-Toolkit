@@ -24,6 +24,8 @@ namespace gps
 
         virtual DatumParameters* getDatum();
 
+        virtual double getUnitFactorToMeter();
+
         virtual void putDatum(DatumParameters* datumParameters);
 
         CGpsGridParametersX& getImpl()

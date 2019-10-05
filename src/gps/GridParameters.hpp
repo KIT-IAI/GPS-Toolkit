@@ -12,6 +12,7 @@ namespace gps
         virtual void LoadFromId(long id) = 0;
         virtual long getId() = 0;
         virtual DatumParameters* getDatum() = 0;
+        virtual double getUnitFactorToMeter() = 0;
         virtual void putDatum(DatumParameters* datumParameters) = 0;
 
         virtual void clear() = 0;
