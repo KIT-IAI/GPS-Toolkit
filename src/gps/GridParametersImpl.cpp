@@ -28,7 +28,7 @@ namespace gps
       m_impl->LoadFromId(id);
     }
 
-    long GridParametersImpl::getId()
+    size_t GridParametersImpl::getId()
     {
       return m_impl->m_lId;
     }

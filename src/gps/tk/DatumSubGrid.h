@@ -33,6 +33,6 @@ public:
 
 private:
 
-    float * m_pdblLatitudes;
-    float * m_pdblLongitudes;
+    double * m_pdblLatitudes;
+    double * m_pdblLongitudes;
 };

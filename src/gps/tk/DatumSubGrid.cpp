@@ -62,12 +62,12 @@ long CDatumSubGrid::Allocate(long lRecords)
         m_pdblLongitudes = NULL;
     }
 
-    m_pdblLatitudes = new float [ lRecords + 1L ];
+    m_pdblLatitudes = new double [ lRecords + 1L ];
 
     if (m_pdblLatitudes == NULL)
         goto _EndAllocate;
 
-    m_pdblLongitudes = new float [ lRecords + 1L ];
+    m_pdblLongitudes = new double [ lRecords + 1L ];
 
     if (m_pdblLongitudes == NULL)
         goto _EndAllocate;
@@ -86,10 +86,10 @@ double CDatumSubGrid::GetCorrectionLat (double dblLat, double dblLon)
     int nLon0 = 0L;
     int nLon1 = 0L;
 
-    float dblValue00 = 0.0;
-    float dblValue01 = 0.0;
-    float dblValue11 = 0.0;
-    float dblValue10 = 0.0;
+    double dblValue00 = 0.0;
+    double dblValue01 = 0.0;
+    double dblValue11 = 0.0;
+    double dblValue10 = 0.0;
 
 // Convert to the 4 bounding lat/lon pos
     double x = gps_round ((dblLon - m_dblLonMin) / (double) m_dblLonSpc);
@@ -127,10 +127,10 @@ double CDatumSubGrid::GetCorrectionLon (double dblLat, double dblLon)
     int nLon0 = 0L;
     int nLon1 = 0L;
 
-    float dblValue00 = 0.0;
-    float dblValue01 = 0.0;
-    float dblValue11 = 0.0;
-    float dblValue10 = 0.0;
+    double dblValue00 = 0.0;
+    double dblValue01 = 0.0;
+    double dblValue11 = 0.0;
+    double dblValue10 = 0.0;
 
 // Convert to the 4 bounding lat/lon pos
     double x = gps_round ((dblLon - m_dblLonMin) / (double) m_dblLonSpc);

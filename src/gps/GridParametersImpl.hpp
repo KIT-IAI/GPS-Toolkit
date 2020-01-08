@@ -20,7 +20,7 @@ namespace gps
 
         virtual void LoadFromId(long id);
 
-        virtual long getId();
+        virtual size_t getId();
 
         virtual DatumParameters* getDatum();
 
