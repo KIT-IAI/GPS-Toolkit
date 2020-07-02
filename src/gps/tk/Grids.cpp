@@ -32519,7 +32519,7 @@ namespace gps
         {
           Datums::getInstance().load(id, &(params->m_cGpsDatumParameters));
         }
-        catch (const std::exception& e)
+        catch (const std::exception& /*e*/)
         {
           throw std::runtime_error("Could not find grid id '" + std::to_string(id) + "'");
         }
