@@ -21,7 +21,7 @@ public:
 public:
   std::wstring m_strName;
 
-  long m_lId;
+  size_t m_lId;
   long m_lProjection;
   long m_lUnits;
 

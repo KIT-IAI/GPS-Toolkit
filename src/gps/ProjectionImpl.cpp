@@ -28,7 +28,7 @@ namespace gps
         {
             checkZone(true);
         }
-        catch (const std::exception& e)
+        catch (const std::exception& /*e*/)
         {
 // if (lResult)
 // {

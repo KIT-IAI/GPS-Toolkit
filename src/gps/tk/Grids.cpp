@@ -32511,7 +32511,20 @@ namespace gps
     {
       params->Clear();
 
+<<<<<<< HEAD
       auto it = m_grids.find(id);
+=======
+            if (it == m_grids.end())
+            {
+                try
+                {
+                    Datums::getInstance().load(id, &(params->m_cGpsDatumParameters));
+                }
+                catch (const std::exception& /*e*/)
+                {
+                    throw std::runtime_error("Could not find grid id '" + std::to_string(id) + "'");
+                }
+>>>>>>> 53c6cd751f94f6c00bab13ebfad806b5516cc69a
 
       if (it == m_grids.end())
       {

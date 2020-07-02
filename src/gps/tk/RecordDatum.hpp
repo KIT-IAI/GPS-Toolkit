@@ -48,7 +48,7 @@ namespace gps
         public:
             void Clear();
 
-            long numId = 0;
+            size_t numId = 0;
 
             double dblAxis = 0.0;
             double dblInverseFlattening = 0.0;
