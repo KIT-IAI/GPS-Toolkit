@@ -9,7 +9,7 @@ namespace gps
 {
     namespace tk
     {
-        const std::array<RecordDatum, 630> DATUMS
+        const std::array<RecordDatum, 632> DATUMS
         {
             buildDatum(4143
             , L"Abidjan 1987"
@@ -3016,7 +3016,15 @@ namespace gps
             , L"Zanderij"
             , AxisA(6378388.0)
             , InverseFlattening(297.0)
-            , Delta(-265.0, 120.0, -358.0))
+            , Delta(-265.0, 120.0, -358.0)),
+            buildDatum(3856
+            , L"Popular Visualisation Pseudo-Mercator"
+            , AxisA(6378137.0)
+            , InverseFlattening(1.0)),
+            buildDatum(1128
+            , L"Japanese Geodetic Datum 2011"
+            , AxisA(6378137.0)
+            , InverseFlattening(298.257222101))
         };
 
         Datums::Datums()

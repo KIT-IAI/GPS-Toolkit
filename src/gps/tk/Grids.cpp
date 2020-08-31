@@ -10,7 +10,7 @@ namespace gps
 {
   namespace tk
   {
-    const std::array<RecordGrid, 3840> GRIDS
+    const std::array<RecordGrid, 3860> GRIDS
     {
         buildGrid(2165
         , L"Abidjan 1987 / TM 5 NW"
@@ -5988,6 +5988,139 @@ namespace gps
         , Scale(0.9996)
         , FalseEasting(500000.0)
         , LatLonOrigin(0.0, 147.0)),
+        buildGrid(6669
+        , L"JGD2011 / Japan Plane Rectangular CS I"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(33.0, 129.5)),
+        buildGrid(66670
+        , L"JGD2011 / Japan Plane Rectangular CS II"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(33.0, 131.0)),
+        buildGrid(6671
+        , L"JGD2011 / Japan Plane Rectangular CS III"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(36.0, 132.1666666666669983)),
+        buildGrid(6672
+        , L"JGD2011 / Japan Plane Rectangular CS IV"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(33.0, 133.5)),
+        buildGrid(6677
+        , L"JGD2011 / Japan Plane Rectangular CS IX"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(36.0, 139.8333333333330017)),
+        buildGrid(6673
+        , L"JGD2011 / Japan Plane Rectangular CS V"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(36.0, 134.3333333333330017)),
+        buildGrid(6674
+        , L"JGD2011 / Japan Plane Rectangular CS VI"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(36.0, 136.0)),
+        buildGrid(6675
+        , L"JGD2011 / Japan Plane Rectangular CS VII"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(36.0, 137.1666666666669983)),
+        buildGrid(6676
+        , L"JGD2011 / Japan Plane Rectangular CS VIII"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(36.0, 138.5)),
+        buildGrid(6678
+        , L"JGD2011 / Japan Plane Rectangular CS X"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(40.0, 140.8333333333330017)),
+        buildGrid(6679
+        , L"JGD2011 / Japan Plane Rectangular CS XI"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(44.0, 140.25)),
+        buildGrid(6680
+        , L"JGD2011 / Japan Plane Rectangular CS XII"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(44.0, 142.25)),
+        buildGrid(6681
+        , L"JGD2011 / Japan Plane Rectangular CS XIII"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(44.0, 144.25)),
+        buildGrid(6682
+        , L"JGD2011 / Japan Plane Rectangular CS XIV"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(26.0, 142.0)),
+        buildGrid(6687
+        , L"JGD2011 / Japan Plane Rectangular CS XIX"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(26.0, 154.0)),
+        buildGrid(6683
+        , L"JGD2011 / Japan Plane Rectangular CS XV"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(26.0, 127.5)),
+        buildGrid(6684
+        , L"JGD2011 / Japan Plane Rectangular CS XVI"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(26.0, 124.0)),
+        buildGrid(6685
+        , L"JGD2011 / Japan Plane Rectangular CS XVII"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(26.0, 131.0)),
+        buildGrid(6686
+        , L"JGD2011 / Japan Plane Rectangular CS XVIII"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 1128
+        , Scale(0.9999)
+        , LatLonOrigin(20.0, 136.0)),
         buildGrid(2979
         , L"K0 1949 / UTM zone 42S"
         , ProjectionType::TRANSVERSEMERCATOR
@@ -32489,7 +32622,16 @@ namespace gps
         , 4311
         , Scale(0.9996)
         , FalseEasting(500000.0)
-        , LatLonOrigin(0.0, -57.0))
+        , LatLonOrigin(0.0, -57.0)),
+        buildGrid(3857
+        , L"WGS 84 / Pseudo-Mercator"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 3856
+        , Scale(0.0)
+        , FalseNorthing(0.0)
+        , FalseEasting(0.0)
+        , LatLonOrigin(0.0, 0.0))
     };
 
     Grids::Grids()
