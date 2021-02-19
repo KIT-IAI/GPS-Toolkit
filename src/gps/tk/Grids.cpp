@@ -10,7 +10,7 @@ namespace gps
 {
   namespace tk
   {
-    const std::array<RecordGrid, 3860> GRIDS
+    const std::array<RecordGrid, 3871> GRIDS
     {
         buildGrid(2165
         , L"Abidjan 1987 / TM 5 NW"
@@ -4713,6 +4713,105 @@ namespace gps
         , ProjectionType::TRANSVERSEMERCATOR
         , ProjectionUnit::M
         , 4283
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 165.0)),
+        buildGrid(7848
+        , L"GDA2020 / MGA zone 48"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 105.0)),
+        buildGrid(7849
+        , L"GDA2020 / MGA zone 49"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 111.0)),
+        buildGrid(7850
+        , L"GDA2020 / MGA zone 50"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 117.0)),
+        buildGrid(7851
+        , L"GDA2020 / MGA zone 51"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 123.0)),
+        buildGrid(7852
+        , L"GDA2020 / MGA zone 52"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 129.0)),
+        buildGrid(7853
+        , L"GDA2020 / MGA zone 53"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 135.0)),
+        buildGrid(7854
+        , L"GDA2020 / MGA zone 54"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 141.0)),
+        buildGrid(7855
+        , L"GDA2020 / MGA zone 55"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 147.0)),
+          buildGrid(7856
+        , L"GDA2020 / MGA zone 56"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 153.0)),
+        buildGrid(7857
+        , L"GDA2020 / MGA zone 57"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
+        , Scale(0.9996)
+        , FalseNorthing(10000000.0)
+        , FalseEasting(500000.0)
+        , LatLonOrigin(0.0, 159.0)),
+        buildGrid(7858
+        , L"GDA2020 / MGA zone 58"
+        , ProjectionType::TRANSVERSEMERCATOR
+        , ProjectionUnit::M
+        , 7844
         , Scale(0.9996)
         , FalseNorthing(10000000.0)
         , FalseEasting(500000.0)
