@@ -1,4 +1,5 @@
 #include <memory>
+#include <stdexcept>
 
 #include "tk/GpsDatumParametersX.h"
 #include "tk/GpsGridParametersX.h"

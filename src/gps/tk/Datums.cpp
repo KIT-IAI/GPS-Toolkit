@@ -1,4 +1,5 @@
 #include <array>
+#include <stdexcept>
 
 #include "GridBuilder.hpp"
 #include "GpsDatumParametersX.h"
